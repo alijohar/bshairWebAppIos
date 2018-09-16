@@ -12,6 +12,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Add NavigationBar
+        setupNavigationBarItems()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -20,6 +23,14 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    private func setupNavigationBarItems(){
+        let titleImageView = UIImageView(image: #imageLiteral(resourceName: "bshair_menu_logo2"))
+        titleImageView.contentMode = UIViewContentMode.scaleAspectFit
+        navigationItem.titleView = titleImageView
+
+//        add background
+self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "bk")?.resizableImage(withCapInsets: UIEdgeInsets.zero, resizingMode: .tile), for: .default)
+    }
 
 }
 
