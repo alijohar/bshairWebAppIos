@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     }
 
     private func setupNavigationBarItems(){
-        let titleImageView = UIImageView(image: #imageLiteral(resourceName: "bshair_menu_logo2"))
+        let titleImageView = UIImageView(image:#imageLiteral(resourceName: "ic_menu_bshair"))
         titleImageView.contentMode = UIViewContentMode.scaleAspectFit
         navigationItem.titleView = titleImageView
 
