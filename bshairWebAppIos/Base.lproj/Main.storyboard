@@ -24,6 +24,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="blackTranslucent" translucent="NO" id="xbm-I2-yxN">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.49019607843137253" green="0.3411764705882353" blue="0.75294117647058822" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
@@ -156,10 +157,10 @@
             </objects>
             <point key="canvasLocation" x="-388" y="-368.7192118226601"/>
         </scene>
-        <!--View Controller-->
+        <!--Search View-->
         <scene sceneID="bg5-7H-DOa">
             <objects>
-                <viewController id="Kfu-kv-qVq" sceneMemberID="viewController">
+                <viewController id="Kfu-kv-qVq" customClass="SearchView" customModule="bshairWebAppIos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WEq-RI-zVT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
