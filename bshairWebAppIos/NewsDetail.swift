@@ -12,6 +12,10 @@ class NewsDetail: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Customize navigationBar
+        setupNavigationBarItems()
+
 
         // Do any additional setup after loading the view.
     }
@@ -31,5 +35,20 @@ class NewsDetail: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func setupNavigationBarItems(){
+        navigationItem.title = "افتتاح مسجد جديد"
+        let shareNewsButton = UIButton(type: .system)
+        shareNewsButton.setImage(#imageLiteral(resourceName: "shareNews"), for: .normal)
+        shareNewsButton.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+        
+        let addCommentsButton = UIButton(type: .system)
+        addCommentsButton.setImage(#imageLiteral(resourceName: "addComment"), for: .normal)
+        addCommentsButton.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+        
+        navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: shareNewsButton), UIBarButtonItem(customView: addCommentsButton)]
+        
+    }
+
 
 }
