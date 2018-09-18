@@ -105,6 +105,7 @@
                                         <connections>
                                             <outlet property="newsImage" destination="kWs-gq-a53" id="U6N-Zb-Zok"/>
                                             <outlet property="newsTitle" destination="BaH-87-XSB" id="vw8-n5-NzM"/>
+                                            <segue destination="btk-cr-0wY" kind="show" id="GLF-oM-AyU"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -156,6 +157,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-388" y="-368.7192118226601"/>
+        </scene>
+        <!--News Detail-->
+        <scene sceneID="iYF-kf-TSY">
+            <objects>
+                <viewController id="btk-cr-0wY" customClass="NewsDetail" customModule="bshairWebAppIos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qjn-Zo-SIo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="W5g-DB-VWd"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="egh-y1-193" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-698" y="438"/>
         </scene>
         <!--Search View-->
         <scene sceneID="bg5-7H-DOa">
