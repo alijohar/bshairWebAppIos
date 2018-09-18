@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var listOfNews: UITableView!
     
     var listOFNewsTemp = ["افتتاح مسجد في القطيف", "افتتاح مسجد في القطيف","افتتاح مسجد في القطيف","افتتاح مسجد في القطيف"]
@@ -45,6 +46,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         myCell.newsTitle.text = listOFNewsTemp[indexPath.row]
 
         return myCell
+    }
+
+    @IBAction func sendCustomNews(_ sender: Any) {
+        sendEmail()
+    }
+    func sendEmail() {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients(["news@bshairdammam.com"])
+            mail.setMessageBody("<p>اكتب نصاً</p>", isHTML: true)
+            
+            present(mail, animated: true)
+        } else {
+            // show failure alert
+        }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
     }
 
 }
