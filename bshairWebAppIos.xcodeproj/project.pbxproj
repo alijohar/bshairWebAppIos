@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C525271A214FA9BF003D5330 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5252719214FA9BF003D5330 /* NewsCell.swift */; };
+		C525273A2150B7AF003D5330 /* DroidArabicKufiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C52527382150B7AF003D5330 /* DroidArabicKufiBold.ttf */; };
+		C525273B2150B7AF003D5330 /* DroidArabicKufiRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C52527392150B7AF003D5330 /* DroidArabicKufiRegular.ttf */; };
 		C57DE615214EAAD70045CBE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57DE614214EAAD70045CBE1 /* AppDelegate.swift */; };
 		C57DE617214EAAD70045CBE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57DE616214EAAD70045CBE1 /* ViewController.swift */; };
 		C57DE61A214EAAD70045CBE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C57DE618214EAAD70045CBE1 /* Main.storyboard */; };
@@ -36,6 +38,8 @@
 
 /* Begin PBXFileReference section */
 		C5252719214FA9BF003D5330 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		C52527382150B7AF003D5330 /* DroidArabicKufiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DroidArabicKufiBold.ttf; sourceTree = "<group>"; };
+		C52527392150B7AF003D5330 /* DroidArabicKufiRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DroidArabicKufiRegular.ttf; sourceTree = "<group>"; };
 		C57DE611214EAAD70045CBE1 /* bshairWebAppIos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bshairWebAppIos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C57DE614214EAAD70045CBE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C57DE616214EAAD70045CBE1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +80,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C52527372150B796003D5330 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C52527382150B7AF003D5330 /* DroidArabicKufiBold.ttf */,
+				C52527392150B7AF003D5330 /* DroidArabicKufiRegular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		C57DE608214EAAD70045CBE1 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +114,7 @@
 			children = (
 				C57DE614214EAAD70045CBE1 /* AppDelegate.swift */,
 				C57DE616214EAAD70045CBE1 /* ViewController.swift */,
+				C52527372150B796003D5330 /* Fonts */,
 				C57DE618214EAAD70045CBE1 /* Main.storyboard */,
 				C5252719214FA9BF003D5330 /* NewsCell.swift */,
 				C57DE61B214EAAD80045CBE1 /* Assets.xcassets */,
@@ -232,9 +246,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C525273B2150B7AF003D5330 /* DroidArabicKufiRegular.ttf in Resources */,
 				C57DE61F214EAAD80045CBE1 /* LaunchScreen.storyboard in Resources */,
 				C57DE61C214EAAD80045CBE1 /* Assets.xcassets in Resources */,
 				C57DE61A214EAAD70045CBE1 /* Main.storyboard in Resources */,
+				C525273A2150B7AF003D5330 /* DroidArabicKufiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
