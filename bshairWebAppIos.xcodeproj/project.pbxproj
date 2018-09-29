@@ -19,6 +19,8 @@
 		C57DE61F214EAAD80045CBE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C57DE61D214EAAD80045CBE1 /* LaunchScreen.storyboard */; };
 		C57DE62A214EAAD80045CBE1 /* bshairWebAppIosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57DE629214EAAD80045CBE1 /* bshairWebAppIosTests.swift */; };
 		C57DE635214EAAD80045CBE1 /* bshairWebAppIosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57DE634214EAAD80045CBE1 /* bshairWebAppIosUITests.swift */; };
+		C5969793215F60F200C7DD70 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5969791215F60F200C7DD70 /* MenuViewController.swift */; };
+		C5969794215F60F200C7DD70 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5969792215F60F200C7DD70 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		C57DE630214EAAD80045CBE1 /* bshairWebAppIosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bshairWebAppIosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C57DE634214EAAD80045CBE1 /* bshairWebAppIosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bshairWebAppIosUITests.swift; sourceTree = "<group>"; };
 		C57DE636214EAAD80045CBE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5969791215F60F200C7DD70 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		C5969792215F60F200C7DD70 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,8 @@
 		C57DE613214EAAD70045CBE1 /* bshairWebAppIos */ = {
 			isa = PBXGroup;
 			children = (
+				C5969792215F60F200C7DD70 /* BaseViewController.swift */,
+				C5969791215F60F200C7DD70 /* MenuViewController.swift */,
 				C57DE614214EAAD70045CBE1 /* AppDelegate.swift */,
 				C57DE616214EAAD70045CBE1 /* ViewController.swift */,
 				C525273C2150C9A0003D5330 /* SearchView.swift */,
@@ -282,9 +288,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C525273D2150C9A0003D5330 /* SearchView.swift in Sources */,
+				C5969793215F60F200C7DD70 /* MenuViewController.swift in Sources */,
 				C57DE617214EAAD70045CBE1 /* ViewController.swift in Sources */,
 				C525271A214FA9BF003D5330 /* NewsCell.swift in Sources */,
 				C525273F2150CAC8003D5330 /* NewsDetail.swift in Sources */,
+				C5969794215F60F200C7DD70 /* BaseViewController.swift in Sources */,
 				C57DE615214EAAD70045CBE1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

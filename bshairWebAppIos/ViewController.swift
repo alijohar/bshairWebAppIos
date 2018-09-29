@@ -9,14 +9,15 @@
 import UIKit
 import MessageUI
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate {
+class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var listOfNews: UITableView!
     
     var listOFNewsTemp = ["افتتاح مسجد في القطيف", "افتتاح مسجد في القطيف","افتتاح مسجد في القطيف","افتتاح مسجد في القطيف"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        addSlideMenuButton()
+
         // Add NavigationBar
         setupNavigationBarItems()
         // Do any additional setup after loading the view, typically from a nib.
