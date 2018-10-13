@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		454EB0CD8C0557D7E48ABE19 /* Pods_bshairWebAppIos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD1A17523C8E2255506E9B7 /* Pods_bshairWebAppIos.framework */; };
 		C525271A214FA9BF003D5330 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5252719214FA9BF003D5330 /* NewsCell.swift */; };
 		C525273A2150B7AF003D5330 /* DroidArabicKufiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C52527382150B7AF003D5330 /* DroidArabicKufiBold.ttf */; };
 		C525273B2150B7AF003D5330 /* DroidArabicKufiRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C52527392150B7AF003D5330 /* DroidArabicKufiRegular.ttf */; };
@@ -41,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1AD1A17523C8E2255506E9B7 /* Pods_bshairWebAppIos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bshairWebAppIos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B3C0E67409D19DF8EF07E8E /* Pods-bshairWebAppIos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bshairWebAppIos.release.xcconfig"; path = "Pods/Target Support Files/Pods-bshairWebAppIos/Pods-bshairWebAppIos.release.xcconfig"; sourceTree = "<group>"; };
+		8D06175C68F661C1CE824E5D /* Pods-bshairWebAppIos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bshairWebAppIos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bshairWebAppIos/Pods-bshairWebAppIos.debug.xcconfig"; sourceTree = "<group>"; };
 		C5252719214FA9BF003D5330 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		C52527382150B7AF003D5330 /* DroidArabicKufiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DroidArabicKufiBold.ttf; sourceTree = "<group>"; };
 		C52527392150B7AF003D5330 /* DroidArabicKufiRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DroidArabicKufiRegular.ttf; sourceTree = "<group>"; };
@@ -68,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				454EB0CD8C0557D7E48ABE19 /* Pods_bshairWebAppIos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +93,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A4B880A41F8F392047497A1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8D06175C68F661C1CE824E5D /* Pods-bshairWebAppIos.debug.xcconfig */,
+				2B3C0E67409D19DF8EF07E8E /* Pods-bshairWebAppIos.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9D5CA34227E90D183858CCBB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1AD1A17523C8E2255506E9B7 /* Pods_bshairWebAppIos.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C52527372150B796003D5330 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +126,8 @@
 				C57DE628214EAAD80045CBE1 /* bshairWebAppIosTests */,
 				C57DE633214EAAD80045CBE1 /* bshairWebAppIosUITests */,
 				C57DE612214EAAD70045CBE1 /* Products */,
+				5A4B880A41F8F392047497A1 /* Pods */,
+				9D5CA34227E90D183858CCBB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -161,9 +185,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C57DE639214EAAD80045CBE1 /* Build configuration list for PBXNativeTarget "bshairWebAppIos" */;
 			buildPhases = (
+				B04FA5C423CFD9D8A3BC92A2 /* [CP] Check Pods Manifest.lock */,
 				C57DE60D214EAAD70045CBE1 /* Sources */,
 				C57DE60E214EAAD70045CBE1 /* Frameworks */,
 				C57DE60F214EAAD70045CBE1 /* Resources */,
+				B6E58FE8B0CAC1D16B6C98F0 /* [CP] Embed Pods Frameworks */,
+				A3C2DFEC7004C3CBF2347037 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -281,6 +308,66 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A3C2DFEC7004C3CBF2347037 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-bshairWebAppIos/Pods-bshairWebAppIos-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B04FA5C423CFD9D8A3BC92A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B6E58FE8B0CAC1D16B6C98F0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-bshairWebAppIos/Pods-bshairWebAppIos-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C57DE60D214EAAD70045CBE1 /* Sources */ = {
@@ -464,6 +551,7 @@
 		};
 		C57DE63A214EAAD80045CBE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D06175C68F661C1CE824E5D /* Pods-bshairWebAppIos.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -482,6 +570,7 @@
 		};
 		C57DE63B214EAAD80045CBE1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B3C0E67409D19DF8EF07E8E /* Pods-bshairWebAppIos.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
