@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ptM-tC-PoP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ptM-tC-PoP">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -78,7 +76,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BaH-87-XSB">
-                                                    <rect key="frame" x="15" y="35.666666666666657" width="237" height="53.333333333333343"/>
+                                                    <rect key="frame" x="15" y="35.333333333333329" width="237" height="53.333333333333329"/>
                                                     <fontDescription key="fontDescription" name="DroidArabicKufi-Bold" family="Droid Arabic Kufi" pointSize="14"/>
                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -273,7 +271,7 @@
         <!--Menu View Controller-->
         <scene sceneID="r2w-V7-Vb4">
             <objects>
-                <viewController storyboardIdentifier="MenuViewController" id="5Th-bK-wxs" customClass="MenuViewController" customModule="AKSwiftSlideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" id="5Th-bK-wxs" customClass="MenuViewController" customModule="bshairWebAppIos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zMB-jv-jue">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -308,7 +306,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4J-za-nK1">
-                                                    <rect key="frame" x="62" y="16" width="305" height="21"/>
+                                                    <rect key="frame" x="62" y="16.333333333333332" width="305" height="20.999999999999996"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="xSD-vE-gms"/>
                                                     </constraints>
@@ -339,14 +337,14 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_menu_bshair" translatesAutoresizingMaskIntoConstraints="NO" id="MiI-Jl-7d9">
-                                <rect key="frame" x="154" y="111" width="66" height="66"/>
+                                <rect key="frame" x="154.66666666666666" y="111" width="66" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" id="4Sa-x1-rbG"/>
                                     <constraint firstAttribute="height" constant="66" id="c6r-an-qZB"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="النسخة التجريبية" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGR-T2-EM0">
-                                <rect key="frame" x="149.66666666666666" y="185" width="77.333333333333343" height="21"/>
+                                <rect key="frame" x="149" y="185" width="77.333333333333314" height="21"/>
                                 <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="11"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -386,7 +384,7 @@
         <image name="Side-nav-drawer" width="317" height="175"/>
         <image name="ic_menu_bshair" width="100" height="100"/>
         <image name="mainBanner" width="608" height="409"/>
-        <image name="menu" width="25" height="25"/>
-        <image name="search" width="25" height="25"/>
+        <image name="menu" width="37.5" height="37.5"/>
+        <image name="search" width="37.5" height="37.5"/>
     </resources>
 </document>
