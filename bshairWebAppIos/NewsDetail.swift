@@ -69,7 +69,14 @@ class NewsDetail: UIViewController {
             guard let email = alertController.textFields?[1].text, !email.isEmpty else {return}
             guard let content = alertController.textFields?[2].text, !content.isEmpty else {return}
             
-            self.sendComment(post_id: post_id, name: name, email: email, content: content)
+            NewsApi.sendComment(post_id: post_id, name: name, email: email, content: content) {(error:Error?, success:Bool) in
+                if success {
+                    print("success")
+                }else{
+                    print("error")
+                }
+                
+            }
         }
         
         //the cancel action doing nothing
@@ -96,31 +103,6 @@ class NewsDetail: UIViewController {
     }
 
     
-    func sendComment(post_id:String, name:String, email:String, content:String){
-        let url = "http://bshaer.net/api/submit_comment"
-        let params = ["post_id":post_id, "name":name, "email":email, "content":content]
-        print("\(name) \(email) \(content)")
-        
-        
-        Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.default, headers: nil)
-            .validate(statusCode: 200..<300)
-            .responseJSON{response in
-                
-                switch response.result{
-                case .failure(let error):
-                    print(error)
-                case .success(let value):
-                    let json = JSON(value)
-                    if let status = json["status"].string {
-                            print(status)
-                    }
-                    
-                    
-                }
-                
-        }
-    
-    }
 
 
 }

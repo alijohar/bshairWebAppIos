@@ -13,7 +13,8 @@
 		C525273B2150B7AF003D5330 /* DroidArabicKufiRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C52527392150B7AF003D5330 /* DroidArabicKufiRegular.ttf */; };
 		C525273D2150C9A0003D5330 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C525273C2150C9A0003D5330 /* SearchView.swift */; };
 		C525273F2150CAC8003D5330 /* NewsDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C525273E2150CAC8003D5330 /* NewsDetail.swift */; };
-		C5389D302174A35300CC6A68 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5389D2F2174A35300CC6A68 /* API.swift */; };
+		C5389D302174A35300CC6A68 /* NewsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5389D2F2174A35300CC6A68 /* NewsApi.swift */; };
+		C5389D322174A83600CC6A68 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5389D312174A83600CC6A68 /* URLs.swift */; };
 		C57DE615214EAAD70045CBE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57DE614214EAAD70045CBE1 /* AppDelegate.swift */; };
 		C57DE617214EAAD70045CBE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57DE616214EAAD70045CBE1 /* ViewController.swift */; };
 		C57DE61A214EAAD70045CBE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C57DE618214EAAD70045CBE1 /* Main.storyboard */; };
@@ -51,7 +52,8 @@
 		C52527392150B7AF003D5330 /* DroidArabicKufiRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DroidArabicKufiRegular.ttf; sourceTree = "<group>"; };
 		C525273C2150C9A0003D5330 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		C525273E2150CAC8003D5330 /* NewsDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetail.swift; sourceTree = "<group>"; };
-		C5389D2F2174A35300CC6A68 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		C5389D2F2174A35300CC6A68 /* NewsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApi.swift; sourceTree = "<group>"; };
+		C5389D312174A83600CC6A68 /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		C57DE611214EAAD70045CBE1 /* bshairWebAppIos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bshairWebAppIos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C57DE614214EAAD70045CBE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C57DE616214EAAD70045CBE1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -124,7 +126,8 @@
 		C5389D2E2174A32800CC6A68 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				C5389D2F2174A35300CC6A68 /* API.swift */,
+				C5389D2F2174A35300CC6A68 /* NewsApi.swift */,
+				C5389D312174A83600CC6A68 /* URLs.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -387,11 +390,12 @@
 			files = (
 				C525273D2150C9A0003D5330 /* SearchView.swift in Sources */,
 				C5969793215F60F200C7DD70 /* MenuViewController.swift in Sources */,
+				C5389D322174A83600CC6A68 /* URLs.swift in Sources */,
 				C57DE617214EAAD70045CBE1 /* ViewController.swift in Sources */,
 				C525271A214FA9BF003D5330 /* NewsCell.swift in Sources */,
 				C525273F2150CAC8003D5330 /* NewsDetail.swift in Sources */,
 				C5969794215F60F200C7DD70 /* BaseViewController.swift in Sources */,
-				C5389D302174A35300CC6A68 /* API.swift in Sources */,
+				C5389D302174A35300CC6A68 /* NewsApi.swift in Sources */,
 				C57DE615214EAAD70045CBE1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
