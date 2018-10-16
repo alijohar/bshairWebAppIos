@@ -12,7 +12,7 @@ import MessageUI
 class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var listOfNews: UITableView!
     
-    var listOFNewsTemp = ["افتتاح مسجد في القطيف", "افتتاح مسجد في القطيف","افتتاح مسجد في القطيف","افتتاح مسجد في القطيف"]
+    var listOFNewsTemp = [NewsPost]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,9 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
 
         // Add NavigationBar
         setupNavigationBarItems()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // Load data from json
+        fetchData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,7 +46,7 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let myCell:NewsCell = tableView.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath) as! NewsCell
 //        titleNews.text = listOFNewsTemp[indexPath.row]
-        myCell.newsTitle.text = listOFNewsTemp[indexPath.row]
+        myCell.newsTitle.text = listOFNewsTemp[indexPath.row].title
 
         return myCell
     }
@@ -67,6 +69,19 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true)
+    }
+    
+    private func fetchData(){
+        
+        NewsApi.getPosts { (error:Error?
+            , newsPost: [NewsPost]?) in
+            if let newsPost = newsPost {
+                self.listOFNewsTemp = newsPost
+                self.listOfNews.reloadData()
+            }
+            
+            
+        }
     }
 
 }
