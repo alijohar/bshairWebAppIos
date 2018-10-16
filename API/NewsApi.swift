@@ -11,6 +11,8 @@ import Alamofire
 import SwiftyJSON
 
 class NewsApi: NSObject {
+    
+//    for sendComment
     class func sendComment(post_id:String, name:String, email:String, content:String, completion: @escaping (_ error:Error?, _ success:Bool)->Void){
         let url = URLs.sendComment
         
@@ -21,22 +23,16 @@ class NewsApi: NSObject {
             .responseJSON{response in
                 
                 switch response.result{
-                case .failure(let error):
-                    completion(error, false)
-                    print(error)
-                case .success(let value):
-                    completion(nil, true)
-                    let json = JSON(value)
-                    if let status = json["status"].string {
-                        print(status)
-                    }
+                    case .failure(let error):
+                        completion(error, false)
                     
-                    
+                    case .success(let value):
+                        completion(nil, true)
                 }
-                
         }
-
-        
-        
     }
+    
+    
+    
+    
 }
