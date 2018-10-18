@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import AlamofireObjectMapper
 
 class NewsApi: NSObject {
     
@@ -39,38 +40,32 @@ class NewsApi: NSObject {
         let params = ["page": page]
         
         Alamofire.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: nil)
-            .responseJSON{response in
-                
-                switch response.result{
+            .validate().responseArray(keyPath: "posts") { (response: DataResponse<[NewsPost]>) in
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                switch response.result {
                 case .failure(let error):
                     completion(error, nil)
                     print(error)
                     
-                case .success(let value):
-                    let json = JSON(value)
-                    guard let postArr = json["posts"].array else {
-                        completion(nil, nil)
-                        return
-                    }
-                    
+                case .success:
+                    let allPostsNews = response.result.value ?? []
                     var postNews = [NewsPost]()
-                    for item in postArr {
-                        guard let item = item.dictionary else {return}
-                        
-                        let newsTitle = NewsPost(fromDictionary: ["" : ""])
-                        newsTitle.title = item["title"]?.string
-                        
-                        
-                        postNews.append(newsTitle)
+
+                    for item in allPostsNews {
+                        postNews.append(item)
+                    }
+
+                    completion(nil, postNews)
+
+                    
                         
                     }
                     
-                    completion(nil, postNews)
-                    
+                
                 }
 
     }
 }
 
 
-}
+

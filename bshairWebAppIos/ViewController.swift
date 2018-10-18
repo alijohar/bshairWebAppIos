@@ -47,7 +47,7 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
         let myCell:NewsCell = tableView.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath) as! NewsCell
 //        titleNews.text = listOFNewsTemp[indexPath.row]
         myCell.newsTitle.text = listOFNewsTemp[indexPath.row].title
-
+        
         return myCell
     }
 
@@ -73,8 +73,7 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
     
     private func fetchData(){
         
-        NewsApi.getPosts { (error:Error?
-            , newsPost: [NewsPost]?) in
+        NewsApi.getPosts { (error:Error?, newsPost: [NewsPost]?) in
             if let newsPost = newsPost {
                 self.listOFNewsTemp = newsPost
                 self.listOfNews.reloadData()
