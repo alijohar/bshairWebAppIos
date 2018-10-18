@@ -9,5 +9,5 @@ target 'bshairWebAppIos' do
   pod 'SwiftyJSON'
   pod 'ObjectMapper'
   pod 'AlamofireObjectMapper'
-
+  pod 'Nuke'
 end

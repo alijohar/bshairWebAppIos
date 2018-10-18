@@ -31,6 +31,7 @@ class NewsAuthor : NSObject, Mappable{
     
     func mapping(map: Map) {
         name <- map["name"]
+        nickname <- map["nickname"]
     }
     
 

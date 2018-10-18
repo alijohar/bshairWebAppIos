@@ -8,6 +8,7 @@
 
 import UIKit
 import MessageUI
+import Nuke
 
 class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var listOfNews: UITableView!
@@ -47,6 +48,14 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
         let myCell:NewsCell = tableView.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath) as! NewsCell
 //        titleNews.text = listOFNewsTemp[indexPath.row]
         myCell.newsTitle.text = listOFNewsTemp[indexPath.row].title
+        let imageView = myCell.newsImage
+        let urlThumbnail = listOFNewsTemp[indexPath.row].thumbnail
+        
+//        Convert StringURl with arabic charecters to standard UrlString
+        let urlwithPercentEscapes = urlThumbnail!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        let urlImage = URL(string: urlwithPercentEscapes!)
+        Nuke.loadImage(with: urlImage!, into: imageView!)
+
         
         return myCell
     }
