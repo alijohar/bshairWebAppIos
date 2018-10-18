@@ -106,7 +106,6 @@
                                         <connections>
                                             <outlet property="newsImage" destination="kWs-gq-a53" id="U6N-Zb-Zok"/>
                                             <outlet property="newsTitle" destination="BaH-87-XSB" id="vw8-n5-NzM"/>
-                                            <segue destination="btk-cr-0wY" kind="show" id="GLF-oM-AyU"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -162,13 +161,13 @@
         <!--News Detail-->
         <scene sceneID="iYF-kf-TSY">
             <objects>
-                <viewController id="btk-cr-0wY" customClass="NewsDetail" customModule="bshairWebAppIos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="News_Detail" id="btk-cr-0wY" customClass="NewsDetail" customModule="bshairWebAppIos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qjn-Zo-SIo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lJE-5s-hFb">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="768"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BSC-tg-zTr">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
@@ -344,7 +343,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="النسخة التجريبية" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGR-T2-EM0">
-                                <rect key="frame" x="155.33333333333334" y="185" width="64.333333333333343" height="13"/>
+                                <rect key="frame" x="149" y="185" width="77.333333333333314" height="21"/>
                                 <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="11"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

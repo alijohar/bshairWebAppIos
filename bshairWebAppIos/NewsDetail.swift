@@ -11,6 +11,8 @@ import Alamofire
 import SwiftyJSON
 
 class NewsDetail: UIViewController {
+    var navTitle:String?
+    var newsItemId:Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +41,7 @@ class NewsDetail: UIViewController {
     */
     
     func setupNavigationBarItems(){
-        navigationItem.title = "افتتاح مسجد جديد"
+        navigationItem.title = navTitle
         let shareNewsButton = UIButton(type: .system)
         shareNewsButton.setImage(#imageLiteral(resourceName: "shareNews"), for: .normal)
         shareNewsButton.frame = CGRect(x: 0, y: 0, width: 34, height: 34)

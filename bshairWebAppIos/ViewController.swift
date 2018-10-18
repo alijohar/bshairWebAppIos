@@ -15,6 +15,7 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
     
     var listOFNewsTemp = [NewsPost]()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSlideMenuButton()
@@ -60,6 +61,14 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
         return myCell
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let secondViewController = self.storyboard!.instantiateViewController(withIdentifier: "News_Detail") as! NewsDetail
+        secondViewController.navTitle = listOFNewsTemp[indexPath.row].title
+
+        self.navigationController!.pushViewController(secondViewController, animated: true)
+        
+    }
+    
     @IBAction func sendCustomNews(_ sender: Any) {
         sendEmail()
     }
