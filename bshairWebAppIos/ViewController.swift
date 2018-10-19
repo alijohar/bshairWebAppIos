@@ -51,7 +51,8 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
         myCell.newsTitle.text = listOFNewsTemp[indexPath.row].title
         let imageView = myCell.newsImage
         let urlThumbnail = listOFNewsTemp[indexPath.row].thumbnail
-        
+        print("gfjhgfghfj \(listOFNewsTemp[indexPath.row])")
+
 //        Convert StringURl with arabic charecters to standard UrlString
         let urlwithPercentEscapes = urlThumbnail!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         let urlImage = URL(string: urlwithPercentEscapes!)
@@ -64,6 +65,9 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let secondViewController = self.storyboard!.instantiateViewController(withIdentifier: "News_Detail") as! NewsDetail
         secondViewController.navTitle = listOFNewsTemp[indexPath.row].title
+
+//        secondViewController.newsImageUrlString = listOFNewsTemp[indexPath.row].thumbnailImages?.large!.url
+    
 
         self.navigationController!.pushViewController(secondViewController, animated: true)
         

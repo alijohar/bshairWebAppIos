@@ -231,6 +231,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="W5g-DB-VWd"/>
                     </view>
+                    <connections>
+                        <outlet property="newsDetailImage" destination="7sx-Q4-42j" id="VVc-dx-1jq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="egh-y1-193" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

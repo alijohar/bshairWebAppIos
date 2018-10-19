@@ -53,6 +53,7 @@ class NewsApi: NSObject {
 
                     for item in allPostsNews {
                         postNews.append(item)
+
                     }
 
                     completion(nil, postNews)

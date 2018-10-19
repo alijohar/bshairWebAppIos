@@ -9,14 +9,17 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Nuke
 
 class NewsDetail: UIViewController {
+    @IBOutlet weak var newsDetailImage: UIImageView!
     var navTitle:String?
     var newsItemId:Int?
+    var newsImageUrlString:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setMainImage()
         // Customize navigationBar
         setupNavigationBarItems()
 
@@ -103,6 +106,15 @@ class NewsDetail: UIViewController {
         self.present(alertController, animated: true, completion: nil)
 
     }
+    
+    func setMainImage() {
+//        let imageView = newsDetailImage
+//        let urlThumbnail = newsImageUrlString
+//        let urlwithPercentEscapes = urlThumbnail!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+//        let urlImage = URL(string: urlwithPercentEscapes!)
+//        Nuke.loadImage(with: urlImage!, into: imageView!)
+
+        }
 
     
 
