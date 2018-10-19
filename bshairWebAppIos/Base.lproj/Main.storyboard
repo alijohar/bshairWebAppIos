@@ -192,17 +192,17 @@
                                                 </constraints>
                                             </view>
                                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9gd-Tg-iOK">
-                                                <rect key="frame" x="8" y="254" width="359" height="738"/>
+                                                <rect key="frame" x="8" y="254" width="359" height="492"/>
                                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                                             </webView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="9gd-Tg-iOK" firstAttribute="centerY" secondItem="BSC-tg-zTr" secondAttribute="centerY" id="16Z-af-dM6"/>
                                             <constraint firstAttribute="trailing" secondItem="FbY-LZ-8id" secondAttribute="trailing" constant="8" id="5fB-FQ-Usm"/>
                                             <constraint firstItem="FbY-LZ-8id" firstAttribute="leading" secondItem="BSC-tg-zTr" secondAttribute="leading" constant="8" id="87Q-8Q-Fg4"/>
                                             <constraint firstItem="7sx-Q4-42j" firstAttribute="leading" secondItem="BSC-tg-zTr" secondAttribute="leading" constant="8" id="ABS-qS-QUV"/>
-                                            <constraint firstAttribute="bottom" secondItem="9gd-Tg-iOK" secondAttribute="bottom" constant="8" id="GWN-ah-wA1"/>
                                             <constraint firstAttribute="height" constant="1000" id="P8v-eb-Cds"/>
                                             <constraint firstItem="9gd-Tg-iOK" firstAttribute="top" secondItem="FbY-LZ-8id" secondAttribute="bottom" constant="8" id="W5f-Wn-g7O"/>
                                             <constraint firstItem="FbY-LZ-8id" firstAttribute="top" secondItem="7sx-Q4-42j" secondAttribute="bottom" constant="8" id="ae9-li-SX3"/>
@@ -233,6 +233,7 @@
                     </view>
                     <connections>
                         <outlet property="newsDetailImage" destination="7sx-Q4-42j" id="VVc-dx-1jq"/>
+                        <outlet property="newsDetailWeb" destination="9gd-Tg-iOK" id="eq5-bt-a9i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="egh-y1-193" userLabel="First Responder" sceneMemberID="firstResponder"/>

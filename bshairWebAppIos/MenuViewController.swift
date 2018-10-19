@@ -28,7 +28,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     *  Array containing menu options
     */
     var arrayMenuOptions = [Dictionary<String,String>]()
-    
+    var arrayMenuCatList = [CatIndex]()
     /**
     *  Menu button which was tapped to display the menu
     */
@@ -38,7 +38,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     *  Delegate of the MenuVC
     */
     var delegate : SlideMenuDelegate?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tblMenuOptions.tableFooterView = UIView()
@@ -56,10 +56,17 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func updateArrayMenuOptions(){
-        arrayMenuOptions.append(["title":"التصنيف الأول", "icon":"bshair_menu_logo2"])
-        arrayMenuOptions.append(["title":"التصنيف الثاني", "icon":"bshair_menu_logo2"])
-        
-        tblMenuOptions.reloadData()
+        NewsApi.getCatIndex { (error:Error?, catIndex: [CatIndex]?) in
+            let allCats = catIndex
+            for item in allCats! {
+                self.arrayMenuCatList.append(item)
+                self.arrayMenuOptions.append(["title": item.title!, "icon":"bshair_menu_logo2"])
+
+            }
+            self.tblMenuOptions.reloadData()
+
+        }
+
     }
     
     @IBAction func onCloseMenuClick(_ button:UIButton!){
@@ -101,13 +108,18 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("id of cat: \(arrayMenuCatList[indexPath.row].id)")
+        print("title of cat: \(arrayMenuCatList[indexPath.row].title)")
+        print("post count of cat: \(arrayMenuCatList[indexPath.row].post_count)")
+
+            
         let btn = UIButton(type: UIButtonType.custom)
         btn.tag = indexPath.row
         self.onCloseMenuClick(btn)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayMenuOptions.count
+        return arrayMenuCatList.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

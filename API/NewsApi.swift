@@ -14,10 +14,10 @@ import AlamofireObjectMapper
 class NewsApi: NSObject {
     
 //    for sendComment
-    class func sendComment(post_id:String, name:String, email:String, content:String, completion: @escaping (_ error:Error?, _ success:Bool)->Void){
+    class func sendComment(post_id:Int, name:String, email:String, content:String, completion: @escaping (_ error:Error?, _ success:Bool)->Void){
         let url = URLs.sendComment
         
-        let params = ["post_id":post_id, "name":name, "email":email, "content":content]
+        let params = ["post_id":post_id, "name":name, "email":email, "content":content] as [String : Any]
         
         Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.default, headers: nil)
             .validate(statusCode: 200..<300)
@@ -65,6 +65,39 @@ class NewsApi: NSObject {
                 
                 }
 
+    }
+    
+    
+//    For get index of catList
+    class func getCatIndex(completion: @escaping (_ error:Error?, _ newsPost:[CatIndex]?)-> Void){
+        let url = URLs.getCatList
+        
+        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil)
+            .validate().responseArray(keyPath: "categories") { (response: DataResponse<[CatIndex]>) in
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                switch response.result {
+                case .failure(let error):
+                    completion(error, nil)
+                    print(error)
+                    
+                case .success:
+                    var allCats = response.result.value ?? []
+                    var catNews = [CatIndex]()
+                    
+                    for item in allCats {
+                        catNews.append(item)
+
+
+                    }
+                    
+                    completion(nil, catNews)
+                    
+                }
+                
+                
+        }
+
+    
     }
 }
 

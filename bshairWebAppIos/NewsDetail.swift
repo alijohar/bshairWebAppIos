@@ -12,17 +12,22 @@ import SwiftyJSON
 import Nuke
 
 class NewsDetail: UIViewController {
+    @IBOutlet weak var newsDetailWeb: UIWebView!
     @IBOutlet weak var newsDetailImage: UIImageView!
     var navTitle:String?
     var newsItemId:Int?
+    var contentNewsDetail:String = ""
     var newsImageUrlString:String?
+    var newFontNameByUser:String = ""
+    var newFontSizeByUser:String = ""
+    var newsDetailURLString:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setMainImage()
         // Customize navigationBar
         setupNavigationBarItems()
-
+        setNewsDetailContent()
 
         // Do any additional setup after loading the view.
     }
@@ -48,6 +53,7 @@ class NewsDetail: UIViewController {
         let shareNewsButton = UIButton(type: .system)
         shareNewsButton.setImage(#imageLiteral(resourceName: "shareNews"), for: .normal)
         shareNewsButton.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+        shareNewsButton.addTarget(self, action: #selector(NewsDetail.shareURlNewsDetail(_:)), for: UIControlEvents.touchUpInside)
         
         let addCommentsButton = UIButton(type: .system)
         addCommentsButton.setImage(#imageLiteral(resourceName: "addComment"), for: .normal)
@@ -68,13 +74,14 @@ class NewsDetail: UIViewController {
             //getting the input values from user
             
 //            post id should add here
-            let post_id = "586"
+            let post_id = self.newsItemId
+            
             
             guard let name = alertController.textFields?[0].text, !name.isEmpty else {return}
             guard let email = alertController.textFields?[1].text, !email.isEmpty else {return}
             guard let content = alertController.textFields?[2].text, !content.isEmpty else {return}
             
-            NewsApi.sendComment(post_id: post_id, name: name, email: email, content: content) {(error:Error?, success:Bool) in
+            NewsApi.sendComment(post_id: post_id!, name: name, email: email, content: content) {(error:Error?, success:Bool) in
                 if success {
                     print("success")
                 }else{
@@ -115,8 +122,46 @@ class NewsDetail: UIViewController {
 //        Nuke.loadImage(with: urlImage!, into: imageView!)
 
         }
-
     
+    func setNewsDetailContent(){
+//        For style
+        var text = "<head><style type=\"text/css\">\n" +
+            "@font-face {\n" +
+            " font-family: 'MyCustomFont';\n" +
+            " src: url('\(newFontNameByUser)') \n" +
+            "}\n" +
+            "\n" +
+            "\n" +
+            "body{\n" +
+            "  font-size: \(newFontSizeByUser);\n" +
+            "  font-family:  'MyCustomFont';\n" +
+            "  text-align: justify;\n" +
+            "  direction: rtl;\n" +
+            "  line-height: 2.5;\n" +
+            "}\n" +
+            "\n" +
+            "img{\n" +
+            "  height: auto;\n" +
+            "  width: 100%;\n" +
+            "  display: block;\n" +
+            "  margin-left: auto;\n" +
+            "  margin-right: auto;\n" +
+            "}\n" +
+            "\n" +
+            "h1, h2, h3, h4, h5, h5 {\n" +
+            "  color: red;\n" +
+            "  text-align: center;\n" +
+        "}</style>\n\n</head><html><body dir=\"rtl\"; style=\"text-align:justify;\">"
+        
+        text = text + contentNewsDetail
+        text = text + "</body></html>"
+        newsDetailWeb.loadHTMLString(text, baseURL: nil)
+
+    }
+
+    @objc func shareURlNewsDetail(_ sender : UIButton){
+//        Sharing newsURL
+    }
 
 
 }

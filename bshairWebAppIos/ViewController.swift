@@ -20,6 +20,7 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
         super.viewDidLoad()
         addSlideMenuButton()
 
+
         // Add NavigationBar
         setupNavigationBarItems()
         
@@ -65,7 +66,8 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let secondViewController = self.storyboard!.instantiateViewController(withIdentifier: "News_Detail") as! NewsDetail
         secondViewController.navTitle = listOFNewsTemp[indexPath.row].title
-
+        secondViewController.contentNewsDetail = listOFNewsTemp[indexPath.row].content!
+        secondViewController.newsItemId = listOFNewsTemp[indexPath.row].id!
 //        secondViewController.newsImageUrlString = listOFNewsTemp[indexPath.row].thumbnailImages?.large!.url
     
 
@@ -104,6 +106,7 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
             
         }
     }
+    
 
 }
 
