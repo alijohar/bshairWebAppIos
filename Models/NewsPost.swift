@@ -45,12 +45,12 @@ class NewsPost : NSObject, Mappable{
         modified <- map["modified"]
         id <- map["id"]
         thumbnail <- map["thumbnail"]
-        thumbnailImages <- map["thumbnailImages"]
+        thumbnailImages <- map["thumbnail_images"]
         content <- map["content"]
         url <- map["url"]
         categories <- map["categories"]
         date <- map["date"]
-        commentCount <- map["commentCount"]
+        commentCount <- map["comment_count"]
     }
 
 }

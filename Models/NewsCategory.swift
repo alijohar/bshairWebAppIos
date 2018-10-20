@@ -12,10 +12,6 @@ class NewsCategory : NSObject, Mappable{
         self.init()
     }
     
-    func mapping(map: Map) {
-        title <- map["map"]
-    }
-    
     override init() {
         super.init()
     }
@@ -28,5 +24,9 @@ class NewsCategory : NSObject, Mappable{
     var slug : String?
     var title : String?
 
+    func mapping(map: Map) {
+        title <- map["title"]
+    }
+    
 
 }

@@ -21,7 +21,7 @@ class NewsDetail: UIViewController {
     @IBOutlet weak var newsCat: UILabel!
     var navTitle:String?
     var newsItemId:Int?
-    var cat:String?
+    var cat = [NewsCategory]()
     var date:String?
     var author:String?
     var numberComments:Int?
@@ -126,11 +126,11 @@ class NewsDetail: UIViewController {
     }
     
     func setMainImage() {
-//        let imageView = newsDetailImage
-//        let urlThumbnail = newsImageUrlString
-//        let urlwithPercentEscapes = urlThumbnail!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-//        let urlImage = URL(string: urlwithPercentEscapes!)
-//        Nuke.loadImage(with: urlImage!, into: imageView!)
+        let imageView = newsDetailImage
+        let urlThumbnail = newsImageUrlString
+        let urlwithPercentEscapes = urlThumbnail!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        let urlImage = URL(string: urlwithPercentEscapes!)
+        Nuke.loadImage(with: urlImage!, into: imageView!)
 
         }
     
@@ -175,9 +175,10 @@ class NewsDetail: UIViewController {
     }
 
     func setNewsDetailInfo(){
-        newsCat.text = cat
-        newsCommentsNumber.text = "\(numberComments)"
-        newsDate.text = date
+        newsCat.text = cat[0].title
+        newsCommentsNumber.text = "\(String(numberComments!)) تعليق"
+        var dateWithoutTime = date?.split(separator: " ")
+        newsDate.text = String(dateWithoutTime!.first!)
         newsAuthorName.text = author
     }
 
