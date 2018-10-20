@@ -14,8 +14,18 @@ import Nuke
 class NewsDetail: UIViewController {
     @IBOutlet weak var newsDetailWeb: UIWebView!
     @IBOutlet weak var newsDetailImage: UIImageView!
+    
+    @IBOutlet weak var newsDate: UILabel!
+    @IBOutlet weak var newsCommentsNumber: UILabel!
+    @IBOutlet weak var newsAuthorName: UILabel!
+    @IBOutlet weak var newsCat: UILabel!
     var navTitle:String?
     var newsItemId:Int?
+    var cat:String?
+    var date:String?
+    var author:String?
+    var numberComments:Int?
+    
     var contentNewsDetail:String = ""
     var newsImageUrlString:String?
     var newFontNameByUser:String = ""
@@ -28,6 +38,7 @@ class NewsDetail: UIViewController {
         // Customize navigationBar
         setupNavigationBarItems()
         setNewsDetailContent()
+        setNewsDetailInfo()
 
         // Do any additional setup after loading the view.
     }
@@ -163,5 +174,11 @@ class NewsDetail: UIViewController {
 //        Sharing newsURL
     }
 
+    func setNewsDetailInfo(){
+        newsCat.text = cat
+        newsCommentsNumber.text = "\(numberComments)"
+        newsDate.text = date
+        newsAuthorName.text = author
+    }
 
 }

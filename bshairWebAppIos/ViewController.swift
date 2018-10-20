@@ -75,6 +75,10 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
         secondViewController.navTitle = listOFNewsTemp[indexPath.row].title
         secondViewController.contentNewsDetail = listOFNewsTemp[indexPath.row].content!
         secondViewController.newsItemId = listOFNewsTemp[indexPath.row].id!
+        secondViewController.author = listOFNewsTemp[indexPath.row].author?.name
+        secondViewController.cat = listOFNewsTemp[indexPath.row].categories![0].title
+        secondViewController.date = listOFNewsTemp[indexPath.row].date
+        secondViewController.numberComments = listOFNewsTemp[indexPath.row].commentCount
 //        secondViewController.newsImageUrlString = listOFNewsTemp[indexPath.row].thumbnailImages?.large!.url
     
 

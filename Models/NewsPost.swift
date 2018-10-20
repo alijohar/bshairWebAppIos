@@ -48,6 +48,9 @@ class NewsPost : NSObject, Mappable{
         thumbnailImages <- map["thumbnailImages"]
         content <- map["content"]
         url <- map["url"]
+        categories <- map["categories"]
+        date <- map["date"]
+        commentCount <- map["commentCount"]
     }
 
 }

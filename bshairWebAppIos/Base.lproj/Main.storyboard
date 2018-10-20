@@ -186,9 +186,51 @@
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FbY-LZ-8id">
                                                 <rect key="frame" x="8" y="216" width="359" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="التصنیف" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wlz-Uf-FZV">
+                                                        <rect key="frame" x="315" y="5.6666666666666856" width="36" height="19"/>
+                                                        <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="10"/>
+                                                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="التصنیف" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9EU-ed-bts">
+                                                        <rect key="frame" x="209.66666666666666" y="6" width="36" height="19"/>
+                                                        <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="10"/>
+                                                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="التصنیف" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wv-5Q-QFa">
+                                                        <rect key="frame" x="113.66666666666669" y="6" width="36" height="19"/>
+                                                        <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="10"/>
+                                                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۰ تعلیق" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcz-XU-dgc">
+                                                        <rect key="frame" x="8" y="6" width="32.666666666666664" height="19"/>
+                                                        <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="10"/>
+                                                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8t-CD-kQz">
+                                                        <rect key="frame" x="179.66666666666666" y="15" width="0.0" height="0.0"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
                                                 <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
+                                                    <constraint firstItem="c8t-CD-kQz" firstAttribute="centerY" secondItem="FbY-LZ-8id" secondAttribute="centerY" id="71o-hD-9A1"/>
+                                                    <constraint firstItem="7Wv-5Q-QFa" firstAttribute="top" secondItem="FbY-LZ-8id" secondAttribute="top" constant="6" id="7t3-F1-Dev"/>
+                                                    <constraint firstItem="c8t-CD-kQz" firstAttribute="centerX" secondItem="FbY-LZ-8id" secondAttribute="centerX" id="Cv6-3V-edM"/>
+                                                    <constraint firstItem="9EU-ed-bts" firstAttribute="top" secondItem="FbY-LZ-8id" secondAttribute="top" constant="6" id="HMl-e2-lvG"/>
+                                                    <constraint firstItem="9EU-ed-bts" firstAttribute="leading" secondItem="c8t-CD-kQz" secondAttribute="trailing" constant="30" id="Hiv-SH-ZeL"/>
+                                                    <constraint firstItem="Wlz-Uf-FZV" firstAttribute="top" secondItem="FbY-LZ-8id" secondAttribute="top" constant="5.6666666666666856" id="L0J-QW-iuU"/>
                                                     <constraint firstAttribute="height" constant="30" id="Qa4-Xv-WdN"/>
+                                                    <constraint firstItem="bcz-XU-dgc" firstAttribute="top" secondItem="FbY-LZ-8id" secondAttribute="top" constant="6" id="SK7-Bd-FwT"/>
+                                                    <constraint firstItem="Wlz-Uf-FZV" firstAttribute="trailing" secondItem="FbY-LZ-8id" secondAttribute="trailingMargin" id="VFX-kt-9lf"/>
+                                                    <constraint firstItem="bcz-XU-dgc" firstAttribute="leading" secondItem="FbY-LZ-8id" secondAttribute="leading" constant="8" id="hXC-bF-TTo"/>
+                                                    <constraint firstItem="c8t-CD-kQz" firstAttribute="leading" secondItem="7Wv-5Q-QFa" secondAttribute="trailing" constant="30" id="mAx-DW-cMX"/>
                                                 </constraints>
                                             </view>
                                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9gd-Tg-iOK">
@@ -232,6 +274,10 @@
                         <viewLayoutGuide key="safeArea" id="W5g-DB-VWd"/>
                     </view>
                     <connections>
+                        <outlet property="newsAuthorName" destination="9EU-ed-bts" id="M1A-FC-sdH"/>
+                        <outlet property="newsCat" destination="Wlz-Uf-FZV" id="ajS-fu-nqh"/>
+                        <outlet property="newsCommentsNumber" destination="bcz-XU-dgc" id="7wY-2T-JDG"/>
+                        <outlet property="newsDate" destination="7Wv-5Q-QFa" id="azs-Tn-vI6"/>
                         <outlet property="newsDetailImage" destination="7sx-Q4-42j" id="VVc-dx-1jq"/>
                         <outlet property="newsDetailWeb" destination="9gd-Tg-iOK" id="eq5-bt-a9i"/>
                     </connections>
