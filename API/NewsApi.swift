@@ -37,7 +37,6 @@ class NewsApi: NSObject {
     class func getPosts( page:String = "1", completion: @escaping (_ error:Error?, _ newsPost:[NewsPost]?, _ lastPage:Int)-> Void){
         let url = URLs.getNews
         let params = ["page": page]
-//        Must get from JSON
         
         
         Alamofire.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: nil)
@@ -104,7 +103,44 @@ class NewsApi: NSObject {
 
     
     }
+    
+    
+//    For searching
+    class func getPostsFromSearch(s:String, page:String = "1", completion: @escaping (_ error:Error?, _ newsPost:[NewsPost]?, _ lastPage:Int)-> Void){
+        let url = URLs.getPostFromSearching
+        let params = ["s": s, "page": page]
+        
+        Alamofire.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: nil)
+            .validate().responseObject { (response: DataResponse<NewsRootClass>) in
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                switch response.result {
+                case .failure(let error):
+                    completion(error, nil, Int(page)!)
+                    print(error)
+                    
+                case .success:
+                    let alljson = response.result.value
+                    let lastPage = alljson?.pages
+                    let allPostsNews = alljson?.posts
+                    
+                    print("all json is: \(alljson) + all page is \(lastPage) + and all postsArray is \(allPostsNews)" )
+                    var postNews = [NewsPost]()
+                    
+                    for item in allPostsNews! {
+                        postNews.append(item)
+                        
+                    }
+                    
+                    completion(nil, postNews, lastPage!)
+                    
+                    
+                }
+                
+                
+        }
+
 }
 
 
 
+}
