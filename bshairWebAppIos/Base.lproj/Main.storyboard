@@ -193,44 +193,71 @@
                                                         <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="التصنیف" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9EU-ed-bts">
-                                                        <rect key="frame" x="209.66666666666666" y="6" width="36" height="19"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الكاتب" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9EU-ed-bts">
+                                                        <rect key="frame" x="214" y="5.6666666666666856" width="27.666666666666657" height="19"/>
                                                         <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="10"/>
                                                         <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="التصنیف" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wv-5Q-QFa">
-                                                        <rect key="frame" x="113.66666666666669" y="6" width="36" height="19"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="التاريخ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wv-5Q-QFa">
+                                                        <rect key="frame" x="128.33333333333334" y="5.6666666666666856" width="26.333333333333343" height="19"/>
                                                         <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="10"/>
                                                         <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۰ تعلیق" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcz-XU-dgc">
-                                                        <rect key="frame" x="8" y="6" width="32.666666666666664" height="19"/>
+                                                        <rect key="frame" x="8" y="5.6666666666666856" width="32.666666666666664" height="19"/>
                                                         <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="10"/>
                                                         <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8t-CD-kQz">
-                                                        <rect key="frame" x="179.66666666666666" y="15" width="0.0" height="0.0"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8t-CD-kQz">
+                                                        <rect key="frame" x="175" y="5" width="9" height="20.333333333333332"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="r35-bc-FA6">
+                                                        <rect key="frame" x="244" y="8" width="14" height="14"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="14" id="7qF-a0-Nhf"/>
+                                                            <constraint firstAttribute="width" constant="14" id="9ZC-0M-TIT"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="bNe-Tx-q4z">
+                                                        <rect key="frame" x="158" y="8" width="14" height="14"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="14" id="TtE-jo-zfb"/>
+                                                            <constraint firstAttribute="width" constant="14" id="bTW-rO-tNU"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allcomments" translatesAutoresizingMaskIntoConstraints="NO" id="Vy9-HZ-30O">
+                                                        <rect key="frame" x="46" y="8" width="14" height="14"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="14" id="CcI-T1-G1c"/>
+                                                            <constraint firstAttribute="width" constant="14" id="YSs-8Q-uHT"/>
+                                                        </constraints>
+                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
+                                                    <constraint firstItem="9EU-ed-bts" firstAttribute="centerY" secondItem="FbY-LZ-8id" secondAttribute="centerY" id="14a-7e-vHK"/>
+                                                    <constraint firstItem="r35-bc-FA6" firstAttribute="centerY" secondItem="FbY-LZ-8id" secondAttribute="centerY" id="6PQ-UF-nEt"/>
+                                                    <constraint firstItem="Vy9-HZ-30O" firstAttribute="centerY" secondItem="FbY-LZ-8id" secondAttribute="centerY" id="6mM-Sr-PML"/>
                                                     <constraint firstItem="c8t-CD-kQz" firstAttribute="centerY" secondItem="FbY-LZ-8id" secondAttribute="centerY" id="71o-hD-9A1"/>
-                                                    <constraint firstItem="7Wv-5Q-QFa" firstAttribute="top" secondItem="FbY-LZ-8id" secondAttribute="top" constant="6" id="7t3-F1-Dev"/>
+                                                    <constraint firstItem="bNe-Tx-q4z" firstAttribute="leading" secondItem="7Wv-5Q-QFa" secondAttribute="trailing" constant="3.3333333333333144" id="97y-YF-XMN"/>
+                                                    <constraint firstItem="bcz-XU-dgc" firstAttribute="centerY" secondItem="FbY-LZ-8id" secondAttribute="centerY" id="9Hg-0j-qgU"/>
                                                     <constraint firstItem="c8t-CD-kQz" firstAttribute="centerX" secondItem="FbY-LZ-8id" secondAttribute="centerX" id="Cv6-3V-edM"/>
-                                                    <constraint firstItem="9EU-ed-bts" firstAttribute="top" secondItem="FbY-LZ-8id" secondAttribute="top" constant="6" id="HMl-e2-lvG"/>
                                                     <constraint firstItem="9EU-ed-bts" firstAttribute="leading" secondItem="c8t-CD-kQz" secondAttribute="trailing" constant="30" id="Hiv-SH-ZeL"/>
-                                                    <constraint firstItem="Wlz-Uf-FZV" firstAttribute="top" secondItem="FbY-LZ-8id" secondAttribute="top" constant="5.6666666666666856" id="L0J-QW-iuU"/>
+                                                    <constraint firstItem="7Wv-5Q-QFa" firstAttribute="centerY" secondItem="FbY-LZ-8id" secondAttribute="centerY" id="Ksb-gC-Lcb"/>
+                                                    <constraint firstItem="r35-bc-FA6" firstAttribute="leading" secondItem="9EU-ed-bts" secondAttribute="trailing" constant="2.3333333333333428" id="Mlw-jk-G9D"/>
+                                                    <constraint firstItem="c8t-CD-kQz" firstAttribute="leading" secondItem="bNe-Tx-q4z" secondAttribute="trailing" constant="3" id="Nni-kR-Cqh"/>
+                                                    <constraint firstItem="Vy9-HZ-30O" firstAttribute="leading" secondItem="bcz-XU-dgc" secondAttribute="trailing" constant="5.3333333333333357" id="PWq-xm-vKX"/>
                                                     <constraint firstAttribute="height" constant="30" id="Qa4-Xv-WdN"/>
-                                                    <constraint firstItem="bcz-XU-dgc" firstAttribute="top" secondItem="FbY-LZ-8id" secondAttribute="top" constant="6" id="SK7-Bd-FwT"/>
                                                     <constraint firstItem="Wlz-Uf-FZV" firstAttribute="trailing" secondItem="FbY-LZ-8id" secondAttribute="trailingMargin" id="VFX-kt-9lf"/>
+                                                    <constraint firstItem="bNe-Tx-q4z" firstAttribute="centerY" secondItem="FbY-LZ-8id" secondAttribute="centerY" id="VpA-wf-Igl"/>
                                                     <constraint firstItem="bcz-XU-dgc" firstAttribute="leading" secondItem="FbY-LZ-8id" secondAttribute="leading" constant="8" id="hXC-bF-TTo"/>
-                                                    <constraint firstItem="c8t-CD-kQz" firstAttribute="leading" secondItem="7Wv-5Q-QFa" secondAttribute="trailing" constant="30" id="mAx-DW-cMX"/>
+                                                    <constraint firstItem="Wlz-Uf-FZV" firstAttribute="centerY" secondItem="FbY-LZ-8id" secondAttribute="centerY" id="iN5-05-xx2"/>
                                                 </constraints>
                                             </view>
                                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9gd-Tg-iOK">
@@ -489,9 +516,12 @@
     </scenes>
     <resources>
         <image name="Side-nav-drawer" width="317" height="175"/>
+        <image name="allcomments" width="37.5" height="37.5"/>
+        <image name="clock" width="37.5" height="37.5"/>
         <image name="ic_menu_bshair" width="100" height="100"/>
         <image name="mainBanner" width="608" height="409"/>
         <image name="menu" width="37.5" height="37.5"/>
         <image name="search" width="37.5" height="37.5"/>
+        <image name="user" width="37.5" height="37.5"/>
     </resources>
 </document>
