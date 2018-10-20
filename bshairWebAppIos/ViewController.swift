@@ -12,18 +12,23 @@ import Nuke
 
 class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var listOfNews: UITableView!
-    
+    var page:String = "1"
     var listOFNewsTemp = [NewsPost]()
     
+    lazy var refresher: UIRefreshControl = {
+        let refresher = UIRefreshControl()
+        refresher.addTarget(self, action: #selector(fetchData), for: .valueChanged)
+        return refresher
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        listOfNews.addSubview(refresher)
         addSlideMenuButton()
-
+        
 
         // Add NavigationBar
         setupNavigationBarItems()
-        
         // Load data from json
         fetchData()
     }
@@ -95,9 +100,9 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
         controller.dismiss(animated: true)
     }
     
-    private func fetchData(){
-        
-        NewsApi.getPosts { (error:Error?, newsPost: [NewsPost]?) in
+    @objc func fetchData(){
+        self.refresher.endRefreshing()
+        NewsApi.getPosts(page: page) { (error:Error?, newsPost: [NewsPost]?) in
             if let newsPost = newsPost {
                 self.listOFNewsTemp = newsPost
                 self.listOfNews.reloadData()
@@ -106,6 +111,8 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
             
         }
     }
+    
+    
     
 
 }

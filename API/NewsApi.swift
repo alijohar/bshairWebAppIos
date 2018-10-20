@@ -34,9 +34,9 @@ class NewsApi: NSObject {
     }
     
     //   for GET last 10 posts (page)
-    class func getPosts(completion: @escaping (_ error:Error?, _ newsPost:[NewsPost]?)-> Void){
+    class func getPosts(page:String, completion: @escaping (_ error:Error?, _ newsPost:[NewsPost]?)-> Void){
         let url = URLs.getNews
-        let page = 1
+        let page = page
         let params = ["page": page]
         
         Alamofire.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: nil)
