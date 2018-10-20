@@ -12,7 +12,9 @@ import Nuke
 
 class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var listOfNews: UITableView!
-    var page:String = "1"
+    var current_page:Int = 1
+    var all_page:Int = 2
+    var isLoading: Bool = false
     var listOFNewsTemp = [NewsPost]()
     
     lazy var refresher: UIRefreshControl = {
@@ -102,10 +104,17 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
     
     @objc func fetchData(){
         self.refresher.endRefreshing()
-        NewsApi.getPosts(page: page) { (error:Error?, newsPost: [NewsPost]?) in
+        guard !isLoading else { return }
+        
+        isLoading = true
+        NewsApi.getPosts { (error:Error?, newsPost: [NewsPost]?, lastPage:Int) in
+            self.isLoading = false
             if let newsPost = newsPost {
                 self.listOFNewsTemp = newsPost
                 self.listOfNews.reloadData()
+                
+                self.current_page = 1
+                self.all_page = lastPage
             }
             
             
@@ -113,6 +122,34 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     
+    func loadMore()  {
+        guard !isLoading else { return }
+        guard Int(current_page) < Int(all_page) else { return }
+        
+        isLoading = true
+        
+        NewsApi.getPosts(page: String(current_page+1)) { (error:Error?, newsPost: [NewsPost]?, lastPage:Int) in
+            self.isLoading = false
+            if let newsPost = newsPost {
+                self.listOFNewsTemp.append(contentsOf: newsPost)
+                self.listOfNews.reloadData()
+                
+                self.current_page += 1
+                self.all_page = lastPage
+            }
+            
+            
+        }
+
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let count = listOFNewsTemp.count
+        if indexPath.row == count-1{
+//            in LastRow
+            self.loadMore()
+        }
+    }
     
 
 }

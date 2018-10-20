@@ -4,10 +4,19 @@
 //  Created on October 16, 2018
 
 import Foundation
+import ObjectMapper
 
 
-class NewsRootClass : NSObject{
-
+class NewsRootClass : NSObject, Mappable{
+    
+    required convenience init?(map: Map) {
+        self.init()
+    }
+    
+    override init() {
+        super.init()
+    }
+    
     var count : Int!
     var countTotal : Int!
     var pages : Int!
@@ -15,14 +24,12 @@ class NewsRootClass : NSObject{
     var query : NewsQuery!
     var status : String!
 
+    func mapping(map: Map) {
+        pages <- map["pages"]
+        posts <- map["posts"]
+    }
 
-    init(count : Int, countTotal : Int, pages : Int, posts : [NewsPost], query : NewsQuery, status : String){
-        self.count = count
-        self.countTotal = countTotal
-        self.pages = pages
-        self.posts = posts
-        self.query = query
-        self.status = status
-}
+
+
 
 }

@@ -34,29 +34,34 @@ class NewsApi: NSObject {
     }
     
     //   for GET last 10 posts (page)
-    class func getPosts(page:String, completion: @escaping (_ error:Error?, _ newsPost:[NewsPost]?)-> Void){
+    class func getPosts( page:String = "1", completion: @escaping (_ error:Error?, _ newsPost:[NewsPost]?, _ lastPage:Int)-> Void){
         let url = URLs.getNews
-        let page = page
         let params = ["page": page]
+//        Must get from JSON
+        
         
         Alamofire.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: nil)
-            .validate().responseArray(keyPath: "posts") { (response: DataResponse<[NewsPost]>) in
+            .validate().responseObject { (response: DataResponse<NewsRootClass>) in
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 switch response.result {
                 case .failure(let error):
-                    completion(error, nil)
+                    completion(error, nil, Int(page)!)
                     print(error)
                     
                 case .success:
-                    let allPostsNews = response.result.value ?? []
+                    let alljson = response.result.value
+                    let lastPage = alljson?.pages
+                    let allPostsNews = alljson?.posts
+                    
+                    print("all json is: \(alljson) + all page is \(lastPage) + and all postsArray is \(allPostsNews)" )
                     var postNews = [NewsPost]()
 
-                    for item in allPostsNews {
+                    for item in allPostsNews! {
                         postNews.append(item)
 
                     }
 
-                    completion(nil, postNews)
+                    completion(nil, postNews, lastPage!)
 
                     
                         
