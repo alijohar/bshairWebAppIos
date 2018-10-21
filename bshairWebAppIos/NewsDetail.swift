@@ -26,6 +26,7 @@ class NewsDetail: UIViewController {
     var author:String?
     var numberComments:Int?
     
+    var newsUrlLink:String = ""
     var contentNewsDetail:String = ""
     var newsImageUrlString:String?
     var newFontNameByUser:String = ""
@@ -171,7 +172,20 @@ class NewsDetail: UIViewController {
     }
 
     @objc func shareURlNewsDetail(_ sender : UIButton){
-//        Sharing newsURL
+        // text to share
+        let text = "http://bshaer.net/?p=\(newsItemId!) \n منشور من تطبيق بشائر"
+        
+        // set up activity view controller
+        let textToShare = [ text ]
+        let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+        
+        // exclude some activity types from the list (optional)
+        activityViewController.excludedActivityTypes = [ UIActivityType.airDrop, UIActivityType.postToFacebook ]
+        
+        // present the view controller
+        self.present(activityViewController, animated: true, completion: nil)
+
     }
 
     func setNewsDetailInfo(){

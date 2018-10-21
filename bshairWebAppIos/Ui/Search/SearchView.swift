@@ -58,9 +58,14 @@ class SearchView: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         secondViewController.navTitle = listOFNewsTemp[indexPath.row].title
         secondViewController.contentNewsDetail = listOFNewsTemp[indexPath.row].content!
         secondViewController.newsItemId = listOFNewsTemp[indexPath.row].id!
-        //        secondViewController.newsImageUrlString = listOFNewsTemp[indexPath.row].thumbnailImages?.large!.url
-        
-        
+        secondViewController.author = listOFNewsTemp[indexPath.row].author?.name
+        secondViewController.cat = listOFNewsTemp[indexPath.row].categories!
+        secondViewController.date = listOFNewsTemp[indexPath.row].date
+        secondViewController.numberComments = listOFNewsTemp[indexPath.row].commentCount
+        secondViewController.newsImageUrlString = listOFNewsTemp[indexPath.row].thumbnailImages?.large!.url
+        secondViewController.newsUrlLink = listOFNewsTemp[indexPath.row].url!
+
+
         self.navigationController!.pushViewController(secondViewController, animated: true)
         
     }
