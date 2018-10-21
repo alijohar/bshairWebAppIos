@@ -16,7 +16,7 @@ class NewsDetail: UIViewController {
     @IBOutlet weak var newsDetailImage: UIImageView!
     
     @IBOutlet weak var newsDate: UILabel!
-    @IBOutlet weak var newsCommentsNumber: UILabel!
+    @IBOutlet weak var CommentsNumber: UIButton!
     @IBOutlet weak var newsAuthorName: UILabel!
     @IBOutlet weak var newsCat: UILabel!
     var navTitle:String?
@@ -32,6 +32,7 @@ class NewsDetail: UIViewController {
     var newFontNameByUser:String = ""
     var newFontSizeByUser:String = ""
     var newsDetailURLString:String?
+    var comments = [NewsComments]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -190,10 +191,17 @@ class NewsDetail: UIViewController {
 
     func setNewsDetailInfo(){
         newsCat.text = cat[0].title
-        newsCommentsNumber.text = "\(String(numberComments!)) تعليق"
+        CommentsNumber.setTitle("\(String(numberComments!)) تعليق", for: .normal)
         var dateWithoutTime = date?.split(separator: " ")
         newsDate.text = String(dateWithoutTime!.first!)
         newsAuthorName.text = author
     }
 
+    @IBAction func openComments(_ sender: Any) {
+        let CommentsViewController = self.storyboard!.instantiateViewController(withIdentifier: "Comments_Detail") as! CommentsView
+        CommentsViewController.arrayComments = comments
+        self.navigationController!.pushViewController(CommentsViewController, animated: true)
+
+    }
+    
 }

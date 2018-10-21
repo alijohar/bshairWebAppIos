@@ -18,7 +18,7 @@ class NewsPost : NSObject, Mappable{
     var categories : [NewsCategory]?
     var commentCount : Int?
     var commentStatus : String?
-    var comments : [AnyObject]?
+    var comments : [NewsComments]?
     var content : String?
     var customFields : NewsCustomField?
     var date : String?
@@ -50,6 +50,7 @@ class NewsPost : NSObject, Mappable{
         url <- map["url"]
         categories <- map["categories"]
         date <- map["date"]
+        comments <- map["comments"]
         commentCount <- map["comment_count"]
     }
 

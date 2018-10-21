@@ -81,7 +81,7 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
         secondViewController.numberComments = listOFNewsTemp[indexPath.row].commentCount
         secondViewController.newsImageUrlString = listOFNewsTemp[indexPath.row].thumbnailImages?.large!.url
         secondViewController.newsUrlLink = listOFNewsTemp[indexPath.row].url!
-
+        secondViewController.comments = listOFNewsTemp[indexPath.row].comments!
 
         self.navigationController!.pushViewController(secondViewController, animated: true)
         

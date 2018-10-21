@@ -207,12 +207,6 @@
                                                         <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۰ تعلیق" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcz-XU-dgc">
-                                                        <rect key="frame" x="8" y="5.5" width="33" height="19"/>
-                                                        <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="10"/>
-                                                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8t-CD-kQz">
                                                         <rect key="frame" x="194.5" y="5" width="9" height="20"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -234,32 +228,40 @@
                                                         </constraints>
                                                     </imageView>
                                                     <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allcomments" translatesAutoresizingMaskIntoConstraints="NO" id="Vy9-HZ-30O">
-                                                        <rect key="frame" x="46.5" y="8" width="14" height="14"/>
+                                                        <rect key="frame" x="39.5" y="8" width="14" height="14"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="14" id="CcI-T1-G1c"/>
                                                             <constraint firstAttribute="width" constant="14" id="YSs-8Q-uHT"/>
                                                         </constraints>
                                                     </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="joU-Iq-iJF">
+                                                        <rect key="frame" x="4" y="-0.5" width="33" height="31"/>
+                                                        <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="10"/>
+                                                        <state key="normal" title="٠ تعليق"/>
+                                                        <connections>
+                                                            <action selector="openComments:" destination="btk-cr-0wY" eventType="touchUpInside" id="XOg-55-6dW"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
+                                                    <constraint firstItem="joU-Iq-iJF" firstAttribute="leading" secondItem="FbY-LZ-8id" secondAttribute="leading" constant="4" id="0LJ-Vu-KuO"/>
                                                     <constraint firstItem="9EU-ed-bts" firstAttribute="centerY" secondItem="FbY-LZ-8id" secondAttribute="centerY" id="14a-7e-vHK"/>
                                                     <constraint firstItem="r35-bc-FA6" firstAttribute="centerY" secondItem="FbY-LZ-8id" secondAttribute="centerY" id="6PQ-UF-nEt"/>
                                                     <constraint firstItem="Vy9-HZ-30O" firstAttribute="centerY" secondItem="FbY-LZ-8id" secondAttribute="centerY" id="6mM-Sr-PML"/>
                                                     <constraint firstItem="c8t-CD-kQz" firstAttribute="centerY" secondItem="FbY-LZ-8id" secondAttribute="centerY" id="71o-hD-9A1"/>
                                                     <constraint firstItem="bNe-Tx-q4z" firstAttribute="leading" secondItem="7Wv-5Q-QFa" secondAttribute="trailing" constant="3.3333333333333144" id="97y-YF-XMN"/>
-                                                    <constraint firstItem="bcz-XU-dgc" firstAttribute="centerY" secondItem="FbY-LZ-8id" secondAttribute="centerY" id="9Hg-0j-qgU"/>
                                                     <constraint firstItem="c8t-CD-kQz" firstAttribute="centerX" secondItem="FbY-LZ-8id" secondAttribute="centerX" id="Cv6-3V-edM"/>
+                                                    <constraint firstItem="Vy9-HZ-30O" firstAttribute="leading" secondItem="joU-Iq-iJF" secondAttribute="trailing" constant="2.5" id="GjT-as-vqW"/>
                                                     <constraint firstItem="9EU-ed-bts" firstAttribute="leading" secondItem="c8t-CD-kQz" secondAttribute="trailing" constant="20" id="Hiv-SH-ZeL"/>
                                                     <constraint firstItem="7Wv-5Q-QFa" firstAttribute="centerY" secondItem="FbY-LZ-8id" secondAttribute="centerY" id="Ksb-gC-Lcb"/>
                                                     <constraint firstItem="r35-bc-FA6" firstAttribute="leading" secondItem="9EU-ed-bts" secondAttribute="trailing" constant="2.3333333333333428" id="Mlw-jk-G9D"/>
                                                     <constraint firstItem="c8t-CD-kQz" firstAttribute="leading" secondItem="bNe-Tx-q4z" secondAttribute="trailing" constant="20" id="Nni-kR-Cqh"/>
-                                                    <constraint firstItem="Vy9-HZ-30O" firstAttribute="leading" secondItem="bcz-XU-dgc" secondAttribute="trailing" constant="5.3333333333333357" id="PWq-xm-vKX"/>
                                                     <constraint firstAttribute="height" constant="30" id="Qa4-Xv-WdN"/>
                                                     <constraint firstItem="Wlz-Uf-FZV" firstAttribute="trailing" secondItem="FbY-LZ-8id" secondAttribute="trailingMargin" id="VFX-kt-9lf"/>
                                                     <constraint firstItem="bNe-Tx-q4z" firstAttribute="centerY" secondItem="FbY-LZ-8id" secondAttribute="centerY" id="VpA-wf-Igl"/>
-                                                    <constraint firstItem="bcz-XU-dgc" firstAttribute="leading" secondItem="FbY-LZ-8id" secondAttribute="leading" constant="8" id="hXC-bF-TTo"/>
                                                     <constraint firstItem="Wlz-Uf-FZV" firstAttribute="centerY" secondItem="FbY-LZ-8id" secondAttribute="centerY" id="iN5-05-xx2"/>
+                                                    <constraint firstItem="joU-Iq-iJF" firstAttribute="centerY" secondItem="FbY-LZ-8id" secondAttribute="centerY" id="sWO-kf-uka"/>
                                                 </constraints>
                                             </view>
                                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9gd-Tg-iOK">
@@ -303,9 +305,9 @@
                         <viewLayoutGuide key="safeArea" id="W5g-DB-VWd"/>
                     </view>
                     <connections>
+                        <outlet property="CommentsNumber" destination="joU-Iq-iJF" id="ZUv-Ld-1XO"/>
                         <outlet property="newsAuthorName" destination="9EU-ed-bts" id="M1A-FC-sdH"/>
                         <outlet property="newsCat" destination="Wlz-Uf-FZV" id="ajS-fu-nqh"/>
-                        <outlet property="newsCommentsNumber" destination="bcz-XU-dgc" id="7wY-2T-JDG"/>
                         <outlet property="newsDate" destination="7Wv-5Q-QFa" id="azs-Tn-vI6"/>
                         <outlet property="newsDetailImage" destination="7sx-Q4-42j" id="VVc-dx-1jq"/>
                         <outlet property="newsDetailWeb" destination="9gd-Tg-iOK" id="eq5-bt-a9i"/>
@@ -313,7 +315,91 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="egh-y1-193" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-698.39999999999998" y="437.4384236453202"/>
+            <point key="canvasLocation" x="-698.55072463768124" y="437.27678571428572"/>
+        </scene>
+        <!--Comments View-->
+        <scene sceneID="PxL-60-2du">
+            <objects>
+                <viewController storyboardIdentifier="Comments_Detail" id="4Hh-Y5-ES2" customClass="CommentsView" customModule="bshairWebAppIos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f3K-Ib-SdJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="khL-C3-Sr2">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentCell" rowHeight="121" id="IxJ-hN-R18" customClass="CommentsCell" customModule="bshairWebAppIos" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="121"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IxJ-hN-R18" id="3gn-th-vjr">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="اسم المعلق" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ckq-ym-1b1">
+                                                    <rect key="frame" x="267" y="12" width="127" height="21"/>
+                                                    <fontDescription key="fontDescription" name="DroidArabicKufi-Bold" family="Droid Arabic Kufi" pointSize="10"/>
+                                                    <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="التاريخ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fb-vB-ahe">
+                                                    <rect key="frame" x="32" y="12" width="89" height="19"/>
+                                                    <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="10"/>
+                                                    <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="ec8-oO-PlM">
+                                                    <rect key="frame" x="16" y="14" width="14" height="14"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="14" id="Ayz-pR-0l7"/>
+                                                        <constraint firstAttribute="height" constant="14" id="Zrn-2M-L7n"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="نص التعليق" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdd-MJ-lJx">
+                                                    <rect key="frame" x="15" y="41" width="384" height="69"/>
+                                                    <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="12"/>
+                                                    <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="mdd-MJ-lJx" secondAttribute="trailing" constant="16" id="7y2-L5-5N2"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ckq-ym-1b1" secondAttribute="trailing" constant="16" id="A8S-RA-xwq"/>
+                                                <constraint firstItem="ec8-oO-PlM" firstAttribute="top" secondItem="3gn-th-vjr" secondAttribute="top" constant="14" id="Oju-T7-LS3"/>
+                                                <constraint firstItem="0fb-vB-ahe" firstAttribute="top" secondItem="3gn-th-vjr" secondAttribute="top" constant="12" id="VY0-BI-MEa"/>
+                                                <constraint firstItem="0fb-vB-ahe" firstAttribute="leading" secondItem="ec8-oO-PlM" secondAttribute="trailing" constant="12" id="ZgH-mb-mk1"/>
+                                                <constraint firstItem="ec8-oO-PlM" firstAttribute="leading" secondItem="3gn-th-vjr" secondAttribute="leading" constant="16" id="e78-VY-Psn"/>
+                                                <constraint firstItem="Ckq-ym-1b1" firstAttribute="top" secondItem="3gn-th-vjr" secondAttribute="top" constant="12" id="esb-Vt-wPv"/>
+                                                <constraint firstItem="mdd-MJ-lJx" firstAttribute="top" secondItem="Ckq-ym-1b1" secondAttribute="bottom" constant="8" id="fnv-xX-8Ne"/>
+                                                <constraint firstItem="mdd-MJ-lJx" firstAttribute="leading" secondItem="3gn-th-vjr" secondAttribute="leading" constant="16" id="qr9-gg-l4R"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="authorName" destination="Ckq-ym-1b1" id="jwV-IE-U1Q"/>
+                                            <outlet property="commentContent" destination="mdd-MJ-lJx" id="xum-BI-pMe"/>
+                                            <outlet property="date" destination="0fb-vB-ahe" id="Qau-NP-v7g"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="4Hh-Y5-ES2" id="erA-xC-4BM"/>
+                                    <outlet property="delegate" destination="4Hh-Y5-ES2" id="4TU-ar-UrQ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="khL-C3-Sr2" firstAttribute="top" secondItem="bfU-dB-m3z" secondAttribute="top" id="12r-UQ-9Tb"/>
+                            <constraint firstItem="khL-C3-Sr2" firstAttribute="leading" secondItem="bfU-dB-m3z" secondAttribute="leading" id="Qve-XA-eaH"/>
+                            <constraint firstItem="khL-C3-Sr2" firstAttribute="trailing" secondItem="bfU-dB-m3z" secondAttribute="trailing" id="pnp-1X-wvM"/>
+                            <constraint firstAttribute="bottom" secondItem="khL-C3-Sr2" secondAttribute="bottom" id="ts2-Nx-2P9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bfU-dB-m3z"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ec7-90-xcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="68.115942028985515" y="432.58928571428572"/>
         </scene>
         <!--Search View-->
         <scene sceneID="bg5-7H-DOa">
