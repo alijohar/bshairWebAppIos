@@ -11,7 +11,7 @@ import UIKit
 class CommentsCell: UITableViewCell {
     @IBOutlet weak var authorName: UILabel!
     @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var commentContent: UILabel!
+    @IBOutlet weak var commentContent: UIWebView!
     
     
     override func awakeFromNib() {

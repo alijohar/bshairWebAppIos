@@ -200,6 +200,8 @@ class NewsDetail: UIViewController {
     @IBAction func openComments(_ sender: Any) {
         let CommentsViewController = self.storyboard!.instantiateViewController(withIdentifier: "Comments_Detail") as! CommentsView
         CommentsViewController.arrayComments = comments
+        CommentsViewController.newsItemId = self.newsItemId
+        
         self.navigationController!.pushViewController(CommentsViewController, animated: true)
 
     }
