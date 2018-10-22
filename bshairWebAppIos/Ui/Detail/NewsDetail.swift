@@ -37,6 +37,8 @@ class NewsDetail: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setMainImage()
+        newFontNameByUser = helper.getFontName()
+        newFontSizeByUser = helper.getFontSize()
         // Customize navigationBar
         setupNavigationBarItems()
         setNewsDetailContent()
@@ -141,7 +143,7 @@ class NewsDetail: UIViewController {
         var text = "<head><style type=\"text/css\">\n" +
             "@font-face {\n" +
             " font-family: 'MyCustomFont';\n" +
-            " src: url('\(newFontNameByUser)') \n" +
+            " src: url('\(newFontNameByUser)')  format('truetype')  \n" +
             "}\n" +
             "\n" +
             "\n" +
@@ -168,7 +170,7 @@ class NewsDetail: UIViewController {
         
         text = text + contentNewsDetail
         text = text + "</body></html>"
-        newsDetailWeb.loadHTMLString(text, baseURL: nil)
+        newsDetailWeb.loadHTMLString(text, baseURL: Bundle.main.bundleURL)
 
     }
 

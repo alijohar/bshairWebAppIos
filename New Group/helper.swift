@@ -9,15 +9,28 @@
 import UIKit
 
 class helper: NSObject {
-//    class func saveValueInString (test:String){
-//        var def = UserDefaults.standard
-//        def.setValue(test, forKey: "aname")
-//        def.synchronize()
-//    }
+    class func saveFontName (NewFontName:String){
+        let def = UserDefaults.standard
+        def.setValue(NewFontName, forKey: "FontName")
+        def.synchronize()
+    }
 //
-//    class func getValueInString () -> String{
-//        var def = UserDefaults.standard
-//        return  def.object(forKey: "aname") as! String
-//
-//    }
+    class func getFontName () -> String{
+        let def = UserDefaults.standard
+        return  def.object(forKey: "FontName") as! String
+
+    }
+    
+    class func saveFontSize (NewFontSize:String){
+        let def = UserDefaults.standard
+        def.setValue(NewFontSize, forKey: "FontSize")
+        def.synchronize()
+    }
+    class func getFontSize () -> String{
+        let def = UserDefaults.standard
+        return  def.object(forKey: "FontSize") as! String
+        
+    }
+    
+
 }

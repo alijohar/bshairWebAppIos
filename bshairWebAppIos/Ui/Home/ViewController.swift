@@ -28,7 +28,6 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
         listOfNews.addSubview(refresher)
         addSlideMenuButton()
         
-
         // Add NavigationBar
         setupNavigationBarItems()
         // Load data from json
