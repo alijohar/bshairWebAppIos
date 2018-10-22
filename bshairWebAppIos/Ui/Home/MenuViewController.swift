@@ -58,10 +58,13 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func updateArrayMenuOptions(){
         NewsApi.getCatIndex { (error:Error?, catIndex: [CatIndex]?) in
             let allCats = catIndex
+            
+            
             for item in allCats! {
+                if(item.id != 21){
                 self.arrayMenuCatList.append(item)
                 self.arrayMenuOptions.append(["title": item.title!, "icon":"bshair_menu_logo2"])
-
+            }
             }
             self.tblMenuOptions.reloadData()
 
@@ -111,6 +114,11 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         print("id of cat: \(arrayMenuCatList[indexPath.row].id)")
         print("title of cat: \(arrayMenuCatList[indexPath.row].title)")
         print("post count of cat: \(arrayMenuCatList[indexPath.row].post_count)")
+        let ListPostForThisCat = self.storyboard!.instantiateViewController(withIdentifier: "List_Post") as! CategoryPosts
+        ListPostForThisCat.catId = arrayMenuCatList[indexPath.row].id
+        ListPostForThisCat.navTitle = arrayMenuCatList[indexPath.row].title
+        self.navigationController!.pushViewController(ListPostForThisCat, animated: true)
+
 
             
         let btn = UIButton(type: UIButtonType.custom)

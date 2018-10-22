@@ -158,7 +158,85 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-388" y="-368.7192118226601"/>
+            <point key="canvasLocation" x="-388.40579710144931" y="-368.97321428571428"/>
+        </scene>
+        <!--Category Posts-->
+        <scene sceneID="cfD-Dt-Ucq">
+            <objects>
+                <viewController storyboardIdentifier="List_Post" id="chS-Mz-9CY" customClass="CategoryPosts" customModule="bshairWebAppIos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9kW-gy-4QB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xBz-kK-kmA">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CatNewsCell" rowHeight="124" id="8uV-Cx-y85" customClass="CatNewsCell" customModule="bshairWebAppIos" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="124"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8uV-Cx-y85" id="Uek-wU-r2U">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="123.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQ5-mV-HDc">
+                                                    <rect key="frame" x="20" y="-9" width="266" height="140"/>
+                                                    <fontDescription key="fontDescription" name="DroidArabicKufi-Bold" family="Droid Arabic Kufi" pointSize="14"/>
+                                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBanner" translatesAutoresizingMaskIntoConstraints="NO" id="0Ge-hz-pHG">
+                                                    <rect key="frame" x="294" y="11" width="100" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="1fI-vV-6wc"/>
+                                                        <constraint firstAttribute="width" constant="100" id="iat-A2-eg3"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="6"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="0Ge-hz-pHG" firstAttribute="leading" secondItem="BQ5-mV-HDc" secondAttribute="trailing" constant="8" symbolic="YES" id="FId-uf-xEv"/>
+                                                <constraint firstItem="BQ5-mV-HDc" firstAttribute="centerY" secondItem="0Ge-hz-pHG" secondAttribute="centerY" id="OBu-xD-QJE"/>
+                                                <constraint firstAttribute="bottom" secondItem="0Ge-hz-pHG" secondAttribute="bottom" constant="12.666666666666671" id="PhI-t9-iw3"/>
+                                                <constraint firstItem="0Ge-hz-pHG" firstAttribute="top" secondItem="Uek-wU-r2U" secondAttribute="top" constant="11" id="b1f-IS-rf5"/>
+                                                <constraint firstItem="BQ5-mV-HDc" firstAttribute="centerY" secondItem="Uek-wU-r2U" secondAttribute="centerY" id="iFv-7V-5nY"/>
+                                                <constraint firstItem="0Ge-hz-pHG" firstAttribute="trailing" secondItem="Uek-wU-r2U" secondAttribute="trailingMargin" id="lQr-qp-LYu"/>
+                                                <constraint firstItem="BQ5-mV-HDc" firstAttribute="top" secondItem="Uek-wU-r2U" secondAttribute="topMargin" constant="-20" id="ogN-K3-oCR"/>
+                                                <constraint firstItem="BQ5-mV-HDc" firstAttribute="leading" secondItem="Uek-wU-r2U" secondAttribute="leadingMargin" id="z5r-Nj-QRW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="newsImageCat" destination="0Ge-hz-pHG" id="VCA-rx-nrv"/>
+                                            <outlet property="newsTitleCat" destination="BQ5-mV-HDc" id="DNr-bK-MLN"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="chS-Mz-9CY" id="AWX-Wf-61g"/>
+                                    <outlet property="delegate" destination="chS-Mz-9CY" id="Sr6-uQ-RDB"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="xBz-kK-kmA" secondAttribute="bottom" id="E4d-GQ-jSV"/>
+                            <constraint firstItem="xBz-kK-kmA" firstAttribute="leading" secondItem="OdS-hd-WqJ" secondAttribute="leading" id="Rue-T5-ejV"/>
+                            <constraint firstItem="xBz-kK-kmA" firstAttribute="trailing" secondItem="OdS-hd-WqJ" secondAttribute="trailing" id="i1G-jq-HTT"/>
+                            <constraint firstItem="xBz-kK-kmA" firstAttribute="top" secondItem="OdS-hd-WqJ" secondAttribute="top" id="oIm-aO-Z3Z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OdS-hd-WqJ"/>
+                    </view>
+                    <connections>
+                        <outlet property="listOfPosts" destination="xBz-kK-kmA" id="vvk-9b-m6Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U7K-lz-EeI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1436.2318840579712" y="430.58035714285711"/>
         </scene>
         <!--News Detail-->
         <scene sceneID="iYF-kf-TSY">
@@ -190,19 +268,19 @@
                                                 <rect key="frame" x="8" y="216" width="398" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="التصنیف" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wlz-Uf-FZV">
-                                                        <rect key="frame" x="354" y="5.5" width="36" height="19"/>
+                                                        <rect key="frame" x="358.5" y="9" width="31.5" height="12"/>
                                                         <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="10"/>
                                                         <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الكاتب" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9EU-ed-bts">
-                                                        <rect key="frame" x="223.5" y="5.5" width="27.5" height="19"/>
+                                                        <rect key="frame" x="223.5" y="9" width="22.5" height="12"/>
                                                         <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="10"/>
                                                         <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="التاريخ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wv-5Q-QFa">
-                                                        <rect key="frame" x="131" y="5.5" width="26" height="19"/>
+                                                        <rect key="frame" x="133.5" y="9" width="23.5" height="12"/>
                                                         <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="10"/>
                                                         <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -214,7 +292,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="r35-bc-FA6">
-                                                        <rect key="frame" x="253.5" y="8" width="14" height="14"/>
+                                                        <rect key="frame" x="248.5" y="8" width="14" height="14"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="14" id="7qF-a0-Nhf"/>
                                                             <constraint firstAttribute="width" constant="14" id="9ZC-0M-TIT"/>
@@ -228,14 +306,14 @@
                                                         </constraints>
                                                     </imageView>
                                                     <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allcomments" translatesAutoresizingMaskIntoConstraints="NO" id="Vy9-HZ-30O">
-                                                        <rect key="frame" x="39.5" y="8" width="14" height="14"/>
+                                                        <rect key="frame" x="36.5" y="8" width="14" height="14"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="14" id="CcI-T1-G1c"/>
                                                             <constraint firstAttribute="width" constant="14" id="YSs-8Q-uHT"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="joU-Iq-iJF">
-                                                        <rect key="frame" x="4" y="-0.5" width="33" height="31"/>
+                                                        <rect key="frame" x="4" y="3" width="30" height="24"/>
                                                         <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="10"/>
                                                         <state key="normal" title="٠ تعليق"/>
                                                         <connections>
