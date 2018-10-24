@@ -45,6 +45,8 @@
 	<array>
 		<string>DroidArabicKufiRegular.ttf</string>
 		<string>DroidArabicKufiBold.ttf</string>
+		<string>AdobeNaskh.ttf</string>
+		<string>Andalus.ttf</string>
 	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>

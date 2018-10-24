@@ -49,6 +49,8 @@
 		C58E1C2A2179C753001CD8F5 /* CatIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58E1C292179C753001CD8F5 /* CatIndex.swift */; };
 		C5969793215F60F200C7DD70 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5969791215F60F200C7DD70 /* MenuViewController.swift */; };
 		C5969794215F60F200C7DD70 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5969792215F60F200C7DD70 /* BaseViewController.swift */; };
+		C5CB7D7C21803B0B00988722 /* Andalus.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5CB7D7B2180374600988722 /* Andalus.ttf */; };
+		C5CB7D7D21803B0B00988722 /* AdobeNaskh.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5CB7D792180355400988722 /* AdobeNaskh.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +121,8 @@
 		C58E1C292179C753001CD8F5 /* CatIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatIndex.swift; sourceTree = "<group>"; };
 		C5969791215F60F200C7DD70 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		C5969792215F60F200C7DD70 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		C5CB7D792180355400988722 /* AdobeNaskh.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AdobeNaskh.ttf; sourceTree = "<group>"; };
+		C5CB7D7B2180374600988722 /* Andalus.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Andalus.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +171,8 @@
 		C52527372150B796003D5330 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				C5CB7D7B2180374600988722 /* Andalus.ttf */,
+				C5CB7D792180355400988722 /* AdobeNaskh.ttf */,
 				C52527382150B7AF003D5330 /* DroidArabicKufiBold.ttf */,
 				C52527392150B7AF003D5330 /* DroidArabicKufiRegular.ttf */,
 			);
@@ -443,6 +449,8 @@
 				C57DE61C214EAAD80045CBE1 /* Assets.xcassets in Resources */,
 				C57DE61A214EAAD70045CBE1 /* Main.storyboard in Resources */,
 				C525273A2150B7AF003D5330 /* DroidArabicKufiBold.ttf in Resources */,
+				C5CB7D7D21803B0B00988722 /* AdobeNaskh.ttf in Resources */,
+				C5CB7D7C21803B0B00988722 /* Andalus.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

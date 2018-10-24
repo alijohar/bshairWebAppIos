@@ -268,19 +268,19 @@
                                                 <rect key="frame" x="8" y="216" width="398" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="التصنیف" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wlz-Uf-FZV">
-                                                        <rect key="frame" x="358.5" y="9" width="31.5" height="12"/>
+                                                        <rect key="frame" x="354" y="5.5" width="36" height="19"/>
                                                         <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="10"/>
                                                         <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الكاتب" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9EU-ed-bts">
-                                                        <rect key="frame" x="223.5" y="9" width="22.5" height="12"/>
+                                                        <rect key="frame" x="223.5" y="5.5" width="27.5" height="19"/>
                                                         <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="10"/>
                                                         <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="التاريخ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wv-5Q-QFa">
-                                                        <rect key="frame" x="133.5" y="9" width="23.5" height="12"/>
+                                                        <rect key="frame" x="130.5" y="5.5" width="26.5" height="19"/>
                                                         <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="10"/>
                                                         <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -292,7 +292,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="r35-bc-FA6">
-                                                        <rect key="frame" x="248.5" y="8" width="14" height="14"/>
+                                                        <rect key="frame" x="253.5" y="8" width="14" height="14"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="14" id="7qF-a0-Nhf"/>
                                                             <constraint firstAttribute="width" constant="14" id="9ZC-0M-TIT"/>
@@ -306,14 +306,14 @@
                                                         </constraints>
                                                     </imageView>
                                                     <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allcomments" translatesAutoresizingMaskIntoConstraints="NO" id="Vy9-HZ-30O">
-                                                        <rect key="frame" x="36.5" y="8" width="14" height="14"/>
+                                                        <rect key="frame" x="39.5" y="8" width="14" height="14"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="14" id="CcI-T1-G1c"/>
                                                             <constraint firstAttribute="width" constant="14" id="YSs-8Q-uHT"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="joU-Iq-iJF">
-                                                        <rect key="frame" x="4" y="3" width="30" height="24"/>
+                                                        <rect key="frame" x="4" y="-0.5" width="33" height="31"/>
                                                         <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="10"/>
                                                         <state key="normal" title="٠ تعليق"/>
                                                         <connections>
