@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import MessageUI
 
 protocol SlideMenuDelegate {
     func slideMenuItemSelectedAtIndex(_ index : Int32)
 }
 
-class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var sampleText: UIWebView!
     @IBOutlet weak var pickerView: UIPickerView!
@@ -180,11 +181,43 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
                 }
             }else if arrayMenuOptionsForSetting[indexPath.row]["title"]! == "مشاركة التطبيق" {
-                print("مشاركة التطبيق")
+                let text = "http://bshaer.net/download"
+                
+                // set up activity view controller
+                let textToShare = [ text ]
+                let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+                activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+                
+                // exclude some activity types from the list (optional)
+                activityViewController.excludedActivityTypes = [ UIActivityType.airDrop, UIActivityType.postToFacebook ]
+                
+                // present the view controller
+                self.present(activityViewController, animated: true, completion: nil)
+
             }else if arrayMenuOptionsForSetting[indexPath.row]["title"]! == "اتصل بنا" {
-                print("اتصل بنا")
+                if MFMailComposeViewController.canSendMail() {
+                    let mail = MFMailComposeViewController()
+                    mail.mailComposeDelegate = self
+                    mail.setToRecipients(["info@bshairdammam.com"])
+                    mail.setMessageBody("<p>اكتب نصاً</p>", isHTML: true)
+                    
+                    present(mail, animated: true)
+                } else {
+                    // show failure alert
+                }
+            
+
             }else if arrayMenuOptionsForSetting[indexPath.row]["title"]! == "تقرير خطأ" {
-                print("تقرير خطأ")
+                    if MFMailComposeViewController.canSendMail() {
+                        let mail = MFMailComposeViewController()
+                        mail.mailComposeDelegate = self
+                        mail.setToRecipients(["error@bshairdammam.com"])
+                        mail.setMessageBody("<p>اكتب توضيحاً عن الخطأ الحاصل</p>", isHTML: true)
+                        
+                        present(mail, animated: true)
+                    } else {
+                        // show failure alert
+                    }
             }
             
                 
