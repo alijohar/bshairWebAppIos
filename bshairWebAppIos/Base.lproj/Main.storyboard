@@ -650,35 +650,74 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pRx-PV-G78">
+                                <rect key="frame" x="0.0" y="462" width="414" height="216"/>
+                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="5Th-bK-wxs" id="UCq-ok-9Kz"/>
+                                    <outlet property="delegate" destination="5Th-bK-wxs" id="S60-XU-ctD"/>
+                                </connections>
+                            </pickerView>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S8s-lj-A0m">
+                                <rect key="frame" x="0.0" y="686" width="414" height="60"/>
+                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="lMM-Z9-Qkz"/>
+                                </constraints>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XoC-YJ-6aF">
+                                <rect key="frame" x="0.0" y="746" width="414" height="39"/>
+                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="14"/>
+                                <state key="normal" title="اختيار">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="applyNewFontAndSize:" destination="5Th-bK-wxs" eventType="touchUpInside" id="Pwh-z7-fKw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="pRx-PV-G78" firstAttribute="trailing" secondItem="Ksk-S6-sjx" secondAttribute="trailing" id="3OG-My-Xg9"/>
                             <constraint firstItem="Ksk-S6-sjx" firstAttribute="bottom" secondItem="jCT-ve-TPX" secondAttribute="bottom" id="6og-jT-iZr"/>
                             <constraint firstItem="rV5-hq-aIr" firstAttribute="leading" secondItem="Ksk-S6-sjx" secondAttribute="leading" id="7j7-WC-xZd"/>
                             <constraint firstItem="Ksk-S6-sjx" firstAttribute="trailing" secondItem="jCT-ve-TPX" secondAttribute="trailing" id="HRX-eJ-3HA"/>
+                            <constraint firstItem="XoC-YJ-6aF" firstAttribute="leading" secondItem="Ksk-S6-sjx" secondAttribute="leading" id="LIy-co-vqm"/>
+                            <constraint firstItem="S8s-lj-A0m" firstAttribute="leading" secondItem="Ksk-S6-sjx" secondAttribute="leading" id="NES-Lk-Aiw"/>
+                            <constraint firstItem="pRx-PV-G78" firstAttribute="centerY" secondItem="rV5-hq-aIr" secondAttribute="centerY" id="OnA-xK-3cS"/>
                             <constraint firstItem="4BE-7D-xA4" firstAttribute="leading" secondItem="Ksk-S6-sjx" secondAttribute="leading" id="QQb-nd-krm"/>
+                            <constraint firstItem="XoC-YJ-6aF" firstAttribute="top" secondItem="S8s-lj-A0m" secondAttribute="bottom" id="Rcn-Mx-sHL"/>
                             <constraint firstItem="4BE-7D-xA4" firstAttribute="top" secondItem="Ksk-S6-sjx" secondAttribute="top" id="TQd-WJ-DXZ"/>
                             <constraint firstItem="rV5-hq-aIr" firstAttribute="top" secondItem="4BE-7D-xA4" secondAttribute="bottom" id="Vdx-uE-hSY"/>
                             <constraint firstItem="MiI-Jl-7d9" firstAttribute="centerX" secondItem="4BE-7D-xA4" secondAttribute="centerX" id="bPJ-d2-OBs"/>
+                            <constraint firstItem="S8s-lj-A0m" firstAttribute="trailing" secondItem="Ksk-S6-sjx" secondAttribute="trailing" id="cze-u6-sX8"/>
+                            <constraint firstItem="pRx-PV-G78" firstAttribute="leading" secondItem="Ksk-S6-sjx" secondAttribute="leading" id="czl-4b-ErL"/>
                             <constraint firstItem="yGR-T2-EM0" firstAttribute="centerX" secondItem="4BE-7D-xA4" secondAttribute="centerX" id="dJX-c8-Juf"/>
+                            <constraint firstItem="XoC-YJ-6aF" firstAttribute="trailing" secondItem="Ksk-S6-sjx" secondAttribute="trailing" id="deS-c0-RnR"/>
                             <constraint firstItem="jCT-ve-TPX" firstAttribute="leading" secondItem="Ksk-S6-sjx" secondAttribute="leading" id="erF-zX-cBm"/>
                             <constraint firstItem="Ksk-S6-sjx" firstAttribute="trailing" secondItem="rV5-hq-aIr" secondAttribute="trailing" id="hwA-cT-c3i"/>
                             <constraint firstItem="MiI-Jl-7d9" firstAttribute="centerY" secondItem="4BE-7D-xA4" secondAttribute="centerY" id="liJ-Xg-Op4"/>
+                            <constraint firstItem="pRx-PV-G78" firstAttribute="centerX" secondItem="rV5-hq-aIr" secondAttribute="centerX" id="oyS-aY-wUe"/>
                             <constraint firstAttribute="bottom" secondItem="rV5-hq-aIr" secondAttribute="bottom" id="pyK-Go-R5m"/>
                             <constraint firstItem="4BE-7D-xA4" firstAttribute="trailing" secondItem="Ksk-S6-sjx" secondAttribute="trailing" id="qUF-kt-LxW"/>
                             <constraint firstItem="jCT-ve-TPX" firstAttribute="top" secondItem="zMB-jv-jue" secondAttribute="top" id="rHM-Ky-e8A"/>
                             <constraint firstItem="yGR-T2-EM0" firstAttribute="top" secondItem="MiI-Jl-7d9" secondAttribute="bottom" constant="8" id="tDS-Jq-92v"/>
+                            <constraint firstItem="S8s-lj-A0m" firstAttribute="top" secondItem="pRx-PV-G78" secondAttribute="bottom" constant="8" id="y0X-cH-N9W"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ksk-S6-sjx"/>
                     </view>
                     <connections>
                         <outlet property="btnCloseMenuOverlay" destination="jCT-ve-TPX" id="qYh-Ea-hiD"/>
+                        <outlet property="buApplyFont" destination="XoC-YJ-6aF" id="OS7-G6-Mjd"/>
+                        <outlet property="pickerView" destination="pRx-PV-G78" id="KLL-as-kh1"/>
+                        <outlet property="sampleText" destination="S8s-lj-A0m" id="VqT-RR-GCD"/>
                         <outlet property="tblMenuOptions" destination="rV5-hq-aIr" id="Uo9-OZ-ccg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0RC-TT-VDL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2487.1999999999998" y="-369.45812807881777"/>
+            <point key="canvasLocation" x="-2488.4057971014495" y="-369.64285714285711"/>
         </scene>
     </scenes>
     <resources>

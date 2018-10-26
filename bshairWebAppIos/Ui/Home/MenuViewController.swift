@@ -12,8 +12,10 @@ protocol SlideMenuDelegate {
     func slideMenuItemSelectedAtIndex(_ index : Int32)
 }
 
-class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    @IBOutlet weak var sampleText: UIWebView!
+    @IBOutlet weak var pickerView: UIPickerView!
     /**
     *  Array to display menu options
     */
@@ -29,18 +31,29 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     */
     var arrayMenuOptions = [Dictionary<String,String>]()
     var arrayMenuCatList = [CatIndex]()
+    var fontName = ["Andalus.ttf", "DroidArabicKufiRegular.ttf", "AdobeNaskh.ttf"]
+    var fontSize = ["75%", "100%", "125%", "150%", "200%"]
+    var defaultFontNameRow:Int = helper.getFontNameRow()
+    var defaultFontSizeRow:Int = helper.getFontSizeRow()
     /**
     *  Menu button which was tapped to display the menu
     */
     var btnMenu : UIButton!
-    
+    var newFontNameByUser:String = helper.getFontName()
+    var newFontSizeByUser:String = helper.getFontSize()
+
     /**
     *  Delegate of the MenuVC
     */
+    @IBOutlet weak var buApplyFont: UIButton!
     var delegate : SlideMenuDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        pickerView.selectRow(defaultFontNameRow, inComponent: 1, animated: true)
+        pickerView.selectRow(defaultFontSizeRow, inComponent: 0, animated: true)
+        
         tblMenuOptions.tableFooterView = UIView()
         // Do any additional setup after loading the view.
     }
@@ -133,4 +146,99 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1;
     }
+
+    @IBAction func applyNewFontAndSize(_ sender: Any) {
+        helper.saveFontName(NewFontName: newFontNameByUser)
+        helper.saveFontSize(NewFontSize: newFontSizeByUser)
+        helper.saveFontNameRow(row: defaultFontNameRow)
+        helper.saveFontSizeRow(row: defaultFontSizeRow)
+        print(helper.getFontName() + helper.getFontSize())
+        print("defaultRowForFontName is \(helper.getFontNameRow())  and defaultRowForFontSize is \(helper.getFontSizeRow())")
+        pickerView.isHidden = true
+        sampleText.isHidden = true
+        buApplyFont.isHidden = true
+    }
+    
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 2
+    }
+    
+    
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if component == 1 {
+            return fontName.count
+        }else {
+            return fontSize.count
+        }
+    }
+    
+    
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        if component == 1 {
+            return fontName[row]
+        }else {
+            return fontSize[row]
+            
+        }
+        
+    }
+    
+    
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+
+        if component == 1 {
+            
+           newFontNameByUser = fontName[row]
+            defaultFontNameRow = row
+
+        }else{
+            newFontSizeByUser = fontSize[row]
+            defaultFontSizeRow = row
+        }
+        
+setSampleContent()
+        
+    }
+    
+    func setSampleContent() {
+        var text = "<head><style type=\"text/css\">\n" +
+            "@font-face {\n" +
+            " font-family: 'MyCustomFont';\n" +
+            " src: url('\(newFontNameByUser)')  format('truetype')  \n" +
+            "}\n" +
+            "\n" +
+            "\n" +
+            "body{\n" +
+            "  font-size: \(newFontSizeByUser);\n" +
+            "  font-family:  'MyCustomFont';\n" +
+            "  text-align: justify;\n" +
+            "  direction: rtl;\n" +
+            "  line-height: 2.5;\n" +
+            "}\n" +
+            "\n" +
+            "img{\n" +
+            "  height: auto;\n" +
+            "  width: 100%;\n" +
+            "  display: block;\n" +
+            "  margin-left: auto;\n" +
+            "  margin-right: auto;\n" +
+            "}\n" +
+            "\n" +
+            "h1, h2, h3, h4, h5, h5 {\n" +
+            "  color: red;\n" +
+            "  text-align: center;\n" +
+        "}</style>\n\n</head><html><body dir=\"rtl\"; style=\"text-align:justify;\">"
+        
+        text = text + "من يكتب يقرأ مرتين"
+        text = text + "</body></html>"
+        sampleText.loadHTMLString(text, baseURL: Bundle.main.bundleURL)
+
+    }
+
 }

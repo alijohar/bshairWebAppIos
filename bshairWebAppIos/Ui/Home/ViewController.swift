@@ -27,7 +27,22 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
         super.viewDidLoad()
         listOfNews.addSubview(refresher)
         addSlideMenuButton()
-        
+        if (helper.getFontSize() == "NoFontSize"){
+            helper.saveFontSize(NewFontSize: "100%")
+        }
+        if (helper.getFontSizeRow() == 1000){
+            helper.saveFontSizeRow(row: 1)
+            
+        }
+
+        if (helper.getFontName() == "NoFontName"){
+            helper.saveFontName(NewFontName: "DroidArabicKufiRegular.ttf")
+        }
+        if (helper.getFontNameRow() == 1000){
+            helper.saveFontNameRow(row: 1)
+            
+        }
+
         // Add NavigationBar
         setupNavigationBarItems()
         // Load data from json
