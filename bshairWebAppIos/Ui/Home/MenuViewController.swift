@@ -29,7 +29,11 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     /**
     *  Array containing menu options
     */
+    var HiddenPickerViewStatus:Bool = true
+    var arrayOfSectionTitle = ["الإعدادات", "التصانيف"]
     var arrayMenuOptions = [Dictionary<String,String>]()
+    var arrayMenuOptionsForSetting = [Dictionary<String,String>]()
+
     var arrayMenuCatList = [CatIndex]()
     var fontName = ["Andalus.ttf", "DroidArabicKufiRegular.ttf", "AdobeNaskh.ttf"]
     var fontSize = ["75%", "100%", "125%", "150%", "200%"]
@@ -50,7 +54,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        hiddenPickerView(status: true)
         pickerView.selectRow(defaultFontNameRow, inComponent: 1, animated: true)
         pickerView.selectRow(defaultFontSizeRow, inComponent: 0, animated: true)
         
@@ -58,6 +62,12 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Do any additional setup after loading the view.
     }
     
+    func hiddenPickerView (status:Bool){
+        pickerView.isHidden = status
+        sampleText.isHidden = status
+        buApplyFont.isHidden = status
+
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -65,6 +75,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        updateArrayMenuOptionsForSetting()
         updateArrayMenuOptions()
     }
     
@@ -75,16 +86,28 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             for item in allCats! {
                 if(item.id != 21){
-                self.arrayMenuCatList.append(item)
-                self.arrayMenuOptions.append(["title": item.title!, "icon":"bshair_menu_logo2"])
-            }
+                    self.arrayMenuCatList.append(item)
+                    self.arrayMenuOptions.append(["title": item.title!, "icon":"bshair_menu_logo2"])
+                }
             }
             self.tblMenuOptions.reloadData()
-
+            
         }
-
+        
     }
-    
+    func updateArrayMenuOptionsForSetting(){
+        self.arrayMenuOptionsForSetting.append(["title": "إعدادات النص", "icon":"font_size"])
+        self.arrayMenuOptionsForSetting.append(["title": "مشاركة التطبيق", "icon":"shareApp"])
+        self.arrayMenuOptionsForSetting.append(["title": "اتصل بنا", "icon":"mail"])
+        self.arrayMenuOptionsForSetting.append(["title": "تقرير خطأ", "icon":"bug"])
+
+        
+            self.tblMenuOptions.reloadData()
+            
+        
+        
+    }
+
     @IBAction func onCloseMenuClick(_ button:UIButton!){
         btnMenu.tag = 0
         
@@ -105,28 +128,68 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.removeFromParentViewController()
         })
     }
-    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2;
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cellMenu")!
-        
-        cell.selectionStyle = UITableViewCellSelectionStyle.none
-        cell.layoutMargins = UIEdgeInsets.zero
-        cell.preservesSuperviewLayoutMargins = false
-        cell.backgroundColor = UIColor.clear
-        
-        let lblTitle : UILabel = cell.contentView.viewWithTag(101) as! UILabel
-        let imgIcon : UIImageView = cell.contentView.viewWithTag(100) as! UIImageView
-        
-        imgIcon.image = UIImage(named: arrayMenuOptions[indexPath.row]["icon"]!)
-        lblTitle.text = arrayMenuOptions[indexPath.row]["title"]!
-        
-        return cell
+
+        if indexPath.section == 0 {
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+            cell.layoutMargins = UIEdgeInsets.zero
+            cell.preservesSuperviewLayoutMargins = false
+            cell.backgroundColor = UIColor.clear
+            
+            let lblTitle : UILabel = cell.contentView.viewWithTag(101) as! UILabel
+            let imgIcon : UIImageView = cell.contentView.viewWithTag(100) as! UIImageView
+            
+            imgIcon.image = UIImage(named: arrayMenuOptionsForSetting[indexPath.row]["icon"]!)
+            lblTitle.text = arrayMenuOptionsForSetting[indexPath.row]["title"]!
+            return cell
+
+        }else{
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+            cell.layoutMargins = UIEdgeInsets.zero
+            cell.preservesSuperviewLayoutMargins = false
+            cell.backgroundColor = UIColor.clear
+            
+            let lblTitle : UILabel = cell.contentView.viewWithTag(101) as! UILabel
+            let imgIcon : UIImageView = cell.contentView.viewWithTag(100) as! UIImageView
+            
+            imgIcon.image = UIImage(named: arrayMenuOptions[indexPath.row]["icon"]!)
+            lblTitle.text = arrayMenuOptions[indexPath.row]["title"]!
+            
+            return cell
+
+
+        }
+    
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("id of cat: \(arrayMenuCatList[indexPath.row].id)")
-        print("title of cat: \(arrayMenuCatList[indexPath.row].title)")
-        print("post count of cat: \(arrayMenuCatList[indexPath.row].post_count)")
+        if indexPath.section == 0{
+            if arrayMenuOptionsForSetting[indexPath.row]["title"]! == "إعدادات النص" {
+                if HiddenPickerViewStatus == true {
+                hiddenPickerView(status: false)
+                    HiddenPickerViewStatus = false
+                    
+                }else {
+                    hiddenPickerView(status: true)
+                    HiddenPickerViewStatus = true
+
+                }
+            }else if arrayMenuOptionsForSetting[indexPath.row]["title"]! == "مشاركة التطبيق" {
+                print("مشاركة التطبيق")
+            }else if arrayMenuOptionsForSetting[indexPath.row]["title"]! == "اتصل بنا" {
+                print("اتصل بنا")
+            }else if arrayMenuOptionsForSetting[indexPath.row]["title"]! == "تقرير خطأ" {
+                print("تقرير خطأ")
+            }
+            
+                
+            
+    }else {
         let ListPostForThisCat = self.storyboard!.instantiateViewController(withIdentifier: "List_Post") as! CategoryPosts
         ListPostForThisCat.catId = arrayMenuCatList[indexPath.row].id
         ListPostForThisCat.navTitle = arrayMenuCatList[indexPath.row].title
@@ -137,15 +200,43 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let btn = UIButton(type: UIButtonType.custom)
         btn.tag = indexPath.row
         self.onCloseMenuClick(btn)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayMenuCatList.count
+        if section == 0 {
+            return arrayMenuOptionsForSetting.count
+
+        }else {
+            return arrayMenuCatList.count
+
+        }
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1;
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
+        
+        let headerLabel = UILabel(frame: CGRect(x: 30, y: 8, width:
+            tableView.bounds.size.width, height: tableView.bounds.size.height))
+        headerLabel.font = UIFont(name: "Droid Arabic Kufi", size: 14)
+        headerLabel.textColor = UIColor.gray
+        headerLabel.text = self.tableView(self.tblMenuOptions, titleForHeaderInSection: section)
+        headerLabel.sizeToFit()
+        headerView.addSubview(headerLabel)
+        
+        return headerView
     }
+    
+     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
+
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return arrayOfSectionTitle[section]
+    }
+    
 
     @IBAction func applyNewFontAndSize(_ sender: Any) {
         helper.saveFontName(NewFontName: newFontNameByUser)
@@ -154,9 +245,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         helper.saveFontSizeRow(row: defaultFontSizeRow)
         print(helper.getFontName() + helper.getFontSize())
         print("defaultRowForFontName is \(helper.getFontNameRow())  and defaultRowForFontSize is \(helper.getFontSizeRow())")
-        pickerView.isHidden = true
-        sampleText.isHidden = true
-        buApplyFont.isHidden = true
+        hiddenPickerView(status: true)
+        HiddenPickerViewStatus = true
     }
     
     

@@ -600,14 +600,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fwA-xg-kzr">
-                                                    <rect key="frame" x="8" y="8" width="38" height="38"/>
+                                                    <rect key="frame" x="8" y="10.5" width="33" height="33"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="38" id="QzT-d9-c0T"/>
-                                                        <constraint firstAttribute="height" constant="38" id="YbN-GJ-lvP"/>
+                                                        <constraint firstAttribute="width" constant="33" id="QzT-d9-c0T"/>
+                                                        <constraint firstAttribute="height" constant="33" id="YbN-GJ-lvP"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4J-za-nK1">
-                                                    <rect key="frame" x="62" y="16.5" width="344" height="21"/>
+                                                    <rect key="frame" x="57" y="16.5" width="349" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="xSD-vE-gms"/>
                                                     </constraints>
