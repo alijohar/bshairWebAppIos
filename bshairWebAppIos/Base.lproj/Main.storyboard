@@ -652,26 +652,24 @@
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pRx-PV-G78">
                                 <rect key="frame" x="0.0" y="462" width="414" height="216"/>
-                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="5Th-bK-wxs" id="UCq-ok-9Kz"/>
                                     <outlet property="delegate" destination="5Th-bK-wxs" id="S60-XU-ctD"/>
                                 </connections>
                             </pickerView>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S8s-lj-A0m">
-                                <rect key="frame" x="0.0" y="686" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="678" width="414" height="60"/>
                                 <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="lMM-Z9-Qkz"/>
                                 </constraints>
                             </webView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XoC-YJ-6aF">
-                                <rect key="frame" x="0.0" y="746" width="414" height="39"/>
-                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="738" width="414" height="39"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="14"/>
-                                <state key="normal" title="اختيار">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                                <state key="normal" title="اختيار"/>
                                 <connections>
                                     <action selector="applyNewFontAndSize:" destination="5Th-bK-wxs" eventType="touchUpInside" id="Pwh-z7-fKw"/>
                                 </connections>
@@ -703,7 +701,7 @@
                             <constraint firstItem="4BE-7D-xA4" firstAttribute="trailing" secondItem="Ksk-S6-sjx" secondAttribute="trailing" id="qUF-kt-LxW"/>
                             <constraint firstItem="jCT-ve-TPX" firstAttribute="top" secondItem="zMB-jv-jue" secondAttribute="top" id="rHM-Ky-e8A"/>
                             <constraint firstItem="yGR-T2-EM0" firstAttribute="top" secondItem="MiI-Jl-7d9" secondAttribute="bottom" constant="8" id="tDS-Jq-92v"/>
-                            <constraint firstItem="S8s-lj-A0m" firstAttribute="top" secondItem="pRx-PV-G78" secondAttribute="bottom" constant="8" id="y0X-cH-N9W"/>
+                            <constraint firstItem="S8s-lj-A0m" firstAttribute="top" secondItem="pRx-PV-G78" secondAttribute="bottom" id="y0X-cH-N9W"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ksk-S6-sjx"/>
                     </view>

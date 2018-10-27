@@ -248,9 +248,9 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
-        headerView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
+        headerView.backgroundColor = UIColor.white
         
-        let headerLabel = UILabel(frame: CGRect(x: 30, y: 8, width:
+        let headerLabel = UILabel(frame: CGRect(x: 30, y: 22, width:
             tableView.bounds.size.width, height: tableView.bounds.size.height))
         headerLabel.font = UIFont(name: "Droid Arabic Kufi", size: 14)
         headerLabel.textColor = UIColor.gray
@@ -262,7 +262,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
      func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40
+        return 70
     }
 
     
@@ -340,9 +340,8 @@ setSampleContent()
             "body{\n" +
             "  font-size: \(newFontSizeByUser);\n" +
             "  font-family:  'MyCustomFont';\n" +
-            "  text-align: justify;\n" +
+            "  text-align: center;\n" +
             "  direction: rtl;\n" +
-            "  line-height: 2.5;\n" +
             "}\n" +
             "\n" +
             "img{\n" +
@@ -356,7 +355,7 @@ setSampleContent()
             "h1, h2, h3, h4, h5, h5 {\n" +
             "  color: red;\n" +
             "  text-align: center;\n" +
-        "}</style>\n\n</head><html><body dir=\"rtl\"; style=\"text-align:justify;\">"
+        "}</style>\n\n</head><html><body dir=\"rtl\"; style=\"text-align:center;\">"
         
         text = text + "من يكتب يقرأ مرتين"
         text = text + "</body></html>"
