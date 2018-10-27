@@ -15,6 +15,7 @@ protocol SlideMenuDelegate {
 
 class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate, MFMailComposeViewControllerDelegate {
     
+    @IBOutlet weak var viewUnderApplyFont: UIView!
     @IBOutlet weak var sampleText: UIWebView!
     @IBOutlet weak var pickerView: UIPickerView!
     /**
@@ -56,6 +57,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenPickerView(status: true)
+        
+        
         pickerView.selectRow(defaultFontNameRow, inComponent: 1, animated: true)
         pickerView.selectRow(defaultFontSizeRow, inComponent: 0, animated: true)
         
@@ -67,7 +70,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         pickerView.isHidden = status
         sampleText.isHidden = status
         buApplyFont.isHidden = status
-
+    viewUnderApplyFont.isHidden = status
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

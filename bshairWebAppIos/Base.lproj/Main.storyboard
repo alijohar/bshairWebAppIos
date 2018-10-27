@@ -652,7 +652,7 @@
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pRx-PV-G78">
                                 <rect key="frame" x="0.0" y="462" width="414" height="216"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="5Th-bK-wxs" id="UCq-ok-9Kz"/>
                                     <outlet property="delegate" destination="5Th-bK-wxs" id="S60-XU-ctD"/>
@@ -660,29 +660,38 @@
                             </pickerView>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S8s-lj-A0m">
                                 <rect key="frame" x="0.0" y="678" width="414" height="60"/>
-                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="lMM-Z9-Qkz"/>
                                 </constraints>
                             </webView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XoC-YJ-6aF">
-                                <rect key="frame" x="0.0" y="738" width="414" height="39"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="738" width="414" height="66"/>
+                                <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="UaK-v2-VOK"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="14"/>
                                 <state key="normal" title="اختيار"/>
                                 <connections>
                                     <action selector="applyNewFontAndSize:" destination="5Th-bK-wxs" eventType="touchUpInside" id="Pwh-z7-fKw"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dvY-Hb-Gx1">
+                                <rect key="frame" x="0.0" y="804" width="414" height="92"/>
+                                <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="pRx-PV-G78" firstAttribute="trailing" secondItem="Ksk-S6-sjx" secondAttribute="trailing" id="3OG-My-Xg9"/>
                             <constraint firstItem="Ksk-S6-sjx" firstAttribute="bottom" secondItem="jCT-ve-TPX" secondAttribute="bottom" id="6og-jT-iZr"/>
                             <constraint firstItem="rV5-hq-aIr" firstAttribute="leading" secondItem="Ksk-S6-sjx" secondAttribute="leading" id="7j7-WC-xZd"/>
+                            <constraint firstItem="dvY-Hb-Gx1" firstAttribute="trailing" secondItem="Ksk-S6-sjx" secondAttribute="trailing" id="B2C-Re-uk3"/>
                             <constraint firstItem="Ksk-S6-sjx" firstAttribute="trailing" secondItem="jCT-ve-TPX" secondAttribute="trailing" id="HRX-eJ-3HA"/>
                             <constraint firstItem="XoC-YJ-6aF" firstAttribute="leading" secondItem="Ksk-S6-sjx" secondAttribute="leading" id="LIy-co-vqm"/>
                             <constraint firstItem="S8s-lj-A0m" firstAttribute="leading" secondItem="Ksk-S6-sjx" secondAttribute="leading" id="NES-Lk-Aiw"/>
+                            <constraint firstAttribute="bottom" secondItem="dvY-Hb-Gx1" secondAttribute="bottom" id="O7Z-9R-zgH"/>
                             <constraint firstItem="pRx-PV-G78" firstAttribute="centerY" secondItem="rV5-hq-aIr" secondAttribute="centerY" id="OnA-xK-3cS"/>
                             <constraint firstItem="4BE-7D-xA4" firstAttribute="leading" secondItem="Ksk-S6-sjx" secondAttribute="leading" id="QQb-nd-krm"/>
                             <constraint firstItem="XoC-YJ-6aF" firstAttribute="top" secondItem="S8s-lj-A0m" secondAttribute="bottom" id="Rcn-Mx-sHL"/>
@@ -695,12 +704,14 @@
                             <constraint firstItem="XoC-YJ-6aF" firstAttribute="trailing" secondItem="Ksk-S6-sjx" secondAttribute="trailing" id="deS-c0-RnR"/>
                             <constraint firstItem="jCT-ve-TPX" firstAttribute="leading" secondItem="Ksk-S6-sjx" secondAttribute="leading" id="erF-zX-cBm"/>
                             <constraint firstItem="Ksk-S6-sjx" firstAttribute="trailing" secondItem="rV5-hq-aIr" secondAttribute="trailing" id="hwA-cT-c3i"/>
+                            <constraint firstItem="dvY-Hb-Gx1" firstAttribute="leading" secondItem="Ksk-S6-sjx" secondAttribute="leading" id="kuS-pL-OHm"/>
                             <constraint firstItem="MiI-Jl-7d9" firstAttribute="centerY" secondItem="4BE-7D-xA4" secondAttribute="centerY" id="liJ-Xg-Op4"/>
                             <constraint firstItem="pRx-PV-G78" firstAttribute="centerX" secondItem="rV5-hq-aIr" secondAttribute="centerX" id="oyS-aY-wUe"/>
                             <constraint firstAttribute="bottom" secondItem="rV5-hq-aIr" secondAttribute="bottom" id="pyK-Go-R5m"/>
                             <constraint firstItem="4BE-7D-xA4" firstAttribute="trailing" secondItem="Ksk-S6-sjx" secondAttribute="trailing" id="qUF-kt-LxW"/>
                             <constraint firstItem="jCT-ve-TPX" firstAttribute="top" secondItem="zMB-jv-jue" secondAttribute="top" id="rHM-Ky-e8A"/>
                             <constraint firstItem="yGR-T2-EM0" firstAttribute="top" secondItem="MiI-Jl-7d9" secondAttribute="bottom" constant="8" id="tDS-Jq-92v"/>
+                            <constraint firstItem="dvY-Hb-Gx1" firstAttribute="top" secondItem="XoC-YJ-6aF" secondAttribute="bottom" id="tLL-1k-5wK"/>
                             <constraint firstItem="S8s-lj-A0m" firstAttribute="top" secondItem="pRx-PV-G78" secondAttribute="bottom" id="y0X-cH-N9W"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ksk-S6-sjx"/>
@@ -711,6 +722,7 @@
                         <outlet property="pickerView" destination="pRx-PV-G78" id="KLL-as-kh1"/>
                         <outlet property="sampleText" destination="S8s-lj-A0m" id="VqT-RR-GCD"/>
                         <outlet property="tblMenuOptions" destination="rV5-hq-aIr" id="Uo9-OZ-ccg"/>
+                        <outlet property="viewUnderApplyFont" destination="dvY-Hb-Gx1" id="R1n-Ge-ggu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0RC-TT-VDL" userLabel="First Responder" sceneMemberID="firstResponder"/>
