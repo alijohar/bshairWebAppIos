@@ -180,7 +180,37 @@ class NewsApi: NSObject {
         
     }
     
+    //   for GET last 10 posts for special tag(tag_slug)
 
+    class func getPostsFromTag(tag_slug:String = "test", completion: @escaping (_ error:Error?, _ postBannerNews:[NewsPost]?)-> Void){
+        let url = URLs.getBannerPosts
+        let params = ["tag_slug": tag_slug]
+        
 
-
+        Alamofire.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: nil)
+            .validate().responseObject { (response: DataResponse<NewsRootClass>) in
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                switch response.result {
+                case .failure(let error):
+                    completion(error, nil)
+                    print(error)
+                    
+                case .success:
+                    let alljson = response.result.value
+                    let allBannerPostsNews = alljson?.posts
+                    
+                    var postBannerNews = [NewsPost]()
+                    
+                    for item in allBannerPostsNews! {
+                        postBannerNews.append(item)
+                        
+                    }
+                    
+                    completion(nil, postBannerNews)
+                    
+                    
+                    
+                }
+        }
+}
 }

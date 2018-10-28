@@ -10,13 +10,16 @@ import UIKit
 import MessageUI
 import Nuke
 
-class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate {
+class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var listOfNews: UITableView!
     var current_page:Int = 1
     var all_page:Int = 2
     var isLoading: Bool = false
     var listOFNewsTemp = [NewsPost]()
-    
+    var bannerNews = [NewsPost]()
     lazy var refresher: UIRefreshControl = {
         let refresher = UIRefreshControl()
         refresher.addTarget(self, action: #selector(fetchData), for: .valueChanged)
@@ -26,6 +29,10 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         listOfNews.addSubview(refresher)
+        customizingCollectionView()
+        
+        autoScroll()
+
         addSlideMenuButton()
         if (helper.getFontSize() == "NoFontSize"){
             helper.saveFontSize(NewFontSize: "100%")
@@ -47,6 +54,11 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
         setupNavigationBarItems()
         // Load data from json
         fetchData()
+        fetchBannerData()
+    }
+    
+    func customizingCollectionView(){
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,7 +85,6 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
         myCell.newsTitle.text = listOFNewsTemp[indexPath.row].title
         let imageView = myCell.newsImage
         let urlThumbnail = listOFNewsTemp[indexPath.row].thumbnail
-        print("gfjhgfghfj \(listOFNewsTemp[indexPath.row])")
 
 //        Convert StringURl with arabic charecters to standard UrlString
         let urlwithPercentEscapes = urlThumbnail!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
@@ -140,7 +151,6 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
         }
     }
     
-    
     func loadMore()  {
         guard !isLoading else { return }
         guard Int(current_page) < Int(all_page) else { return }
@@ -170,6 +180,82 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
         }
     }
     
+    
+//    ForCollectionView
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return bannerNews.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell:MainBanner = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! MainBanner
+        
+        let imageView = cell.imageView
+        let urlLargeBanner = bannerNews[indexPath.row].thumbnailImages?.large?.url
+//        Convert StringURl with arabic charecters to standard UrlString
+        let urlwithPercentEscapes = urlLargeBanner!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        let urlImage = URL(string: urlwithPercentEscapes!)
+        
+        Nuke.loadImage(with: urlImage!, into: imageView!)
+
+
+            cell.titleLabel.text = bannerNews[indexPath.row].title
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let secondViewController = self.storyboard!.instantiateViewController(withIdentifier: "News_Detail") as! NewsDetail
+        secondViewController.navTitle = bannerNews[indexPath.row].title
+        secondViewController.contentNewsDetail = bannerNews[indexPath.row].content!
+        secondViewController.newsItemId = bannerNews[indexPath.row].id!
+        secondViewController.author = bannerNews[indexPath.row].author?.name
+        secondViewController.cat = bannerNews[indexPath.row].categories!
+        secondViewController.date = bannerNews[indexPath.row].date
+        secondViewController.numberComments = bannerNews[indexPath.row].commentCount
+        secondViewController.newsImageUrlString = bannerNews[indexPath.row].thumbnailImages?.large!.url
+        secondViewController.newsUrlLink = bannerNews[indexPath.row].url!
+        secondViewController.comments = bannerNews[indexPath.row].comments!
+        
+        self.navigationController!.pushViewController(secondViewController, animated: true)
+
+    }
+    func fetchBannerData (){
+        NewsApi.getPostsFromTag { (error:Error?, newsBannerPost: [NewsPost]?) in
+            if let newsPost = newsBannerPost {
+                self.bannerNews = newsPost
+                self.collectionView.reloadData()
+            }
+            
+        }
+    }
+    
+
+    @objc func scrollAutomatically(_ timer1: Timer) {
+        
+        if let coll  = collectionView {
+            for cell in coll.visibleCells {
+                let indexPath: IndexPath? = coll.indexPath(for: cell)
+                if ((indexPath?.row)!  < bannerNews.count - 1){
+                    let indexPath1: IndexPath?
+                    indexPath1 = IndexPath.init(row: (indexPath?.row)! + 1, section: (indexPath?.section)!)
+                    
+                    coll.scrollToItem(at: indexPath1!, at: .right, animated: true)
+                }
+                else{
+                    let indexPath1: IndexPath?
+                    indexPath1 = IndexPath.init(row: 0, section: (indexPath?.section)!)
+                    coll.scrollToItem(at: indexPath1!, at: .left, animated: true)
+                }
+                
+            }
+        }
+        
+    }
+    
+    func autoScroll(){
+        Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(self.scrollAutomatically), userInfo: nil, repeats: true)
+
+    }
+
 
 }
 

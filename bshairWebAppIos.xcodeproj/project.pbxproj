@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		454EB0CD8C0557D7E48ABE19 /* Pods_bshairWebAppIos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD1A17523C8E2255506E9B7 /* Pods_bshairWebAppIos.framework */; };
+		C52140AF21858D31000B73CB /* MainBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52140AE21858D31000B73CB /* MainBanner.swift */; };
 		C525271A214FA9BF003D5330 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5252719214FA9BF003D5330 /* NewsCell.swift */; };
 		C525273A2150B7AF003D5330 /* DroidArabicKufiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C52527382150B7AF003D5330 /* DroidArabicKufiBold.ttf */; };
 		C525273B2150B7AF003D5330 /* DroidArabicKufiRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C52527392150B7AF003D5330 /* DroidArabicKufiRegular.ttf */; };
@@ -74,6 +75,7 @@
 		1AD1A17523C8E2255506E9B7 /* Pods_bshairWebAppIos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bshairWebAppIos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B3C0E67409D19DF8EF07E8E /* Pods-bshairWebAppIos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bshairWebAppIos.release.xcconfig"; path = "Pods/Target Support Files/Pods-bshairWebAppIos/Pods-bshairWebAppIos.release.xcconfig"; sourceTree = "<group>"; };
 		8D06175C68F661C1CE824E5D /* Pods-bshairWebAppIos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bshairWebAppIos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bshairWebAppIos/Pods-bshairWebAppIos.debug.xcconfig"; sourceTree = "<group>"; };
+		C52140AE21858D31000B73CB /* MainBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBanner.swift; sourceTree = "<group>"; };
 		C5252719214FA9BF003D5330 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		C52527382150B7AF003D5330 /* DroidArabicKufiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DroidArabicKufiBold.ttf; sourceTree = "<group>"; };
 		C52527392150B7AF003D5330 /* DroidArabicKufiRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DroidArabicKufiRegular.ttf; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				C5969792215F60F200C7DD70 /* BaseViewController.swift */,
 				C5969791215F60F200C7DD70 /* MenuViewController.swift */,
 				C57DE616214EAAD70045CBE1 /* ViewController.swift */,
+				C52140AE21858D31000B73CB /* MainBanner.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 				C5969793215F60F200C7DD70 /* MenuViewController.swift in Sources */,
 				C58D82562175F5BF001E4E38 /* NewsAttachment.swift in Sources */,
 				C54BA6DD217C5CFD003C7F07 /* CommentsView.swift in Sources */,
+				C52140AF21858D31000B73CB /* MainBanner.swift in Sources */,
 				C58D824D2175F5BF001E4E38 /* NewsMedium.swift in Sources */,
 				C5389D322174A83600CC6A68 /* URLs.swift in Sources */,
 				C55DB200217B243200FC6860 /* searchCell.swift in Sources */,

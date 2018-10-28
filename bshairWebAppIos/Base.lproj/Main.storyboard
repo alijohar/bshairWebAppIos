@@ -44,28 +44,68 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBanner" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HW1-dp-8Od">
-                                <rect key="frame" x="8" y="8" width="398" height="200"/>
-                                <color key="backgroundColor" red="0.74640256169999997" green="0.70366078620000005" blue="0.58631902930000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9mY-Nb-OKy">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="cQb-0A-7ag"/>
+                                    <constraint firstAttribute="height" constant="220" id="Lf0-VP-xBn"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="افتتاح مسجد أم الحمام في القطيف" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ee7-IH-nXC">
-                                <rect key="frame" x="8" y="175" width="398" height="33"/>
-                                <fontDescription key="fontDescription" name="DroidArabicKufi-Bold" family="Droid Arabic Kufi" pointSize="14"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="highlightedColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.40695695930797549" colorSpace="calibratedRGB"/>
-                                <size key="shadowOffset" width="0.0" height="1"/>
-                            </label>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Yz9-iA-qOe">
+                                    <size key="itemSize" width="414" height="224"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="collectionCell" id="QNu-Gl-Hmv" customClass="MainBanner" customModule="bshairWebAppIos" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="-2" width="414" height="224"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="224"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBanner" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HW1-dp-8Od">
+                                                    <rect key="frame" x="8" y="8" width="398" height="208"/>
+                                                    <color key="backgroundColor" red="0.74640256169999997" green="0.70366078620000005" blue="0.58631902930000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="6"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="افتتاح مسجد أم الحمام في القطيف" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ee7-IH-nXC">
+                                                    <rect key="frame" x="86.5" y="176" width="241" height="28"/>
+                                                    <fontDescription key="fontDescription" name="DroidArabicKufi-Bold" family="Droid Arabic Kufi" pointSize="14"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="highlightedColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.40695695930797549" colorSpace="calibratedRGB"/>
+                                                    <size key="shadowOffset" width="0.0" height="1"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="HW1-dp-8Od" firstAttribute="top" secondItem="QNu-Gl-Hmv" secondAttribute="top" constant="8" id="DBM-o1-33g"/>
+                                            <constraint firstItem="ee7-IH-nXC" firstAttribute="centerX" secondItem="QNu-Gl-Hmv" secondAttribute="centerX" id="Jk9-o2-s1G"/>
+                                            <constraint firstItem="HW1-dp-8Od" firstAttribute="centerX" secondItem="QNu-Gl-Hmv" secondAttribute="centerX" id="KHg-jm-dhk"/>
+                                            <constraint firstAttribute="trailing" secondItem="HW1-dp-8Od" secondAttribute="trailing" constant="8" id="NuM-HY-htn"/>
+                                            <constraint firstItem="HW1-dp-8Od" firstAttribute="leading" secondItem="QNu-Gl-Hmv" secondAttribute="leading" constant="8" id="Yip-BI-5qj"/>
+                                            <constraint firstAttribute="bottom" secondItem="HW1-dp-8Od" secondAttribute="bottom" constant="8" id="gI2-YG-PCd"/>
+                                            <constraint firstItem="HW1-dp-8Od" firstAttribute="centerY" secondItem="QNu-Gl-Hmv" secondAttribute="centerY" id="vma-Gw-EeV"/>
+                                            <constraint firstAttribute="bottom" secondItem="ee7-IH-nXC" secondAttribute="bottom" constant="20" id="y6L-wG-1x0"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="HW1-dp-8Od" id="jau-xf-OTj"/>
+                                            <outlet property="titleLabel" destination="ee7-IH-nXC" id="Dxu-0u-A7e"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="TlP-SC-flh"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="8FR-en-x0e"/>
+                                </connections>
+                            </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fkr-s3-AeS">
-                                <rect key="frame" x="0.0" y="208" width="414" height="600"/>
+                                <rect key="frame" x="0.0" y="220" width="414" height="588"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="124" id="m7c-Cg-dW5" customClass="NewsCell" customModule="bshairWebAppIos" customModuleProvider="target">
@@ -120,16 +160,12 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Fkr-s3-AeS" secondAttribute="bottom" id="3mA-dt-xvb"/>
-                            <constraint firstItem="ee7-IH-nXC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="175" id="BVQ-vF-Xm9"/>
-                            <constraint firstItem="HW1-dp-8Od" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="Dng-0Q-kSq"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HW1-dp-8Od" secondAttribute="trailing" constant="8" id="Eac-ZP-mMg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ee7-IH-nXC" secondAttribute="trailing" constant="8" id="JMo-bE-zeY"/>
-                            <constraint firstItem="Fkr-s3-AeS" firstAttribute="top" secondItem="HW1-dp-8Od" secondAttribute="bottom" id="Qyn-tP-EUR"/>
-                            <constraint firstItem="ee7-IH-nXC" firstAttribute="bottom" secondItem="HW1-dp-8Od" secondAttribute="bottom" id="Z4d-nk-0vj"/>
-                            <constraint firstItem="HW1-dp-8Od" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="dEg-VA-uEv"/>
-                            <constraint firstItem="ee7-IH-nXC" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gSh-0w-6ah"/>
+                            <constraint firstItem="9mY-Nb-OKy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FPt-5s-jSQ"/>
+                            <constraint firstItem="9mY-Nb-OKy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GXn-ue-pWe"/>
+                            <constraint firstItem="Fkr-s3-AeS" firstAttribute="top" secondItem="9mY-Nb-OKy" secondAttribute="bottom" id="ate-ke-cos"/>
                             <constraint firstItem="Fkr-s3-AeS" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tvp-vN-is1"/>
                             <constraint firstItem="Fkr-s3-AeS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wS4-op-dlW"/>
+                            <constraint firstItem="9mY-Nb-OKy" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xmc-cj-lGJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -153,6 +189,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="collectionView" destination="9mY-Nb-OKy" id="T5a-d2-TM0"/>
                         <outlet property="listOfNews" destination="Fkr-s3-AeS" id="ajw-GO-M2d"/>
                     </connections>
                 </viewController>
