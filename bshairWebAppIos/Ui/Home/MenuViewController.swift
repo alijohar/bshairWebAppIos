@@ -15,6 +15,7 @@ protocol SlideMenuDelegate {
 
 class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate, MFMailComposeViewControllerDelegate {
     
+    @IBOutlet weak var versionName: UILabel!
     @IBOutlet weak var viewUnderApplyFont: UIView!
     @IBOutlet weak var sampleText: UIWebView!
     @IBOutlet weak var pickerView: UIPickerView!
@@ -57,7 +58,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenPickerView(status: true)
-        
+        setVersionName()
         
         pickerView.selectRow(defaultFontNameRow, inComponent: 1, animated: true)
         pickerView.selectRow(defaultFontSizeRow, inComponent: 0, animated: true)
@@ -70,7 +71,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         pickerView.isHidden = status
         sampleText.isHidden = status
         buApplyFont.isHidden = status
-    viewUnderApplyFont.isHidden = status
+        viewUnderApplyFont.isHidden = status
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -366,4 +367,13 @@ setSampleContent()
 
     }
 
+    func setVersionName(){
+        //First get the nsObject by defining as an optional anyObject
+        let nsObject: AnyObject? = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as AnyObject
+        
+        //Then just cast the object as a String, but be careful, you may want to double check for nil
+        let version = nsObject as! String
+
+        versionName.text = version
+    }
 }
