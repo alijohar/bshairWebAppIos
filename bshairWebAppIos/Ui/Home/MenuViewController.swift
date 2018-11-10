@@ -38,6 +38,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var arrayMenuOptionsForSetting = [Dictionary<String,String>]()
 
     var arrayMenuCatList = [CatIndex]()
+    var fontNameForDisplay = ["خط أدوب نسخ", "خط درويد كوفي", "خط أندلس"]
     var fontName = ["Andalus.ttf", "DroidArabicKufiRegular.ttf", "AdobeNaskh.ttf"]
     var fontSize = ["75%", "100%", "125%", "150%", "200%"]
     var defaultFontNameRow:Int = helper.getFontNameRow()
@@ -66,6 +67,11 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tblMenuOptions.tableFooterView = UIView()
         // Do any additional setup after loading the view.
     }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
+    }
+
     
     func hiddenPickerView (status:Bool){
         pickerView.isHidden = status
@@ -185,7 +191,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
                 }
             }else if arrayMenuOptionsForSetting[indexPath.row]["title"]! == "مشاركة التطبيق" {
-                let text = "http://bshaer.net/download"
+                let text = "تحميل تطبيق بشائر \n http://bshaer.net/download"
                 
                 // set up activity view controller
                 let textToShare = [ text ]
@@ -199,6 +205,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.present(activityViewController, animated: true, completion: nil)
 
             }else if arrayMenuOptionsForSetting[indexPath.row]["title"]! == "اتصل بنا" {
+                
                 if MFMailComposeViewController.canSendMail() {
                     let mail = MFMailComposeViewController()
                     mail.mailComposeDelegate = self
@@ -306,7 +313,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         if component == 1 {
-            return fontName[row]
+            return fontNameForDisplay[row]
         }else {
             return fontSize[row]
             

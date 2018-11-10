@@ -648,7 +648,7 @@
                                     <outlet property="delegate" destination="5Th-bK-wxs" id="v4J-9K-Xvs"/>
                                 </connections>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Side-nav-drawer" translatesAutoresizingMaskIntoConstraints="NO" id="4BE-7D-xA4">
+                            <imageView clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Side-nav-drawer" translatesAutoresizingMaskIntoConstraints="NO" id="4BE-7D-xA4">
                                 <rect key="frame" x="0.0" y="44" width="414" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="euC-5u-ml8"/>
