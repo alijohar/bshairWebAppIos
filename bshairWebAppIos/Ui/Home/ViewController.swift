@@ -257,16 +257,20 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
 
     }
 
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: view.bounds.width, height: collectionView.bounds.height)
+//    }
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
+
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             let itemWidth = view.bounds.width
-            let itemHeight = layout.itemSize.height
+            let itemHeight = collectionView.bounds.height
             layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
             layout.invalidateLayout()
         }
     }
-    
+
 }
 
