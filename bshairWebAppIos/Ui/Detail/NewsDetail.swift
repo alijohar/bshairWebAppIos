@@ -176,7 +176,7 @@ class NewsDetail: UIViewController {
 
     @objc func shareURlNewsDetail(_ sender : UIButton){
         // text to share
-        let text = "http://bshaer.net/?p=\(newsItemId!) \n منشور من تطبيق بشائر"
+        let text = "\(navTitle!)  \n\n\n اقرأ المزيد في \n http://bshaer.net/?p=\(newsItemId!)"
         
         // set up activity view controller
         let textToShare = [ text ]
