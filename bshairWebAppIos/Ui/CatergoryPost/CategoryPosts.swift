@@ -45,8 +45,21 @@ class CategoryPosts: BaseViewController, UITableViewDelegate, UITableViewDataSou
     
     private func setupNavigationBarItems(){
         navigationItem.title = navTitle
+        let homePage = UIButton(type: .system)
+        homePage.setImage(#imageLiteral(resourceName: "home"), for: .normal)
+        homePage.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+        homePage.addTarget(self, action: #selector(CategoryPosts.goToHome(_:)), for: UIControlEvents.touchUpInside)
+        
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: homePage)
 
         
+    }
+    
+    @objc func goToHome(_ sender : UIButton){
+        let homePage = self.storyboard!.instantiateViewController(withIdentifier: "homePageApp") as! ViewController
+        self.navigationController!.pushViewController(homePage, animated: true)
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
