@@ -121,7 +121,7 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
             mail.mailComposeDelegate = self
             mail.setToRecipients(["news@bshairdammam.com"])
             mail.setMessageBody("<p>اكتب نصاً</p>", isHTML: true)
-            
+
             present(mail, animated: true)
         } else {
             // show failure alert
@@ -253,7 +253,7 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
     
     
     func autoScroll(){
-        Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(self.scrollAutomatically), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 6.0, target: self, selector: #selector(self.scrollAutomatically), userInfo: nil, repeats: true)
 
     }
 

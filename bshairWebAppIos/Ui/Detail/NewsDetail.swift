@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 import Nuke
 
-class NewsDetail: UIViewController {
+class NewsDetail: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var newsDetailWeb: UIWebView!
     @IBOutlet weak var newsDetailImage: UIImageView!
     
@@ -154,6 +154,20 @@ class NewsDetail: UIViewController {
             "  direction: rtl;\n" +
             "  line-height: 2.5;\n" +
             "}\n" +
+            ".link{\n" +
+            "    display: inline-block;\n" +
+            "    background-color: #7d5abd;\n" +
+            "    color: #FFFFFF;\n" +
+            "    padding: 6px 25px;\n" +
+            "    text-align: center;\n" +
+            "    text-decoration: none;\n" +
+            "    font-size: 16px;\n" +
+        "    opacity: 0.9;" +
+            "}\n" +
+            ".center{\n" +
+            "    text-align: center;\n" +
+            "}\n" +
+
             "\n" +
             "img{\n" +
             "  height: auto;\n" +
@@ -167,9 +181,11 @@ class NewsDetail: UIViewController {
             "  color: red;\n" +
             "  text-align: center;\n" +
         "}</style>\n\n</head><html><body dir=\"rtl\"; style=\"text-align:justify;\">"
-        
+        let link = "http://bshaer.net/?p=\(newsItemId!)"
+
         text = text + contentNewsDetail
-        text = text + "</body></html>"
+        let button:String = "<p class =\"center\"><a href=\"\(link)\" class=\"link\">المطالعة في الموقع</a></p>"
+        text = text + button + "</body></html>"
         newsDetailWeb.loadHTMLString(text, baseURL: Bundle.main.bundleURL)
 
     }
@@ -207,5 +223,13 @@ class NewsDetail: UIViewController {
         self.navigationController!.pushViewController(CommentsViewController, animated: true)
 
     }
-    
+
+    func webView(webView: UIWebView!, shouldStartLoadWithRequest request: NSURLRequest!, navigationType: UIWebViewNavigationType) -> Bool {
+        if navigationType == UIWebViewNavigationType.linkClicked {
+            UIApplication.shared.openURL(request.url!)
+            return false
+        }
+        return true
+    }
+
 }
