@@ -98,9 +98,20 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             for item in allCats! {
                 if(item.id != 21){
                     self.arrayMenuCatList.append(item)
+                    
+//                    if item.id == 5000 {
+//                        self.arrayMenuOptions[0] = ["title": item.title!, "icon":"bshair_menu_logo2"]
+//
+//                    }else{
+                    
                     self.arrayMenuOptions.append(["title": item.title!, "icon":"bshair_menu_logo2"])
+                    }
+
                 }
             }
+            
+            
+            
             self.tblMenuOptions.reloadData()
             
         }
