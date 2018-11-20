@@ -209,12 +209,17 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 if MFMailComposeViewController.canSendMail() {
                     let mail = MFMailComposeViewController()
                     mail.mailComposeDelegate = self
-                    mail.setToRecipients(["info@bshairdammam.com"])
+                    mail.setToRecipients(["bshaer.news@gmail.com"])
                     mail.setMessageBody("<p>اكتب نصاً</p>", isHTML: true)
                     
                     present(mail, animated: true)
                 } else {
-                    // show failure alert
+                    let alertController = UIAlertController(title: "تطبيق Mail غير مثبت", message: "كي تتمكن من إرسال رسالة يرجى تثبيت تطبيق Mail أو التواصل مباشرة عبر البريد الإلكتروني bshaer.news@gmail.com", preferredStyle: .alert)
+                    
+                    alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (action: UIAlertAction!) in
+                    }))
+                    present(alertController, animated: true, completion: nil)
+
                 }
             
 
@@ -222,12 +227,17 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     if MFMailComposeViewController.canSendMail() {
                         let mail = MFMailComposeViewController()
                         mail.mailComposeDelegate = self
-                        mail.setToRecipients(["error@bshairdammam.com"])
+                        mail.setToRecipients(["bshaer.news@gmail.com"])
                         mail.setMessageBody("<p>اكتب توضيحاً عن الخطأ الحاصل</p>", isHTML: true)
                         
                         present(mail, animated: true)
                     } else {
-                        // show failure alert
+                        let alertController = UIAlertController(title: "تطبيق Mail غير مثبت", message: "كي تتمكن من إرسال تقرير خطأ يرجى تثبيت تطبيق Mail أو التواصل مباشرة عبر البريد الإلكتروني bshaer.news@gmail.com", preferredStyle: .alert)
+                        
+                        alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (action: UIAlertAction!) in
+                        }))
+                        present(alertController, animated: true, completion: nil)
+
                     }
             }
             

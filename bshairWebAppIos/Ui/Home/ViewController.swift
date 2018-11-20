@@ -119,12 +119,19 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
-            mail.setToRecipients(["news@bshairdammam.com"])
+            mail.setToRecipients(["bshaer.news@gmail.com"])
             mail.setMessageBody("<p>اكتب نصاً</p>", isHTML: true)
 
             present(mail, animated: true)
         } else {
-            // show failure alert
+            let alertController = UIAlertController(title: "تطبيق Mail غير مثبت", message: "كي تتمكن من إرسال خبر يرجى تثبيت تطبيق Mail أو التواصل مباشرة عبر البريد الإلكتروني bshaer.news@gmail.com", preferredStyle: .alert)
+            
+            alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (action: UIAlertAction!) in
+            }))
+            
+            
+            present(alertController, animated: true, completion: nil)
+            
         }
     }
     
