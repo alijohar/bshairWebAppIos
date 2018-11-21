@@ -93,29 +93,67 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func updateArrayMenuOptions(){
         NewsApi.getCatIndex { (error:Error?, catIndex: [CatIndex]?) in
             let allCats = catIndex
-            
-            
-            for item in allCats! {
-                if(item.id != 21){
-                    self.arrayMenuCatList.append(item)
-                    
-//                    if item.id == 5000 {
-//                        self.arrayMenuOptions[0] = ["title": item.title!, "icon":"bshair_menu_logo2"]
-//
-//                    }else{
-                    
-                    self.arrayMenuOptions.append(["title": item.title!, "icon":"bshair_menu_logo2"])
-                    }
-
+            for item in allCats!{
+                if item.id != 21{
+                self.arrayMenuCatList.append(item)
+                self.arrayMenuOptions.append(["title": item.title!, "icon":"bshair_menu_logo2"])
                 }
             }
             
+            for item in allCats! {
+
+                if item.id == 7{
+                self.arrayMenuCatList[0] = item
+                self.arrayMenuOptions[0] = ["title": item.title!, "icon":"bshair_menu_logo2"]
+                }
+                else if item.id == 10{
+                    self.arrayMenuCatList[1] = item
+                    self.arrayMenuOptions[1] = ["title": item.title!, "icon":"bshair_menu_logo2"]
+                }
+                else if item.id == 18{
+                    self.arrayMenuCatList[2] = item
+                    self.arrayMenuOptions[2] = ["title": item.title!, "icon":"bshair_menu_logo2"]
+                }
+                else if item.id == 5{
+                    self.arrayMenuCatList[3] = item
+                    self.arrayMenuOptions[3] = ["title": item.title!, "icon":"bshair_menu_logo2"]
+                }
+                else if item.id == 3{
+                    self.arrayMenuCatList[4] = item
+                    self.arrayMenuOptions[4] = ["title": item.title!, "icon":"bshair_menu_logo2"]
+                }
+                else if item.id == 13{
+                    self.arrayMenuCatList[5] = item
+                    self.arrayMenuOptions[5] = ["title": item.title!, "icon":"bshair_menu_logo2"]
+                }
+                else if item.id == 20{
+                    self.arrayMenuCatList[6] = item
+                    self.arrayMenuOptions[6] = ["title": item.title!, "icon":"bshair_menu_logo2"]
+                }
+                else if item.id == 50{
+                    self.arrayMenuCatList[7] = item
+                    self.arrayMenuOptions[7] = ["title": item.title!, "icon":"bshair_menu_logo2"]
+                }
+                else if item.id == 51{
+                    self.arrayMenuCatList[8] = item
+                    self.arrayMenuOptions[8] = ["title": item.title!, "icon":"bshair_menu_logo2"]
+                }
+                else if item.id == 52{
+                    self.arrayMenuCatList[9] = item
+                    self.arrayMenuOptions[9] = ["title": item.title!, "icon":"bshair_menu_logo2"]
+                }
+                else if item.id == 53{
+                    self.arrayMenuCatList[10] = item
+                    self.arrayMenuOptions[10] = ["title": item.title!, "icon":"bshair_menu_logo2"]
+                }
+
+            }
             
             
             self.tblMenuOptions.reloadData()
-            
-        }
+
         
+    }
     }
     func updateArrayMenuOptionsForSetting(){
         self.arrayMenuOptionsForSetting.append(["title": "إعدادات النص", "icon":"font_size"])
