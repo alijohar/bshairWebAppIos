@@ -1,8 +1,8 @@
 //
-//  NewsDetail.swift
+//  NewsDetailArticle.swift
 //  bshairWebAppIos
 //
-//  Created by johar on 9/18/18.
+//  Created by johar on 11/21/18.
 //  Copyright © 2018 papyrus. All rights reserved.
 //
 
@@ -11,21 +11,28 @@ import Alamofire
 import SwiftyJSON
 import Nuke
 
-class NewsDetail: UIViewController, UIWebViewDelegate {
-    @IBOutlet weak var newsDetailWeb: UIWebView!
-    @IBOutlet weak var newsDetailImage: UIImageView!
+
+class NewsDetailArticle: UIViewController, UIWebViewDelegate {
     
-    @IBOutlet weak var newsDate: UILabel!
-    @IBOutlet weak var CommentsNumber: UIButton!
-    @IBOutlet weak var newsAuthorName: UILabel!
-    @IBOutlet weak var newsCat: UILabel!
+    @IBOutlet weak var newsDetailWebArticle: UIWebView!
+    @IBOutlet weak var newsDetailImageArticle: UIImageView!
+    
+    @IBOutlet weak var authorNameArticle: UILabel!
+    
+    @IBOutlet weak var newsDateArticle: UILabel!
+    
+    @IBOutlet weak var commentsNumberArticle: UIButton!
+    
+    @IBOutlet weak var newsCatArticle: UILabel!
+    
+    
+  
     var navTitle:String?
     var authorName:String?
     var newsItemId:Int?
     var itsArticle:Bool?
     var cat = [NewsCategory]()
     var date:String?
-    var author:String?
     var numberComments:Int?
     
     var newsUrlLink:String = ""
@@ -45,10 +52,10 @@ class NewsDetail: UIViewController, UIWebViewDelegate {
         setupNavigationBarItems()
         setNewsDetailContent()
         setNewsDetailInfo()
-        newsDetailWeb.delegate = self
+        newsDetailWebArticle.delegate = self
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -71,19 +78,19 @@ class NewsDetail: UIViewController, UIWebViewDelegate {
             // Handle other navigation types...
             return true
         }
-
+        
     }
-
+    
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
     func setupNavigationBarItems(){
         navigationItem.title = navTitle
@@ -110,7 +117,7 @@ class NewsDetail: UIViewController, UIWebViewDelegate {
             
             //getting the input values from user
             
-//            post id should add here
+            //            post id should add here
             let post_id = self.newsItemId
             
             
@@ -148,20 +155,20 @@ class NewsDetail: UIViewController, UIWebViewDelegate {
         
         //finally presenting the dialog box
         self.present(alertController, animated: true, completion: nil)
-
+        
     }
     
     func setMainImage() {
-        let imageView = newsDetailImage
+        let imageView = newsDetailImageArticle
         let urlThumbnail = newsImageUrlString
         let urlwithPercentEscapes = urlThumbnail!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         let urlImage = URL(string: urlwithPercentEscapes!)
         Nuke.loadImage(with: urlImage!, into: imageView!)
-
-        }
+        
+    }
     
     func setNewsDetailContent(){
-//        For style
+        //        For style
         var text = "<head><style type=\"text/css\">\n" +
             "@font-face {\n" +
             " font-family: 'MyCustomFont';\n" +
@@ -184,12 +191,12 @@ class NewsDetail: UIViewController, UIWebViewDelegate {
             "    text-align: center;\n" +
             "    text-decoration: none;\n" +
             "    font-size: 16px;\n" +
-        "    opacity: 0.9;" +
+            "    opacity: 0.9;" +
             "}\n" +
             ".center{\n" +
             "    text-align: center;\n" +
             "}\n" +
-
+            
             "\n" +
             "img{\n" +
             "  height: auto;\n" +
@@ -204,14 +211,14 @@ class NewsDetail: UIViewController, UIWebViewDelegate {
             "  text-align: center;\n" +
         "}</style>\n\n</head><html><body dir=\"rtl\"; style=\"text-align:justify;\">"
         let link = "http://bshaer.net/?p=\(newsItemId!)"
-
+        
         text = text + contentNewsDetail
         let button:String = "<p class =\"center\"><a href=\"\(link)\" class=\"link\">المطالعة في الموقع</a></p>"
         text = text + button + "</body></html>"
-        newsDetailWeb.loadHTMLString(text, baseURL: Bundle.main.bundleURL)
-
+        newsDetailWebArticle.loadHTMLString(text, baseURL: Bundle.main.bundleURL)
+        
     }
-
+    
     @objc func shareURlNewsDetail(_ sender : UIButton){
         // text to share
         let text = "\(navTitle!)  \n\n\n اقرأ المزيد في \n http://bshaer.net/?p=\(newsItemId!)"
@@ -226,28 +233,29 @@ class NewsDetail: UIViewController, UIWebViewDelegate {
         
         // present the view controller
         self.present(activityViewController, animated: true, completion: nil)
-
+        
     }
-
+    
     func setNewsDetailInfo(){
-        newsCat.text = cat[0].title
-        CommentsNumber.setTitle("\(String(numberComments!)) تعليق", for: .normal)
+        newsCatArticle.text = cat[0].title
+        commentsNumberArticle.setTitle("\(String(numberComments!)) تعليق", for: .normal)
         var dateWithoutTime = date?.split(separator: " ")
-        newsDate.text = String(dateWithoutTime!.first!)
+       newsDateArticle.text = String(dateWithoutTime!.first!)
         
-        newsAuthorName.text = author
+       authorNameArticle.text = authorName
+        
         
     }
-
+    
     @IBAction func openComments(_ sender: Any) {
         let CommentsViewController = self.storyboard!.instantiateViewController(withIdentifier: "Comments_Detail") as! CommentsView
         CommentsViewController.arrayComments = comments
         CommentsViewController.newsItemId = self.newsItemId
         
         self.navigationController!.pushViewController(CommentsViewController, animated: true)
-
+        
     }
-
+    
     func webView(webView: UIWebView!, shouldStartLoadWithRequest request: NSURLRequest!, navigationType: UIWebViewNavigationType) -> Bool {
         if navigationType == UIWebViewNavigationType.linkClicked {
             UIApplication.shared.openURL(request.url!)
@@ -255,5 +263,5 @@ class NewsDetail: UIViewController, UIWebViewDelegate {
         }
         return true
     }
-
+    
 }

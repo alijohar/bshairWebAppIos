@@ -14,6 +14,8 @@ class CategoryPosts: BaseViewController, UITableViewDelegate, UITableViewDataSou
     
     @IBOutlet weak var listOfPosts: UITableView!
     var navTitle:String?
+    var itsArticle:Bool = false
+
     var catId:Int?
     var current_page:Int = 1
     var all_page:Int = 2
@@ -82,6 +84,39 @@ class CategoryPosts: BaseViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        itsArticle = false
+        let tags = listOFNewsTemp[indexPath.row].tags
+        
+        for item in tags!{
+            if item.title == "مقال"{
+                itsArticle = true
+                
+                
+            }
+        }
+        
+        if itsArticle{
+            let ThirdViewController = self.storyboard!.instantiateViewController(withIdentifier: "News_Detail_Article") as! NewsDetailArticle
+            
+            
+            ThirdViewController.authorName = listOFNewsTemp[indexPath.row].customFields?.authorName![0]
+            ThirdViewController.navTitle = listOFNewsTemp[indexPath.row].title
+            ThirdViewController.itsArticle = self.itsArticle
+            ThirdViewController.contentNewsDetail = listOFNewsTemp[indexPath.row].content!
+            ThirdViewController.newsItemId = listOFNewsTemp[indexPath.row].id!
+            //                ThirdViewController.author = listOFNewsTemp[indexPath.row].author?.name
+            ThirdViewController.cat = listOFNewsTemp[indexPath.row].categories!
+            ThirdViewController.date = listOFNewsTemp[indexPath.row].date
+            ThirdViewController.numberComments = listOFNewsTemp[indexPath.row].commentCount
+            ThirdViewController.newsImageUrlString = listOFNewsTemp[indexPath.row].thumbnailImages?.large!.url
+            ThirdViewController.newsUrlLink = listOFNewsTemp[indexPath.row].url!
+            ThirdViewController.comments = listOFNewsTemp[indexPath.row].comments!
+            
+            self.navigationController!.pushViewController(ThirdViewController, animated: true)
+            
+        }else{
+            
+
         let secondViewController = self.storyboard!.instantiateViewController(withIdentifier: "News_Detail") as! NewsDetail
         secondViewController.navTitle = listOFNewsTemp[indexPath.row].title
         secondViewController.contentNewsDetail = listOFNewsTemp[indexPath.row].content!
@@ -95,6 +130,8 @@ class CategoryPosts: BaseViewController, UITableViewDelegate, UITableViewDataSou
         secondViewController.comments = listOFNewsTemp[indexPath.row].comments!
         
         self.navigationController!.pushViewController(secondViewController, animated: true)
+        
+        }
         
     }
     

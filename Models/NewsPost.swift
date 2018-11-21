@@ -44,6 +44,7 @@ class NewsPost : NSObject, Mappable{
         author <- map["author"]
         modified <- map["modified"]
         id <- map["id"]
+        tags <- map["tags"]
         thumbnail <- map["thumbnail"]
         thumbnailImages <- map["thumbnail_images"]
         content <- map["content"]
@@ -52,6 +53,7 @@ class NewsPost : NSObject, Mappable{
         date <- map["date"]
         comments <- map["comments"]
         commentCount <- map["comment_count"]
+        customFields <- map["custom_fields"]
     }
 
 }

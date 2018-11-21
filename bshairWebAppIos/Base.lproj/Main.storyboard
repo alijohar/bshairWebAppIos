@@ -750,6 +750,125 @@
             </objects>
             <point key="canvasLocation" x="-2488.4057971014495" y="-369.64285714285711"/>
         </scene>
+        <!--News Detail Article-->
+        <scene sceneID="svB-dm-Bk7">
+            <objects>
+                <viewController storyboardIdentifier="News_Detail_Article" id="5Jk-U5-cKF" customClass="NewsDetailArticle" customModule="bshairWebAppIos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LFX-j9-Qe8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBanner" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MKA-ff-AWc">
+                                <rect key="frame" x="246" y="8" width="160" height="160"/>
+                                <color key="backgroundColor" red="0.74640256169999997" green="0.70366078620000005" blue="0.58631902930000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="8wU-9B-J8Z"/>
+                                    <constraint firstAttribute="height" constant="160" id="Nof-te-ezE">
+                                        <variation key="widthClass=regular" constant="320"/>
+                                    </constraint>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BOq-84-jfj">
+                                <rect key="frame" x="8" y="176" width="398" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="التصنیف" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1L-x4-1FW">
+                                        <rect key="frame" x="354" y="5.6666666666666572" width="36" height="19"/>
+                                        <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="10"/>
+                                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allcomments" translatesAutoresizingMaskIntoConstraints="NO" id="hyO-Aq-1s8">
+                                        <rect key="frame" x="39.666666666666664" y="8" width="14" height="14"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="14" id="4Cg-zv-8d7"/>
+                                            <constraint firstAttribute="width" constant="14" id="vnY-l5-9AS"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sW-hf-kSB">
+                                        <rect key="frame" x="4" y="-0.33333333333334281" width="33" height="31"/>
+                                        <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="10"/>
+                                        <state key="normal" title="٠ تعليق"/>
+                                        <connections>
+                                            <action selector="openComments:" destination="5Jk-U5-cKF" eventType="touchUpInside" id="KXK-vi-g10"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="التاريخ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gJ-Lf-IRt">
+                                        <rect key="frame" x="177" y="5.6666666666666572" width="26.666666666666657" height="19"/>
+                                        <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="10"/>
+                                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="zz3-3z-gLd">
+                                        <rect key="frame" x="207" y="7" width="14" height="14"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="14" id="FcJ-Ux-c9L"/>
+                                            <constraint firstAttribute="width" constant="14" id="tEq-Tf-9nP"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="1gJ-Lf-IRt" firstAttribute="centerX" secondItem="BOq-84-jfj" secondAttribute="centerX" constant="-8.6666666666666856" id="3dw-no-hDu"/>
+                                    <constraint firstItem="7sW-hf-kSB" firstAttribute="leading" secondItem="BOq-84-jfj" secondAttribute="leading" constant="4" id="FvG-dY-BWc"/>
+                                    <constraint firstAttribute="height" constant="30" id="HTE-oc-OIm"/>
+                                    <constraint firstItem="zz3-3z-gLd" firstAttribute="leading" secondItem="1gJ-Lf-IRt" secondAttribute="trailing" constant="3.3333333333333144" id="HTJ-fD-APq"/>
+                                    <constraint firstItem="7sW-hf-kSB" firstAttribute="centerY" secondItem="BOq-84-jfj" secondAttribute="centerY" id="Jth-kZ-1wM"/>
+                                    <constraint firstItem="O1L-x4-1FW" firstAttribute="centerY" secondItem="BOq-84-jfj" secondAttribute="centerY" id="Luh-hN-fg3"/>
+                                    <constraint firstItem="hyO-Aq-1s8" firstAttribute="centerY" secondItem="BOq-84-jfj" secondAttribute="centerY" id="UMm-OP-tXJ"/>
+                                    <constraint firstItem="1gJ-Lf-IRt" firstAttribute="centerY" secondItem="BOq-84-jfj" secondAttribute="centerY" id="aS9-Vc-jVt"/>
+                                    <constraint firstItem="O1L-x4-1FW" firstAttribute="trailing" secondItem="BOq-84-jfj" secondAttribute="trailingMargin" id="azi-Mz-xZ2"/>
+                                    <constraint firstItem="zz3-3z-gLd" firstAttribute="centerY" secondItem="BOq-84-jfj" secondAttribute="centerY" constant="-1" id="hDg-jK-EqJ"/>
+                                    <constraint firstItem="O1L-x4-1FW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zz3-3z-gLd" secondAttribute="trailing" constant="8" symbolic="YES" id="j4G-X9-8tL"/>
+                                    <constraint firstItem="hyO-Aq-1s8" firstAttribute="leading" secondItem="7sW-hf-kSB" secondAttribute="trailing" constant="2.5" id="jHe-8y-efp"/>
+                                </constraints>
+                            </view>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F9j-Qe-9fn">
+                                <rect key="frame" x="8" y="214" width="398" height="648"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                            </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الكاتب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Eh-Hq-qJH">
+                                <rect key="frame" x="32" y="76.666666666666671" width="199" height="23"/>
+                                <fontDescription key="fontDescription" name="DroidArabicKufi-Bold" family="Droid Arabic Kufi" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4Eh-Hq-qJH" firstAttribute="leading" secondItem="jG8-aT-Kgr" secondAttribute="leading" constant="32" id="JYL-K8-7mn"/>
+                            <constraint firstAttribute="trailing" secondItem="MKA-ff-AWc" secondAttribute="trailing" constant="8" id="QWs-ax-APT"/>
+                            <constraint firstItem="F9j-Qe-9fn" firstAttribute="top" secondItem="BOq-84-jfj" secondAttribute="bottom" constant="8" id="SAU-c3-VjG"/>
+                            <constraint firstItem="jG8-aT-Kgr" firstAttribute="bottom" secondItem="F9j-Qe-9fn" secondAttribute="bottom" id="VXb-aF-aHG"/>
+                            <constraint firstItem="4Eh-Hq-qJH" firstAttribute="centerY" secondItem="MKA-ff-AWc" secondAttribute="centerY" id="YAw-G4-IQD"/>
+                            <constraint firstItem="MKA-ff-AWc" firstAttribute="leading" secondItem="4Eh-Hq-qJH" secondAttribute="trailing" constant="15" id="ZgG-h5-we0"/>
+                            <constraint firstAttribute="trailing" secondItem="F9j-Qe-9fn" secondAttribute="trailing" constant="8" id="hxH-y7-2vP"/>
+                            <constraint firstItem="BOq-84-jfj" firstAttribute="top" secondItem="MKA-ff-AWc" secondAttribute="bottom" constant="8" id="msd-em-h2C"/>
+                            <constraint firstAttribute="trailing" secondItem="BOq-84-jfj" secondAttribute="trailing" constant="8" id="uI4-xJ-dD6"/>
+                            <constraint firstItem="F9j-Qe-9fn" firstAttribute="leading" secondItem="LFX-j9-Qe8" secondAttribute="leading" constant="8" id="wv3-Ul-RvA"/>
+                            <constraint firstItem="BOq-84-jfj" firstAttribute="leading" secondItem="LFX-j9-Qe8" secondAttribute="leading" constant="8" id="wxR-9a-bWZ"/>
+                            <constraint firstItem="MKA-ff-AWc" firstAttribute="top" secondItem="LFX-j9-Qe8" secondAttribute="top" constant="8" id="xXL-30-wLm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jG8-aT-Kgr"/>
+                    </view>
+                    <connections>
+                        <outlet property="authorNameArticle" destination="4Eh-Hq-qJH" id="ejX-oD-m9i"/>
+                        <outlet property="commentsNumberArticle" destination="7sW-hf-kSB" id="pBC-Kg-NeL"/>
+                        <outlet property="newsCatArticle" destination="O1L-x4-1FW" id="zPg-0T-HsE"/>
+                        <outlet property="newsDateArticle" destination="1gJ-Lf-IRt" id="5Jd-GW-PMa"/>
+                        <outlet property="newsDetailImageArticle" destination="MKA-ff-AWc" id="kgG-6B-Ta2"/>
+                        <outlet property="newsDetailWebArticle" destination="F9j-Qe-9fn" id="XTA-Mi-vY5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Erd-S2-GIO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-700" y="1106.9196428571429"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Side-nav-drawer" width="305" height="178"/>

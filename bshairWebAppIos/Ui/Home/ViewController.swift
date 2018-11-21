@@ -16,6 +16,7 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var listOfNews: UITableView!
     var current_page:Int = 1
+    var itsArticle:Bool = false
     var all_page:Int = 2
     var isLoading: Bool = false
     var listOFNewsTemp = [NewsPost]()
@@ -86,18 +87,54 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
         let imageView = myCell.newsImage
         let urlThumbnail = listOFNewsTemp[indexPath.row].thumbnail
 
+        
 //        Convert StringURl with arabic charecters to standard UrlString
         let urlwithPercentEscapes = urlThumbnail!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         let urlImage = URL(string: urlwithPercentEscapes!)
         Nuke.loadImage(with: urlImage!, into: imageView!)
 
-        
         return myCell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        itsArticle = false
+        let tags = listOFNewsTemp[indexPath.row].tags
+        
+        for item in tags!{
+            if item.title == "مقال"{
+                itsArticle = true
+
+
+            }
+        }
+        
+        if itsArticle{
+            let ThirdViewController = self.storyboard!.instantiateViewController(withIdentifier: "News_Detail_Article") as! NewsDetailArticle
+            
+            
+            ThirdViewController.authorName = listOFNewsTemp[indexPath.row].customFields?.authorName![0]
+            ThirdViewController.navTitle = listOFNewsTemp[indexPath.row].title
+            ThirdViewController.itsArticle = self.itsArticle
+            ThirdViewController.contentNewsDetail = listOFNewsTemp[indexPath.row].content!
+            ThirdViewController.newsItemId = listOFNewsTemp[indexPath.row].id!
+            //                ThirdViewController.author = listOFNewsTemp[indexPath.row].author?.name
+            ThirdViewController.cat = listOFNewsTemp[indexPath.row].categories!
+            ThirdViewController.date = listOFNewsTemp[indexPath.row].date
+            ThirdViewController.numberComments = listOFNewsTemp[indexPath.row].commentCount
+            ThirdViewController.newsImageUrlString = listOFNewsTemp[indexPath.row].thumbnailImages?.large!.url
+            ThirdViewController.newsUrlLink = listOFNewsTemp[indexPath.row].url!
+            ThirdViewController.comments = listOFNewsTemp[indexPath.row].comments!
+            
+            self.navigationController!.pushViewController(ThirdViewController, animated: true)
+
+        }else{
+            
+        
+        
         let secondViewController = self.storyboard!.instantiateViewController(withIdentifier: "News_Detail") as! NewsDetail
+        
         secondViewController.navTitle = listOFNewsTemp[indexPath.row].title
+        secondViewController.itsArticle = self.itsArticle
         secondViewController.contentNewsDetail = listOFNewsTemp[indexPath.row].content!
         secondViewController.newsItemId = listOFNewsTemp[indexPath.row].id!
         secondViewController.author = listOFNewsTemp[indexPath.row].author?.name
@@ -107,8 +144,12 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
         secondViewController.newsImageUrlString = listOFNewsTemp[indexPath.row].thumbnailImages?.large!.url
         secondViewController.newsUrlLink = listOFNewsTemp[indexPath.row].url!
         secondViewController.comments = listOFNewsTemp[indexPath.row].comments!
-
+        
         self.navigationController!.pushViewController(secondViewController, animated: true)
+
+        }
+
+        
         
     }
     
@@ -210,6 +251,38 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        itsArticle = false
+        let tags = bannerNews[indexPath.row].tags
+        
+        for item in tags!{
+            if item.title == "مقال"{
+                itsArticle = true
+                
+            }
+        }
+
+        if itsArticle{
+            let ThirdViewController = self.storyboard!.instantiateViewController(withIdentifier: "News_Detail_Article") as! NewsDetailArticle
+            
+            
+            ThirdViewController.authorName = listOFNewsTemp[indexPath.row].customFields?.authorName![0]
+            ThirdViewController.navTitle = listOFNewsTemp[indexPath.row].title
+            ThirdViewController.itsArticle = self.itsArticle
+            ThirdViewController.contentNewsDetail = listOFNewsTemp[indexPath.row].content!
+            ThirdViewController.newsItemId = listOFNewsTemp[indexPath.row].id!
+            //                ThirdViewController.author = listOFNewsTemp[indexPath.row].author?.name
+            ThirdViewController.cat = listOFNewsTemp[indexPath.row].categories!
+            ThirdViewController.date = listOFNewsTemp[indexPath.row].date
+            ThirdViewController.numberComments = listOFNewsTemp[indexPath.row].commentCount
+            ThirdViewController.newsImageUrlString = listOFNewsTemp[indexPath.row].thumbnailImages?.large!.url
+            ThirdViewController.newsUrlLink = listOFNewsTemp[indexPath.row].url!
+            ThirdViewController.comments = listOFNewsTemp[indexPath.row].comments!
+            
+            self.navigationController!.pushViewController(ThirdViewController, animated: true)
+            
+        }else{
+            
+
         let secondViewController = self.storyboard!.instantiateViewController(withIdentifier: "News_Detail") as! NewsDetail
         secondViewController.navTitle = bannerNews[indexPath.row].title
         secondViewController.contentNewsDetail = bannerNews[indexPath.row].content!
@@ -223,7 +296,7 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
         secondViewController.comments = bannerNews[indexPath.row].comments!
         
         self.navigationController!.pushViewController(secondViewController, animated: true)
-
+        }
     }
     func fetchBannerData (){
         NewsApi.getPostsFromTag { (error:Error?, newsBannerPost: [NewsPost]?) in
