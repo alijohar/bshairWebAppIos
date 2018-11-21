@@ -14,6 +14,7 @@ struct URLs {
     /// GET last 10 posts (page)
     static let getNews = main + "get_posts"
     
+
     /// GET last 10 Banner Posts (tag_slug, page)
     static let getBannerPosts = main + "get_tag_posts"
     

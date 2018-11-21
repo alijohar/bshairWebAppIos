@@ -12,6 +12,8 @@ import Nuke
 
 class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var paddingBottom: NSLayoutConstraint!
+    @IBOutlet weak var collectionViewBanner: UICollectionView!
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var listOfNews: UITableView!
@@ -21,6 +23,7 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
     var isLoading: Bool = false
     var listOFNewsTemp = [NewsPost]()
     var bannerNews = [NewsPost]()
+    var bannerNewsAdevertising = [NewsPost]()
     lazy var refresher: UIRefreshControl = {
         let refresher = UIRefreshControl()
         refresher.addTarget(self, action: #selector(fetchData), for: .valueChanged)
@@ -33,6 +36,7 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
         customizingCollectionView()
         
         autoScroll()
+        autoScrollAdvertising()
 
         addSlideMenuButton()
         if (helper.getFontSize() == "NoFontSize"){
@@ -56,6 +60,9 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
         // Load data from json
         fetchData()
         fetchBannerData()
+        fetchBannerDataAdvertising()
+        
+
     }
     
     func customizingCollectionView(){
@@ -231,10 +238,18 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
     
 //    ForCollectionView
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        if collectionView != collectionViewBanner{
         return bannerNews.count
+        }else{
+        return bannerNewsAdevertising.count
+
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if collectionView != collectionViewBanner{
+
         let cell:MainBanner = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! MainBanner
         
         let imageView = cell.imageView
@@ -248,9 +263,25 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
 
             cell.titleLabel.text = bannerNews[indexPath.row].title
         return cell
-    }
+        }else{
+            
+        }
+        let cell:MainBannerAdvertising = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewBanner", for: indexPath) as! MainBannerAdvertising
+        let imageView = cell.MainBannerAds
+        let urlLargeBanner = bannerNewsAdevertising[indexPath.row].thumbnailImages?.large?.url
+        
+        //        Convert StringURl with arabic charecters to standard UrlString
+        let urlwithPercentEscapes = urlLargeBanner!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        let urlImage = URL(string: urlwithPercentEscapes!)
+        
+        Nuke.loadImage(with: urlImage!, into: imageView!)
+        
+        return cell
+
+        }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView != collectionViewBanner{
         itsArticle = false
         let tags = bannerNews[indexPath.row].tags
         
@@ -297,12 +328,41 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
         
         self.navigationController!.pushViewController(secondViewController, animated: true)
         }
+        }else{
+            guard let url = URL(string: bannerNewsAdevertising[indexPath.row].customFields!.websiteAdvertising![0]) else { return }
+            UIApplication.shared.open(url)
+        }
     }
+    
+    
+    
+    //    ForCollectionViewBanner
+    
     func fetchBannerData (){
         NewsApi.getPostsFromTag { (error:Error?, newsBannerPost: [NewsPost]?) in
             if let newsPost = newsBannerPost {
                 self.bannerNews = newsPost
                 self.collectionView.reloadData()
+
+                
+                
+            }
+            
+        }
+    }
+    
+    func fetchBannerDataAdvertising(){
+        NewsApi.getPostsAdvertising { (error:Error?, newsBannerPost: [NewsPost]?) in
+            if let newsPost = newsBannerPost {
+                self.bannerNewsAdevertising = newsPost
+                self.collectionViewBanner.reloadData()
+                if newsPost.count == 0 {
+                    self.collectionViewBanner.isHidden = true
+                    self.paddingBottom.constant = 0
+                    self.view.layoutIfNeeded()
+                }
+
+                
             }
             
         }
@@ -332,9 +392,37 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     
+    @objc func scrollAutomaticallyAdvertising(_ timer1: Timer) {
+        
+        if let coll  = collectionViewBanner {
+            for cell in coll.visibleCells {
+                let indexPath: IndexPath? = coll.indexPath(for: cell)
+                if ((indexPath?.row)!  < bannerNewsAdevertising.count - 1){
+                    let indexPath1: IndexPath?
+                    indexPath1 = IndexPath.init(row: (indexPath?.row)! + 1, section: (indexPath?.section)!)
+                    
+                    coll.scrollToItem(at: indexPath1!, at: .right, animated: true)
+                }
+                else{
+                    let indexPath1: IndexPath?
+                    indexPath1 = IndexPath.init(row: 0, section: (indexPath?.section)!)
+                    coll.scrollToItem(at: indexPath1!, at: .left, animated: true)
+                }
+                
+            }
+        }
+        
+    }
+
+    
     func autoScroll(){
         Timer.scheduledTimer(timeInterval: 6.0, target: self, selector: #selector(self.scrollAutomatically), userInfo: nil, repeats: true)
 
+    }
+
+    func autoScrollAdvertising(){
+        Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.scrollAutomaticallyAdvertising), userInfo: nil, repeats: true)
+        
     }
 
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -350,6 +438,14 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
             layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
             layout.invalidateLayout()
         }
+        
+        if let layout = collectionViewBanner.collectionViewLayout as? UICollectionViewFlowLayout {
+            let itemWidth = view.bounds.width
+            let itemHeight = collectionViewBanner.bounds.height
+            layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
+            layout.invalidateLayout()
+        }
+
     }
 
 }

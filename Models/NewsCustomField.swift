@@ -14,10 +14,11 @@ class NewsCustomField : NSObject, Mappable{
     
     
     var authorName : [String]?
-
+    var websiteAdvertising: [String]?
     
     func mapping(map: Map) {
         authorName <- map["authorName"]
+        websiteAdvertising <- map["websiteAdvertising"]
     }
     
     override init() {

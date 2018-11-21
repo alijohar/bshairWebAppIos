@@ -108,7 +108,7 @@
                                 </connections>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fkr-s3-AeS">
-                                <rect key="frame" x="0.0" y="220" width="414" height="588"/>
+                                <rect key="frame" x="0.0" y="220" width="414" height="458"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="124" id="m7c-Cg-dW5" customClass="NewsCell" customModule="bshairWebAppIos" customModuleProvider="target">
@@ -158,15 +158,67 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="LbF-ip-e4a"/>
                                 </connections>
                             </tableView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Sr7-6B-1pb">
+                                <rect key="frame" x="0.0" y="680" width="414" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="NA9-Kw-WGQ"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eIX-am-hbe">
+                                    <size key="itemSize" width="414" height="101"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionViewBanner" id="ZW6-Hz-yaV" customClass="MainBannerAdvertising" customModule="bshairWebAppIos" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="13.666666666666666" width="414" height="101"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="101"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBanner" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r5x-Sy-tFF">
+                                                    <rect key="frame" x="0.0" y="0.6666666666666643" width="414" height="100"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="OiJ-ce-O0P"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="6"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="r5x-Sy-tFF" firstAttribute="leading" secondItem="ZW6-Hz-yaV" secondAttribute="leading" id="Egi-UC-VHT"/>
+                                            <constraint firstItem="r5x-Sy-tFF" firstAttribute="centerY" secondItem="ZW6-Hz-yaV" secondAttribute="centerY" id="Mcc-QB-V7J"/>
+                                            <constraint firstAttribute="trailing" secondItem="r5x-Sy-tFF" secondAttribute="trailing" id="OOG-Uz-zMm"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="MainBannerAds" destination="r5x-Sy-tFF" id="ax3-du-1kC"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="B5D-HF-Plq"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="HDf-gY-WvD"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Fkr-s3-AeS" secondAttribute="bottom" id="3mA-dt-xvb"/>
+                            <constraint firstItem="Sr7-6B-1pb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="46e-IK-t9i"/>
                             <constraint firstItem="9mY-Nb-OKy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FPt-5s-jSQ"/>
                             <constraint firstItem="9mY-Nb-OKy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GXn-ue-pWe"/>
                             <constraint firstItem="Fkr-s3-AeS" firstAttribute="top" secondItem="9mY-Nb-OKy" secondAttribute="bottom" id="ate-ke-cos"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Fkr-s3-AeS" secondAttribute="bottom" constant="96" id="cFS-zV-0jd"/>
+                            <constraint firstItem="Sr7-6B-1pb" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="dtH-8R-icZ"/>
                             <constraint firstItem="Fkr-s3-AeS" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tvp-vN-is1"/>
                             <constraint firstItem="Fkr-s3-AeS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wS4-op-dlW"/>
+                            <constraint firstItem="Sr7-6B-1pb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xID-IU-hmJ"/>
                             <constraint firstItem="9mY-Nb-OKy" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xmc-cj-lGJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -192,7 +244,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="9mY-Nb-OKy" id="T5a-d2-TM0"/>
+                        <outlet property="collectionViewBanner" destination="Sr7-6B-1pb" id="hdO-Nn-kjT"/>
                         <outlet property="listOfNews" destination="Fkr-s3-AeS" id="ajw-GO-M2d"/>
+                        <outlet property="paddingBottom" destination="cFS-zV-0jd" id="zrd-vN-kNy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
