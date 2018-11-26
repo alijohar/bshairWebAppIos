@@ -182,7 +182,7 @@ class NewsApi: NSObject {
     
     //   for GET last 10 posts for special tag(tag_slug)
 
-    class func getPostsFromTag(tag_slug:String = "بنر", completion: @escaping (_ error:Error?, _ postBannerNews:[NewsPost]?)-> Void){
+    class func getPostsFromTag(tag_slug:String = "تطبيق", completion: @escaping (_ error:Error?, _ postBannerNews:[NewsPost]?)-> Void){
         let url = URLs.getBannerPosts
         let params = ["tag_slug": tag_slug]
         
