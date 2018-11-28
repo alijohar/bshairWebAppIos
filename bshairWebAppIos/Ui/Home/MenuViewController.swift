@@ -94,7 +94,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         NewsApi.getCatIndex { (error:Error?, catIndex: [CatIndex]?) in
             let allCats = catIndex
             for item in allCats!{
-                if item.id != 21{
+                if item.id != 21 && item.id != 56{
                 self.arrayMenuCatList.append(item)
                 self.arrayMenuOptions.append(["title": item.title!, "icon":"bshair_menu_logo2"])
                 }
@@ -114,37 +114,41 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     self.arrayMenuCatList[2] = item
                     self.arrayMenuOptions[2] = ["title": item.title!, "icon":"bshair_menu_logo2"]
                 }
-                else if item.id == 5{
+                else if item.id == 20{
                     self.arrayMenuCatList[3] = item
                     self.arrayMenuOptions[3] = ["title": item.title!, "icon":"bshair_menu_logo2"]
                 }
-                else if item.id == 3{
+                else if item.id == 5{
                     self.arrayMenuCatList[4] = item
                     self.arrayMenuOptions[4] = ["title": item.title!, "icon":"bshair_menu_logo2"]
                 }
-                else if item.id == 13{
+                else if item.id == 3{
                     self.arrayMenuCatList[5] = item
                     self.arrayMenuOptions[5] = ["title": item.title!, "icon":"bshair_menu_logo2"]
                 }
-                else if item.id == 20{
+                else if item.id == 13{
+                    self.arrayMenuCatList[6] = item
+                    self.arrayMenuOptions[6] = ["title": item.title!, "icon":"bshair_menu_logo2"]
+                }
+                else if item.id == 11{
                     self.arrayMenuCatList[6] = item
                     self.arrayMenuOptions[6] = ["title": item.title!, "icon":"bshair_menu_logo2"]
                 }
                 else if item.id == 50{
-                    self.arrayMenuCatList[7] = item
-                    self.arrayMenuOptions[7] = ["title": item.title!, "icon":"bshair_menu_logo2"]
-                }
-                else if item.id == 51{
                     self.arrayMenuCatList[8] = item
                     self.arrayMenuOptions[8] = ["title": item.title!, "icon":"bshair_menu_logo2"]
                 }
-                else if item.id == 52{
+                else if item.id == 51{
                     self.arrayMenuCatList[9] = item
                     self.arrayMenuOptions[9] = ["title": item.title!, "icon":"bshair_menu_logo2"]
                 }
-                else if item.id == 53{
+                else if item.id == 52{
                     self.arrayMenuCatList[10] = item
                     self.arrayMenuOptions[10] = ["title": item.title!, "icon":"bshair_menu_logo2"]
+                }
+                else if item.id == 53{
+                    self.arrayMenuCatList[11] = item
+                    self.arrayMenuOptions[11] = ["title": item.title!, "icon":"bshair_menu_logo2"]
                 }
 
             }
