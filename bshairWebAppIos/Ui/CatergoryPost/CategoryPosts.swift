@@ -72,7 +72,15 @@ class CategoryPosts: BaseViewController, UITableViewDelegate, UITableViewDataSou
         let myCell:CatNewsCell = tableView.dequeueReusableCell(withIdentifier: "CatNewsCell", for: indexPath) as! CatNewsCell
         myCell.newsTitleCat.text = listOFNewsTemp[indexPath.row].title
         let imageView = myCell.newsImageCat
-        let urlThumbnail = listOFNewsTemp[indexPath.row].thumbnail
+        
+        
+        var urlThumbnail:String?
+        if (listOFNewsTemp[indexPath.row].thumbnail != nil) {
+            urlThumbnail = listOFNewsTemp[indexPath.row].thumbnail!
+        }else{
+            
+            urlThumbnail = "http://www.bshaer.net/wp-content/uploads/2018/12/default.jpg"
+        }
         
         //        Convert StringURl with arabic charecters to standard UrlString
         let urlwithPercentEscapes = urlThumbnail!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)

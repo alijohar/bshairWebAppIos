@@ -92,8 +92,13 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
 //        titleNews.text = listOFNewsTemp[indexPath.row]
         myCell.newsTitle.text = listOFNewsTemp[indexPath.row].title
         let imageView = myCell.newsImage
-        let urlThumbnail = listOFNewsTemp[indexPath.row].thumbnail
+        var urlThumbnail:String?
+        if (listOFNewsTemp[indexPath.row].thumbnail != nil) {
+        urlThumbnail = listOFNewsTemp[indexPath.row].thumbnail!
+        }else{
 
+        urlThumbnail = "http://www.bshaer.net/wp-content/uploads/2018/12/default.jpg"
+        }
         
 //        Convert StringURl with arabic charecters to standard UrlString
         let urlwithPercentEscapes = urlThumbnail!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
@@ -245,7 +250,14 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
         let cell:MainBanner = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! MainBanner
         
         let imageView = cell.imageView
-        let urlLargeBanner = bannerNews[indexPath.row].thumbnailImages?.large?.url
+            var urlLargeBanner:String?
+            if (bannerNews[indexPath.row].thumbnailImages?.large?.url != nil){
+         urlLargeBanner = bannerNews[indexPath.row].thumbnailImages?.large?.url
+            }
+            else {
+                urlLargeBanner = "http://www.bshaer.net/wp-content/uploads/2018/12/default.jpg"
+
+            }
 //        Convert StringURl with arabic charecters to standard UrlString
         let urlwithPercentEscapes = urlLargeBanner!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         let urlImage = URL(string: urlwithPercentEscapes!)

@@ -43,7 +43,14 @@ class SearchView: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         //        titleNews.text = listOFNewsTemp[indexPath.row]
         myCell.newsTitle.text = listOFNewsTemp[indexPath.row].title
         let imageView = myCell.newsImage
-        let urlThumbnail = listOFNewsTemp[indexPath.row].thumbnail
+        
+        var urlThumbnail:String?
+        if listOFNewsTemp[indexPath.row].thumbnail != nil {
+         urlThumbnail = listOFNewsTemp[indexPath.row].thumbnail
+        }else{
+            urlThumbnail = "http://www.bshaer.net/wp-content/uploads/2018/12/default.jpg"
+
+        }
         
         //        Convert StringURl with arabic charecters to standard UrlString
         let urlwithPercentEscapes = urlThumbnail!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)

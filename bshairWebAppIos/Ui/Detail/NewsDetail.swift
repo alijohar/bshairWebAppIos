@@ -153,7 +153,13 @@ class NewsDetail: UIViewController, UIWebViewDelegate {
     
     func setMainImage() {
         let imageView = newsDetailImage
-        let urlThumbnail = newsImageUrlString
+        var urlThumbnail:String?
+        if newsImageUrlString != nil {
+         urlThumbnail = newsImageUrlString
+        }
+        else {
+            urlThumbnail = "http://www.bshaer.net/wp-content/uploads/2018/12/default.jpg"
+        }
         let urlwithPercentEscapes = urlThumbnail!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         let urlImage = URL(string: urlwithPercentEscapes!)
         Nuke.loadImage(with: urlImage!, into: imageView!)
