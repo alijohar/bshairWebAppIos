@@ -164,22 +164,14 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
         sendEmail()
     }
     func sendEmail() {
-        if MFMailComposeViewController.canSendMail() {
-            let mail = MFMailComposeViewController()
-            mail.mailComposeDelegate = self
-            mail.setToRecipients(["bshaer.news@gmail.com"])
-            mail.setMessageBody("<p>اكتب نصاً</p>", isHTML: true)
-
-            present(mail, animated: true)
+        guard let url = URL(string: "http://www.bshaer.net/%D8%A3%D8%B1%D8%B3%D9%84-%D9%84%D9%86%D8%A7-%D8%AE%D8%A8%D8%B1%D8%A7%D9%8B/") else {
+            return //be safe
+        }
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         } else {
-            let alertController = UIAlertController(title: "تطبيق Mail غير مثبت", message: "كي تتمكن من إرسال خبر يرجى تثبيت تطبيق Mail أو التواصل مباشرة عبر البريد الإلكتروني bshaer.news@gmail.com", preferredStyle: .alert)
-            
-            alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (action: UIAlertAction!) in
-            }))
-            
-            
-            present(alertController, animated: true, completion: nil)
-            
+            UIApplication.shared.openURL(url)
         }
     }
     
