@@ -33,7 +33,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     *  Array containing menu options
     */
     var HiddenPickerViewStatus:Bool = true
-    var arrayOfSectionTitle = ["الإعدادات", "التصانيف"]
+    var arrayOfSectionTitle = ["التصانيف", "الإعدادات"]
     var arrayMenuOptions = [Dictionary<String,String>]()
     var arrayMenuOptionsForSetting = [Dictionary<String,String>]()
 
@@ -199,7 +199,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cellMenu")!
 
-        if indexPath.section == 0 {
+        if indexPath.section != 0 {
             cell.selectionStyle = UITableViewCellSelectionStyle.none
             cell.layoutMargins = UIEdgeInsets.zero
             cell.preservesSuperviewLayoutMargins = false
@@ -232,7 +232,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 0{
+        if indexPath.section != 0{
             if arrayMenuOptionsForSetting[indexPath.row]["title"]! == "إعدادات النص" {
                 if HiddenPickerViewStatus == true {
                 hiddenPickerView(status: false)
@@ -311,7 +311,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
+        if section != 0 {
             return arrayMenuOptionsForSetting.count
 
         }else {
