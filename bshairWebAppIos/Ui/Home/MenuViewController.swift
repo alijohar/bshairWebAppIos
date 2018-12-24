@@ -96,10 +96,12 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             for item in allCats!{
                 if item.id != 21 && item.id != 56{
                 self.arrayMenuCatList.append(item)
-                self.arrayMenuOptions.append(["title": item.title!, "icon":"bshair_menu_logo2"])
+                self.arrayMenuOptions.append(["title": "   ", "icon":"bshair_menu_logo2"])
+                    
+                    
                 }
             }
-            
+//
             for item in allCats! {
 
                 if item.id == 7{
@@ -131,8 +133,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     self.arrayMenuOptions[6] = ["title": item.title!, "icon":"bshair_menu_logo2"]
                 }
                 else if item.id == 11{
-                    self.arrayMenuCatList[6] = item
-                    self.arrayMenuOptions[6] = ["title": item.title!, "icon":"bshair_menu_logo2"]
+                    self.arrayMenuCatList[7] = item
+                    self.arrayMenuOptions[7] = ["title": item.title!, "icon":"bshair_menu_logo2"]
                 }
                 else if item.id == 50{
                     self.arrayMenuCatList[8] = item
@@ -151,14 +153,42 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     self.arrayMenuOptions[11] = ["title": item.title!, "icon":"bshair_menu_logo2"]
                 }
 
+                
+            
+
             }
             
+
+            
+            
+            
+            print("count of \(self.arrayMenuOptions.count) \(self.arrayMenuCatList.count)")
+
+//            for item in 0...self.arrayMenuOptions.count-1 {
+//                if self.arrayMenuOptions[item]["title"] == "   "{
+//                    self.arrayMenuOptions.remove(at: item)
+//                    self.arrayMenuCatList.remove(at: item)
+//
+//                }
+//            }
+//
+            
+            
+            
+            
+            print("count of \(self.arrayMenuOptions.count) \(self.arrayMenuCatList.count)")
+
+            self.arrayMenuOptions.remove(at: 3)
+            self.arrayMenuCatList.remove(at: 3)
+//            self.arrayMenuOptions.remove(at: 7)
+//            self.arrayMenuCatList.remove(at: 7)
             
             self.tblMenuOptions.reloadData()
 
         
     }
     }
+    
     func updateArrayMenuOptionsForSetting(){
         self.arrayMenuOptionsForSetting.append(["title": "إعدادات النص", "icon":"font_size"])
         self.arrayMenuOptionsForSetting.append(["title": "مشاركة التطبيق", "icon":"shareApp"])
@@ -316,6 +346,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         }else {
             return arrayMenuCatList.count
+
 
         }
     }
