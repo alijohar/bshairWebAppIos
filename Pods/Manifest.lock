@@ -5,6 +5,7 @@ PODS:
     - ObjectMapper (~> 3.3)
   - Nuke (7.4.2)
   - ObjectMapper (3.3.0)
+  - OneSignal (2.9.4)
   - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
@@ -12,6 +13,7 @@ DEPENDENCIES:
   - AlamofireObjectMapper
   - Nuke
   - ObjectMapper
+  - OneSignal (< 3.0, >= 2.6.2)
   - SwiftyJSON
 
 SPEC REPOS:
@@ -20,6 +22,7 @@ SPEC REPOS:
     - AlamofireObjectMapper
     - Nuke
     - ObjectMapper
+    - OneSignal
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -27,8 +30,9 @@ SPEC CHECKSUMS:
   AlamofireObjectMapper: 3395e698901d8b0e6f48b7d0c43bd47875325102
   Nuke: aee5c42001369902798f7b844611b8ae930ce333
   ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
+  OneSignal: a41f5a896177275662da07e23d6a809c0e105a89
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 0ce639c40c0437966888c830b2063cfaffa194e2
+PODFILE CHECKSUM: 6552c6ec9094495a8c4312430c2c5e13df16cc1c
 
 COCOAPODS: 1.6.0.beta.2

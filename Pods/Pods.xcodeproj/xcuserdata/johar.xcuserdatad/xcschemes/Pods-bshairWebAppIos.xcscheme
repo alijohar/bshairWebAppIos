@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6A2A89C4911F37EDA2CBF8889E200C03"
+               BlueprintIdentifier = "46294BA999B4D41D1198735EDC9890B1"
                BuildableName = "Pods_bshairWebAppIos.framework"
                BlueprintName = "Pods-bshairWebAppIos"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6A2A89C4911F37EDA2CBF8889E200C03"
+            BlueprintIdentifier = "46294BA999B4D41D1198735EDC9890B1"
             BuildableName = "Pods_bshairWebAppIos.framework"
             BlueprintName = "Pods-bshairWebAppIos"
             ReferencedContainer = "container:Pods.xcodeproj">
