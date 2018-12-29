@@ -123,6 +123,7 @@
 		C54BA6E3217DE011003C7F07 /* CatNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatNewsCell.swift; sourceTree = "<group>"; };
 		C558BBDF2175B5CE00B77135 /* helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = helper.swift; path = "New Group/helper.swift"; sourceTree = SOURCE_ROOT; };
 		C55DB1FF217B243200FC6860 /* searchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchCell.swift; sourceTree = "<group>"; };
+		C5776C3421D7A1FA00357325 /* bshairWebAppIos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bshairWebAppIos.entitlements; sourceTree = "<group>"; };
 		C57DE611214EAAD70045CBE1 /* bshairWebAppIos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bshairWebAppIos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C57DE614214EAAD70045CBE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C57DE616214EAAD70045CBE1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -344,6 +345,7 @@
 		C57DE613214EAAD70045CBE1 /* bshairWebAppIos */ = {
 			isa = PBXGroup;
 			children = (
+				C5776C3421D7A1FA00357325 /* bshairWebAppIos.entitlements */,
 				C55DB1FD217B23F200FC6860 /* Ui */,
 				C52527372150B796003D5330 /* Fonts */,
 				C57DE614214EAAD70045CBE1 /* AppDelegate.swift */,
@@ -492,6 +494,14 @@
 					};
 					C57DE610214EAAD70045CBE1 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					C57DE624214EAAD80045CBE1 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -915,6 +925,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = bshairWebAppIos/bshairWebAppIos.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V28GA7L5GC;
@@ -937,6 +948,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = bshairWebAppIos/bshairWebAppIos.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V28GA7L5GC;
