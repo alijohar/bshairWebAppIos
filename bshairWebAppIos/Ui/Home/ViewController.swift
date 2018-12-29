@@ -396,6 +396,7 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     
+    
     @objc func scrollAutomaticallyAdvertising(_ timer1: Timer) {
         
         if let coll  = collectionViewBanner {
