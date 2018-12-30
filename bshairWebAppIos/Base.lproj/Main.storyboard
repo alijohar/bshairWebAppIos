@@ -111,24 +111,36 @@
                                 <rect key="frame" x="0.0" y="220" width="414" height="458"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="124" id="m7c-Cg-dW5" customClass="NewsCell" customModule="bshairWebAppIos" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="124"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="118" id="m7c-Cg-dW5" customClass="NewsCell" customModule="bshairWebAppIos" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="118"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m7c-Cg-dW5" id="XvO-9K-TdK">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="123.66666666666667"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="117.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BaH-87-XSB">
-                                                    <rect key="frame" x="20" y="-9" width="291" height="115"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BaH-87-XSB">
+                                                    <rect key="frame" x="20" y="10" width="287" height="54"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="54" id="z1R-zu-xWt"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="DroidArabicKufi-Bold" family="Droid Arabic Kufi" pointSize="14"/>
                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBanner" translatesAutoresizingMaskIntoConstraints="NO" id="kWs-gq-a53">
-                                                    <rect key="frame" x="319" y="11" width="75" height="75"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGw-uo-hbA">
+                                                    <rect key="frame" x="20" y="74" width="287" height="23"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="75" id="6Ce-Uh-wfM"/>
-                                                        <constraint firstAttribute="width" constant="75" id="dMC-M7-suq"/>
+                                                        <constraint firstAttribute="height" constant="23" id="U8z-LK-Suh"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBanner" translatesAutoresizingMaskIntoConstraints="NO" id="kWs-gq-a53">
+                                                    <rect key="frame" x="319" y="21" width="75" height="75"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="75" id="RNI-Hw-Lhr"/>
+                                                        <constraint firstAttribute="width" constant="75" id="nGS-LE-tRi"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -138,16 +150,19 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="BaH-87-XSB" firstAttribute="centerY" secondItem="XvO-9K-TdK" secondAttribute="centerY" id="1L4-cO-L3U"/>
-                                                <constraint firstItem="kWs-gq-a53" firstAttribute="top" secondItem="XvO-9K-TdK" secondAttribute="top" constant="11" id="2em-6i-u0I"/>
-                                                <constraint firstItem="BaH-87-XSB" firstAttribute="centerY" secondItem="kWs-gq-a53" secondAttribute="centerY" id="HL0-xB-7Yp"/>
-                                                <constraint firstItem="kWs-gq-a53" firstAttribute="leading" secondItem="BaH-87-XSB" secondAttribute="trailing" constant="8" symbolic="YES" id="Pil-CV-emh"/>
-                                                <constraint firstItem="BaH-87-XSB" firstAttribute="top" secondItem="XvO-9K-TdK" secondAttribute="topMargin" constant="-20" id="cuc-fm-zsc"/>
-                                                <constraint firstItem="BaH-87-XSB" firstAttribute="leading" secondItem="XvO-9K-TdK" secondAttribute="leadingMargin" id="jV5-qA-wOZ"/>
-                                                <constraint firstItem="kWs-gq-a53" firstAttribute="trailing" secondItem="XvO-9K-TdK" secondAttribute="trailingMargin" id="skL-95-hYw"/>
+                                                <constraint firstItem="kWs-gq-a53" firstAttribute="leading" secondItem="XGw-uo-hbA" secondAttribute="trailing" constant="12" id="1WE-eA-UQU"/>
+                                                <constraint firstItem="kWs-gq-a53" firstAttribute="top" secondItem="XvO-9K-TdK" secondAttribute="topMargin" constant="10" id="Ibk-ff-aqA"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="kWs-gq-a53" secondAttribute="bottom" constant="10" id="PD5-ov-AhH"/>
+                                                <constraint firstItem="BaH-87-XSB" firstAttribute="leading" secondItem="XvO-9K-TdK" secondAttribute="leadingMargin" id="Ua3-CU-SSw"/>
+                                                <constraint firstItem="XGw-uo-hbA" firstAttribute="leading" secondItem="XvO-9K-TdK" secondAttribute="leadingMargin" id="igH-kj-wWy"/>
+                                                <constraint firstItem="XGw-uo-hbA" firstAttribute="top" secondItem="XvO-9K-TdK" secondAttribute="top" constant="74" id="nQn-it-2x1"/>
+                                                <constraint firstItem="BaH-87-XSB" firstAttribute="top" secondItem="XvO-9K-TdK" secondAttribute="top" constant="10" id="oCG-Pp-JqA"/>
+                                                <constraint firstItem="kWs-gq-a53" firstAttribute="trailing" secondItem="XvO-9K-TdK" secondAttribute="trailingMargin" id="rwm-YC-cpM"/>
+                                                <constraint firstItem="kWs-gq-a53" firstAttribute="leading" secondItem="BaH-87-XSB" secondAttribute="trailing" constant="12" id="vgs-2m-usw"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="catTitle" destination="XGw-uo-hbA" id="f5Y-0g-jq6"/>
                                             <outlet property="newsImage" destination="kWs-gq-a53" id="U6N-Zb-Zok"/>
                                             <outlet property="newsTitle" destination="BaH-87-XSB" id="vw8-n5-NzM"/>
                                         </connections>

@@ -91,6 +91,7 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
         let myCell:NewsCell = tableView.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath) as! NewsCell
 //        titleNews.text = listOFNewsTemp[indexPath.row]
         myCell.newsTitle.text = listOFNewsTemp[indexPath.row].title
+        myCell.catTitle.text = listOFNewsTemp[indexPath.row].categories![0].title
         let imageView = myCell.newsImage
         var urlThumbnail:String?
         if (listOFNewsTemp[indexPath.row].thumbnail != nil) {
