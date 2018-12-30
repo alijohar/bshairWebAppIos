@@ -71,6 +71,7 @@ class CategoryPosts: BaseViewController, UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let myCell:CatNewsCell = tableView.dequeueReusableCell(withIdentifier: "CatNewsCell", for: indexPath) as! CatNewsCell
         myCell.newsTitleCat.text = listOFNewsTemp[indexPath.row].title
+        myCell.newsCatCat.text = listOFNewsTemp[indexPath.row].categories![0].title
         let imageView = myCell.newsImageCat
         
         

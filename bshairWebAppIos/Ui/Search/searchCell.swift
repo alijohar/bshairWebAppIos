@@ -12,6 +12,7 @@ class searchCell: UITableViewCell {
 
     @IBOutlet weak var newsTitle: UILabel!
     @IBOutlet weak var newsImage: UIImageView!
+    @IBOutlet weak var newsCat: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

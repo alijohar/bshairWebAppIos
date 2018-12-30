@@ -42,6 +42,7 @@ class SearchView: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         let myCell:searchCell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath) as! searchCell
         //        titleNews.text = listOFNewsTemp[indexPath.row]
         myCell.newsTitle.text = listOFNewsTemp[indexPath.row].title
+        myCell.newsCat.text = listOFNewsTemp[indexPath.row].categories![0].title
         let imageView = myCell.newsImage
         
         var urlThumbnail:String?
