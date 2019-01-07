@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import Nuke
+import Firebase
 
 class NewsDetail: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var newsDetailWeb: UIWebView!
@@ -38,6 +39,10 @@ class NewsDetail: UIViewController, UIWebViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Analytics.logEvent("PostViewIOS", parameters: [
+            "العنوان": navTitle! as NSObject,
+            ])
+
         setMainImage()
         newFontNameByUser = helper.getFontName()
         newFontSizeByUser = helper.getFontSize()

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C4513FA8ECB1668D192BAFE812417B4C"
+               BlueprintIdentifier = "EC60A784EEF13CE5311C5F24B9ED5E61"
                BuildableName = "Pods_bshairWebAppIos_OneSignalNotificationServiceExtension.framework"
                BlueprintName = "Pods-bshairWebAppIos-OneSignalNotificationServiceExtension"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C4513FA8ECB1668D192BAFE812417B4C"
+            BlueprintIdentifier = "EC60A784EEF13CE5311C5F24B9ED5E61"
             BuildableName = "Pods_bshairWebAppIos_OneSignalNotificationServiceExtension.framework"
             BlueprintName = "Pods-bshairWebAppIos-OneSignalNotificationServiceExtension"
             ReferencedContainer = "container:Pods.xcodeproj">

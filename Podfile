@@ -12,6 +12,7 @@ target 'bshairWebAppIos' do
   pod 'ObjectMapper'
   pod 'AlamofireObjectMapper'
   pod 'Nuke'
+  pod 'Firebase/Core'
 
 target 'OneSignalNotificationServiceExtension' do
   pod 'OneSignal', '>= 2.6.2', '< 3.0'
