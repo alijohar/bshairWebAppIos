@@ -58,6 +58,7 @@
 		C5969794215F60F200C7DD70 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5969792215F60F200C7DD70 /* BaseViewController.swift */; };
 		C5CB7D7C21803B0B00988722 /* Andalus.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5CB7D7B2180374600988722 /* Andalus.ttf */; };
 		C5CB7D7D21803B0B00988722 /* AdobeNaskh.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5CB7D792180355400988722 /* AdobeNaskh.ttf */; };
+		C5E7EF2D21E5DC9300395D5A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5E7EF2C21E5DC9300395D5A /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +162,7 @@
 		C5969792215F60F200C7DD70 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		C5CB7D792180355400988722 /* AdobeNaskh.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AdobeNaskh.ttf; sourceTree = "<group>"; };
 		C5CB7D7B2180374600988722 /* Andalus.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Andalus.ttf; sourceTree = "<group>"; };
+		C5E7EF2C21E5DC9300395D5A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D5175ED7C87DE48E245BA7FD /* Pods-bshairWebAppIos-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bshairWebAppIos-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bshairWebAppIos-OneSignalNotificationServiceExtension/Pods-bshairWebAppIos-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -355,6 +357,7 @@
 				C57DE61B214EAAD80045CBE1 /* Assets.xcassets */,
 				C57DE61D214EAAD80045CBE1 /* LaunchScreen.storyboard */,
 				C584A23721E333AD00E51740 /* GoogleService-Info.plist */,
+				C5E7EF2C21E5DC9300395D5A /* GoogleService-Info.plist */,
 				C57DE620214EAAD80045CBE1 /* Info.plist */,
 			);
 			path = bshairWebAppIos;
@@ -551,6 +554,7 @@
 			files = (
 				C525273B2150B7AF003D5330 /* DroidArabicKufiRegular.ttf in Resources */,
 				C584A23821E333AE00E51740 /* GoogleService-Info.plist in Resources */,
+				C5E7EF2D21E5DC9300395D5A /* GoogleService-Info.plist in Resources */,
 				C57DE61F214EAAD80045CBE1 /* LaunchScreen.storyboard in Resources */,
 				C57DE61C214EAAD80045CBE1 /* Assets.xcassets in Resources */,
 				C57DE61A214EAAD70045CBE1 /* Main.storyboard in Resources */,
