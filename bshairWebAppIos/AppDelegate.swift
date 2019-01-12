@@ -11,29 +11,81 @@ import OneSignal
 import Firebase
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate{
 
     var window: UIWindow?
 
-
+    let myNewsDetail = NewsDetail()
+    let myHomePage = ViewController()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
-        // Replace 'YOUR_APP_ID' with your OneSignal App ID.
-        OneSignal.initWithLaunchOptions(launchOptions,
-                                        appId: "2cd9655b-a7da-49fb-83bb-a26ac56e8ade",
-                                        handleNotificationAction: nil,
-                                        settings: onesignalInitSettings)
         
-        OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
+        // For debugging
+        //OneSignal.setLogLevel(.LL_VERBOSE, visualLevel: .LL_NONE)
         
-        // Recommend moving the below line to prompt for push after informing the user about
-        //   how your app will use them.
-        OneSignal.promptForPushNotifications(userResponse: { accepted in
-            print("User accepted notifications: \(accepted)")
-        })
+        let notificationReceivedBlock: OSHandleNotificationReceivedBlock = { notification in
+            
+            print("Received Notification: \(String(describing: notification!.payload.notificationID))")
+            print("launchURL = \(notification?.payload.launchURL ?? "None")")
+            print("content_available = \(notification?.payload.contentAvailable ?? false)")
+        }
+        
+        let notificationOpenedBlock: OSHandleNotificationActionBlock = { result in
+            // This block gets called when the user reacts to a notification received
+            let payload: OSNotificationPayload? = result?.notification.payload
+            
+            print("Message = \(String(describing: payload!.body))")
+            print("badge number = \(payload?.badge ?? 0)")
+            print("notification sound = \(payload?.sound ?? "None")")
+            
+            if let additionalData = result!.notification.payload!.additionalData {
+                print("additionalData = \(additionalData)")
+                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let newsDetailFromPush = mainStoryboard.instantiateViewController(withIdentifier: "News_Detail_push") as! NewsDetailPush
+                let HomePage : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "homePageApp") as UIViewController
+                self.window = UIWindow(frame: UIScreen.main.bounds)
 
-        // Override point for customization after application launch.
+                
+                if additionalData["customKey"] != nil {
+                    print(additionalData["customKey"]!)
+                    var id:String = additionalData["customKey"] as! String
+                    newsDetailFromPush.newsItemId = Int(id)!
+                    self.window?.rootViewController = newsDetailFromPush
+                    self.window?.makeKeyAndVisible()
+                    
+//                    TODO NEED SOME WORK TO HANDLE LOADING POST BY ID
+
+                }
+                if additionalData["openApp"] != nil {
+                    print(additionalData["openApp"]!)
+                    self.window?.rootViewController = HomePage
+                    self.window?.makeKeyAndVisible()
+                    
+                }
+                if additionalData["openURL"] != nil {
+                    print(additionalData["openURL"]!)
+                    guard let url = URL(string: additionalData["openURL"]! as! String) else {
+                        return //be safe
+                    }
+                    
+                    if #available(iOS 10.0, *) {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    } else {
+                        UIApplication.shared.openURL(url)
+                    }
+
+                }
+                
+            }
+        }
         
+        let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false, kOSSettingsKeyInAppLaunchURL: true, ]
+        
+        OneSignal.initWithLaunchOptions(launchOptions, appId: "2cd9655b-a7da-49fb-83bb-a26ac56e8ade", handleNotificationReceived: notificationReceivedBlock, handleNotificationAction: notificationOpenedBlock, settings: onesignalInitSettings)
+        
+        OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification
+        
+
         FirebaseApp.configure()
         return true
     }
@@ -60,6 +112,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    
+    
+    
 }
 

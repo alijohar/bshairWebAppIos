@@ -19,7 +19,7 @@ struct URLs {
     static let getBannerPosts = main + "get_tag_posts"
     
     /// GET post detail using to show post comments (id)
-    static let getPostComment = main + "get_post"
+    static let getSinglePost = main + "get_post"
     
     /// GET all cats list ()
     static let getCatList = main + "get_category_index"

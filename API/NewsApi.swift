@@ -251,5 +251,32 @@ class NewsApi: NSObject {
         }
         
     }
+    
+    //    For get single post
+    class func getSinglePost(post_id:Int, completion: @escaping (_ error:Error?, _ SinglePost:NewsPost?)-> Void){
+        let url = URLs.getSinglePost
+        let params = ["id": post_id]
+
+        Alamofire.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: nil)
+            .validate().responseObject(keyPath: "post") { (response: DataResponse<NewsPost>) in
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                switch response.result {
+                case .failure(let error):
+                    completion(error, nil)
+                    print(error)
+                    
+                case .success:
+                    let singlePost = response.result.value
+                    
+                    completion(nil, singlePost)
+                    
+                }
+                
+                
+        }
+        
+        
+    }
+
 
 }

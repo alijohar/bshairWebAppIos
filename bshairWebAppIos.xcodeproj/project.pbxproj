@@ -59,6 +59,7 @@
 		C5CB7D7C21803B0B00988722 /* Andalus.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5CB7D7B2180374600988722 /* Andalus.ttf */; };
 		C5CB7D7D21803B0B00988722 /* AdobeNaskh.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5CB7D792180355400988722 /* AdobeNaskh.ttf */; };
 		C5E7EF2D21E5DC9300395D5A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5E7EF2C21E5DC9300395D5A /* GoogleService-Info.plist */; };
+		C5E7EF3221E64E3800395D5A /* NewsDetailPush.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E7EF3121E64E3800395D5A /* NewsDetailPush.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +164,7 @@
 		C5CB7D792180355400988722 /* AdobeNaskh.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AdobeNaskh.ttf; sourceTree = "<group>"; };
 		C5CB7D7B2180374600988722 /* Andalus.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Andalus.ttf; sourceTree = "<group>"; };
 		C5E7EF2C21E5DC9300395D5A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C5E7EF3121E64E3800395D5A /* NewsDetailPush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailPush.swift; sourceTree = "<group>"; };
 		D5175ED7C87DE48E245BA7FD /* Pods-bshairWebAppIos-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bshairWebAppIos-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bshairWebAppIos-OneSignalNotificationServiceExtension/Pods-bshairWebAppIos-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -252,6 +254,7 @@
 		C54BA6D5217C573E003C7F07 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				C5E7EF3121E64E3800395D5A /* NewsDetailPush.swift */,
 				C525273E2150CAC8003D5330 /* NewsDetail.swift */,
 				C545C55A21A555AF0004B444 /* NewsDetailArticle.swift */,
 			);
@@ -675,6 +678,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C58D824B2175F5BF001E4E38 /* NewsCustomField.swift in Sources */,
+				C5E7EF3221E64E3800395D5A /* NewsDetailPush.swift in Sources */,
 				C58D824F2175F5BF001E4E38 /* NewsImage.swift in Sources */,
 				C54BA6DB217C5C70003C7F07 /* CommentsCell.swift in Sources */,
 				C525273D2150C9A0003D5330 /* SearchView.swift in Sources */,

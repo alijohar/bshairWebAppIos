@@ -793,7 +793,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="النسخة التجريبية" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGR-T2-EM0">
-                                <rect key="frame" x="141.33333333333334" y="168" width="64.333333333333343" height="13"/>
+                                <rect key="frame" x="135" y="168" width="77.333333333333314" height="21"/>
                                 <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="11"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -964,6 +964,140 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Erd-S2-GIO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-700" y="1106.9196428571429"/>
+        </scene>
+        <!--News Detail Push-->
+        <scene sceneID="2Fo-ES-Hfn">
+            <objects>
+                <viewController storyboardIdentifier="News_Detail_push" id="8XY-DT-ePJ" customClass="NewsDetailPush" customModule="bshairWebAppIos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="erd-vz-PgP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oms-Iu-vsx">
+                                <rect key="frame" x="8" y="8" width="398" height="220"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="v8z-La-Fnp">
+                                        <variation key="widthClass=regular" constant="320"/>
+                                    </constraint>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9du-Gl-hIS">
+                                <rect key="frame" x="8" y="236" width="398" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="التصنیف" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Rq-pj-Bb7">
+                                        <rect key="frame" x="354" y="5.6666666666666572" width="36" height="19"/>
+                                        <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="10"/>
+                                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الكاتب" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43h-D8-1v3">
+                                        <rect key="frame" x="223.66666666666666" y="5.6666666666666572" width="27.333333333333343" height="19"/>
+                                        <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="10"/>
+                                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="التاريخ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NjT-ZP-LJc">
+                                        <rect key="frame" x="130.66666666666666" y="5.6666666666666572" width="26.666666666666657" height="19"/>
+                                        <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="10"/>
+                                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCY-L2-Nnj">
+                                        <rect key="frame" x="194.66666666666666" y="5" width="9" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="DW6-Us-xny">
+                                        <rect key="frame" x="253.33333333333331" y="8" width="14" height="14"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="14" id="Q6V-A5-fjA"/>
+                                            <constraint firstAttribute="height" constant="14" id="yUm-HJ-ipW"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="8ca-Ui-glP">
+                                        <rect key="frame" x="160.66666666666666" y="8" width="14" height="14"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="14" id="K5n-Hd-SWj"/>
+                                            <constraint firstAttribute="width" constant="14" id="sgz-EF-5cf"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allcomments" translatesAutoresizingMaskIntoConstraints="NO" id="gjN-cw-qUe">
+                                        <rect key="frame" x="39.666666666666664" y="8" width="14" height="14"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="14" id="bfV-5F-TaR"/>
+                                            <constraint firstAttribute="width" constant="14" id="g65-DT-EjP"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ld2-Ho-HqA">
+                                        <rect key="frame" x="4" y="-0.33333333333334281" width="33" height="31"/>
+                                        <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="10"/>
+                                        <state key="normal" title="٠ تعليق"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="NjT-ZP-LJc" firstAttribute="centerY" secondItem="9du-Gl-hIS" secondAttribute="centerY" id="1Uh-Qa-1DZ"/>
+                                    <constraint firstItem="7Rq-pj-Bb7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DW6-Us-xny" secondAttribute="trailing" constant="8" symbolic="YES" id="5KM-aK-pf1"/>
+                                    <constraint firstItem="DW6-Us-xny" firstAttribute="centerY" secondItem="9du-Gl-hIS" secondAttribute="centerY" id="7Yd-gB-6cm"/>
+                                    <constraint firstItem="fCY-L2-Nnj" firstAttribute="centerX" secondItem="9du-Gl-hIS" secondAttribute="centerX" id="CqO-nI-09d"/>
+                                    <constraint firstItem="Ld2-Ho-HqA" firstAttribute="leading" secondItem="9du-Gl-hIS" secondAttribute="leading" constant="4" id="DQa-sU-zFi"/>
+                                    <constraint firstItem="43h-D8-1v3" firstAttribute="centerY" secondItem="9du-Gl-hIS" secondAttribute="centerY" id="GEk-Tu-JZC"/>
+                                    <constraint firstItem="DW6-Us-xny" firstAttribute="leading" secondItem="43h-D8-1v3" secondAttribute="trailing" constant="2.3333333333333428" id="KBa-3S-0AK"/>
+                                    <constraint firstItem="43h-D8-1v3" firstAttribute="leading" secondItem="fCY-L2-Nnj" secondAttribute="trailing" constant="20" id="KSB-PA-NE2"/>
+                                    <constraint firstAttribute="height" constant="30" id="R5x-yo-rXO"/>
+                                    <constraint firstItem="7Rq-pj-Bb7" firstAttribute="trailing" secondItem="9du-Gl-hIS" secondAttribute="trailingMargin" id="Tvq-46-UjZ"/>
+                                    <constraint firstItem="7Rq-pj-Bb7" firstAttribute="centerY" secondItem="9du-Gl-hIS" secondAttribute="centerY" id="VeI-te-791"/>
+                                    <constraint firstItem="fCY-L2-Nnj" firstAttribute="leading" secondItem="8ca-Ui-glP" secondAttribute="trailing" constant="20" id="Y29-8c-nt2"/>
+                                    <constraint firstItem="NjT-ZP-LJc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gjN-cw-qUe" secondAttribute="trailing" constant="8" symbolic="YES" id="ZJK-fd-kH5"/>
+                                    <constraint firstItem="Ld2-Ho-HqA" firstAttribute="centerY" secondItem="9du-Gl-hIS" secondAttribute="centerY" id="gEO-0Q-Tbs"/>
+                                    <constraint firstItem="fCY-L2-Nnj" firstAttribute="centerY" secondItem="9du-Gl-hIS" secondAttribute="centerY" id="nHM-DV-vBY"/>
+                                    <constraint firstItem="gjN-cw-qUe" firstAttribute="centerY" secondItem="9du-Gl-hIS" secondAttribute="centerY" id="oat-le-nmf"/>
+                                    <constraint firstItem="8ca-Ui-glP" firstAttribute="leading" secondItem="NjT-ZP-LJc" secondAttribute="trailing" constant="3.3333333333333144" id="req-wY-zSm"/>
+                                    <constraint firstItem="gjN-cw-qUe" firstAttribute="leading" secondItem="Ld2-Ho-HqA" secondAttribute="trailing" constant="2.5" id="rnR-bO-oeF"/>
+                                    <constraint firstItem="8ca-Ui-glP" firstAttribute="centerY" secondItem="9du-Gl-hIS" secondAttribute="centerY" id="ykB-2v-9Ug"/>
+                                </constraints>
+                            </view>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5CZ-et-1ef">
+                                <rect key="frame" x="8" y="274" width="398" height="588"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Oms-Iu-vsx" firstAttribute="top" secondItem="erd-vz-PgP" secondAttribute="top" constant="8" id="4gb-VW-OVe"/>
+                            <constraint firstAttribute="trailing" secondItem="5CZ-et-1ef" secondAttribute="trailing" constant="8" id="Y5v-y4-4TI"/>
+                            <constraint firstAttribute="trailing" secondItem="Oms-Iu-vsx" secondAttribute="trailing" constant="8" id="bg4-2p-ncs"/>
+                            <constraint firstItem="9du-Gl-hIS" firstAttribute="top" secondItem="Oms-Iu-vsx" secondAttribute="bottom" constant="8" id="g9e-rc-slK"/>
+                            <constraint firstAttribute="trailing" secondItem="9du-Gl-hIS" secondAttribute="trailing" constant="8" id="n4h-Nn-Klp"/>
+                            <constraint firstItem="5CZ-et-1ef" firstAttribute="leading" secondItem="erd-vz-PgP" secondAttribute="leading" constant="8" id="nxr-cD-Eak"/>
+                            <constraint firstItem="Wwh-dh-8L7" firstAttribute="bottom" secondItem="5CZ-et-1ef" secondAttribute="bottom" id="sxd-fR-f83"/>
+                            <constraint firstItem="9du-Gl-hIS" firstAttribute="leading" secondItem="erd-vz-PgP" secondAttribute="leading" constant="8" id="tNS-YC-7mW"/>
+                            <constraint firstItem="Oms-Iu-vsx" firstAttribute="leading" secondItem="erd-vz-PgP" secondAttribute="leading" constant="8" id="vdd-qK-Xh1"/>
+                            <constraint firstItem="5CZ-et-1ef" firstAttribute="top" secondItem="9du-Gl-hIS" secondAttribute="bottom" constant="8" id="wcj-SK-2hT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Wwh-dh-8L7"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="l5j-ao-MaH"/>
+                    <connections>
+                        <outlet property="CommentsNumber" destination="Ld2-Ho-HqA" id="VJk-vo-TEg"/>
+                        <outlet property="newsAuthorName" destination="43h-D8-1v3" id="tTU-Jv-pAz"/>
+                        <outlet property="newsCat" destination="7Rq-pj-Bb7" id="Qz6-F2-b1r"/>
+                        <outlet property="newsDate" destination="NjT-ZP-LJc" id="agj-em-5bE"/>
+                        <outlet property="newsDetailImage" destination="Oms-Iu-vsx" id="hwC-FV-Lks"/>
+                        <outlet property="newsDetailWeb" destination="5CZ-et-1ef" id="fol-j0-fJx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ENp-fq-ubL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1138" y="1264"/>
         </scene>
     </scenes>
     <resources>
