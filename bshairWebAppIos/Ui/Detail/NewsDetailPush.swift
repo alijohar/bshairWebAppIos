@@ -256,9 +256,13 @@ class NewsDetailPush: UIViewController, UIWebViewDelegate {
     func setNewsDetailInfo(){
         newsCat.text = cat[0].title
         CommentsNumber.setTitle("\(String(numberComments!)) تعليق", for: .normal)
-        var dateWithoutTime = date?.split(separator: " ")
+        if (date?.contains(":"))!{
+            let dateWithoutTime = date?.split(separator: " ")
         newsDate.text = String(dateWithoutTime!.first!)
-
+        }
+        else{
+            newsDate.text = date
+        }
         newsAuthorName.text = author
         
     }

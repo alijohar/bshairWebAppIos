@@ -48,8 +48,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
                 
                 if additionalData["customKey"] != nil {
                     print(additionalData["customKey"]!)
-                    var id:String = additionalData["customKey"] as! String
-                    newsDetailFromPush.newsItemId = Int(id)!
+                    var id = additionalData["customKey"]
+                    newsDetailFromPush.newsItemId = id as! Int
                     self.window?.rootViewController = newsDetailFromPush
                     self.window?.makeKeyAndVisible()
                     
@@ -84,7 +84,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         OneSignal.initWithLaunchOptions(launchOptions, appId: "2cd9655b-a7da-49fb-83bb-a26ac56e8ade", handleNotificationReceived: notificationReceivedBlock, handleNotificationAction: notificationOpenedBlock, settings: onesignalInitSettings)
         
         OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification
-        
+        OneSignal.promptForPushNotifications(userResponse: { accepted in
+            print("User accepted notifications: \(accepted)")
+        })
+
+        application.registerForRemoteNotifications()
 
         FirebaseApp.configure()
         return true

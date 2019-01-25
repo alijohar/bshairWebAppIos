@@ -247,8 +247,14 @@ class NewsDetailArticle: UIViewController, UIWebViewDelegate {
     func setNewsDetailInfo(){
         newsCatArticle.text = cat[0].title
         commentsNumberArticle.setTitle("\(String(numberComments!)) تعليق", for: .normal)
+        if (date?.contains(":"))!{
+
         var dateWithoutTime = date?.split(separator: " ")
        newsDateArticle.text = String(dateWithoutTime!.first!)
+        }
+        else{
+            newsDateArticle.text = date
+        }
         
        authorNameArticle.text = authorName
         
