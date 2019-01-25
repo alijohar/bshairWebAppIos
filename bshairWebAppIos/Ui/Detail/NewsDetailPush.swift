@@ -45,7 +45,10 @@ class NewsDetailPush: UIViewController, UIWebViewDelegate {
 //        Analytics.logEvent("PostViewIOS", parameters: [
 //            "العنوان": navTitle! as NSObject,
 //            ])
-        setupNavigationBarItems()
+        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.4902, green: 0.3529, blue: 0.7412, alpha: 1) /* #7d5abd */
+                self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "bk")?.resizableImage(withCapInsets: UIEdgeInsets.zero, resizingMode: .tile), for: .default)
+
+
         self.newFontNameByUser = helper.getFontName()
         self.newFontSizeByUser = helper.getFontSize()
 
@@ -59,7 +62,7 @@ class NewsDetailPush: UIViewController, UIWebViewDelegate {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-
+        
     }
     
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
@@ -94,12 +97,34 @@ class NewsDetailPush: UIViewController, UIWebViewDelegate {
     */
     
     func setupNavigationBarItems(){
-        let titleImageView = UIImageView(image:#imageLiteral(resourceName: "ic_menu_bshair"))
-        titleImageView.contentMode = UIViewContentMode.scaleAspectFit
-        navigationItem.titleView = titleImageView
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "bk")?.resizableImage(withCapInsets: UIEdgeInsets.zero, resizingMode: .tile), for: .default)
+
+        self.navigationItem.title = navTitle
         
-        // add background
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "bk")?.resizableImage(withCapInsets: UIEdgeInsets.zero, resizingMode: .tile), for: .default)
+        let shareNewsButton = UIButton(type: .system)
+        shareNewsButton.setImage(#imageLiteral(resourceName: "shareNews"), for: .normal)
+        shareNewsButton.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+        shareNewsButton.addTarget(self, action: #selector(NewsDetailPush.shareURlNewsDetail(_:)), for: UIControlEvents.touchUpInside)
+        
+        let addCommentsButton = UIButton(type: .system)
+        addCommentsButton.setImage(#imageLiteral(resourceName: "addComment"), for: .normal)
+        addCommentsButton.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+        addCommentsButton.addTarget(self, action: #selector(NewsDetailPush.sendCommentButton(_:)), for: UIControlEvents.touchUpInside)
+
+        
+        let goHome = UIButton(type: .system)
+        goHome.setImage(#imageLiteral(resourceName: "home"), for: .normal)
+        goHome.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+        goHome.addTarget(self, action: #selector(NewsDetailPush.goToHome(_:)), for: UIControlEvents.touchUpInside)
+
+        
+        navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: shareNewsButton), UIBarButtonItem(customView: addCommentsButton)]
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: goHome)
+
+
+
+//        // add background
 
         
 //        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "bk")?.resizableImage(withCapInsets: UIEdgeInsets.zero, resizingMode: .tile), for: .default)
@@ -183,6 +208,12 @@ class NewsDetailPush: UIViewController, UIWebViewDelegate {
         Nuke.loadImage(with: urlImage!, into: imageView!)
 
         }
+    
+    @objc func goToHome(_ sender : UIButton){
+        let homePage = self.storyboard!.instantiateViewController(withIdentifier: "homePageApp") as! ViewController
+        self.navigationController!.pushViewController(homePage, animated: true)
+
+    }
     
     func setNewsDetailContent(){
 //        For style
@@ -302,6 +333,7 @@ class NewsDetailPush: UIViewController, UIWebViewDelegate {
     
             self.setMainImage()
             // Customize navigationBar
+            self.setupNavigationBarItems()
             self.setNewsDetailContent()
             self.setNewsDetailInfo()
             self.newsDetailWeb.delegate = self

@@ -48,9 +48,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
                 
                 if additionalData["customKey"] != nil {
                     print(additionalData["customKey"]!)
-                    var id = additionalData["customKey"]
+                    let id = additionalData["customKey"]
                     newsDetailFromPush.newsItemId = id as! Int
-                    self.window?.rootViewController = newsDetailFromPush
+                    let navi =  UINavigationController.init(rootViewController: newsDetailFromPush)
+
+//                    navi.navigationBar.setBackgroundImage(UIImage(named: "bk")?.resizableImage(withCapInsets: UIEdgeInsets.zero, resizingMode: .tile), for: .default)
+
+                    self.window?.rootViewController = navi
                     self.window?.makeKeyAndVisible()
                     
 //                    TODO NEED SOME WORK TO HANDLE LOADING POST BY ID
@@ -58,7 +62,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
                 }
                 if additionalData["openApp"] != nil {
                     print(additionalData["openApp"]!)
-                    self.window?.rootViewController = HomePage
+                    let navi =  UINavigationController.init(rootViewController: HomePage)
+
+//                    navi.navigationBar.setBackgroundImage(UIImage(named: "bk")?.resizableImage(withCapInsets: UIEdgeInsets.zero, resizingMode: .tile), for: .default)
+                    
+                    self.window?.rootViewController = navi
                     self.window?.makeKeyAndVisible()
                     
                 }
